@@ -2,7 +2,7 @@
 
 </script>
 <template>
-<header>
+<header >
   <div class="logo">
     <img class="logo-img" src="https://th.bing.com/th/id/R.add2ab6c33f2a2ac37bd7ad0639831b3?rik=QKxNLnIOQxyNHQ&riu=http%3a%2f%2fsmt-kyoto.com%2fimages%2flogo.png&ehk=rXnG73oUS6XtQxqGKU12cHFlZkCvdBMmi6oyXyZFvGA%3d&risl=&pid=ImgRaw&r=0" alt="SMT">
   </div>
@@ -24,8 +24,8 @@ header{
   justify-content: space-between;
   background-color: rgb(255, 235, 50);
   width: 100%;
-  height: 6vh;
   align-items: center;
+  box-shadow: 0 3px 14px 1px rgb(165, 140, 0);
 }
 
 .logo-img{
@@ -41,11 +41,11 @@ header{
   background-color: rgb(224, 149, 10);
   box-shadow: 3px 3px 3px black;
   margin:0 1vh 0 0;
-  /* height: 2vh; */
   width: 12vh;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
+  border-radius: 3px;
 }
 
 .butao:hover{
