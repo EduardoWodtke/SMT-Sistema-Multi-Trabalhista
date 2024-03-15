@@ -26,6 +26,7 @@ header{
   width: 100%;
   align-items: center;
   box-shadow: 0 3px 14px 1px rgb(165, 140, 0);
+  height: 30%;
 }
 
 .logo-img{
@@ -38,8 +39,8 @@ header{
 }
 
 .butao{
-  background-color: rgb(224, 149, 10);
-  box-shadow: 3px 3px 3px black;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 3px 3px 3px rgb(95, 95, 95);
   margin:0 1vh 0 0;
   width: 12vh;
   text-align: center;

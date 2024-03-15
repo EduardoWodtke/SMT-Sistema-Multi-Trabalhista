@@ -9,7 +9,7 @@
     </div>
     <div class="Servicos">
       <div class="bolinhas">
-
+        
       </div>
       <div class="bolinhas">
         
@@ -37,8 +37,16 @@
 
 <style scoped>
 main{
-  height: 93.1vh;
-  /* background-color: rgb(41, 41, 41); */
+  width: 100%;
+  height: 100%;
+  background-color: rgb(41, 41, 41);
+  display: flexbox;
+  align-content: center;
+}
+
+.bolinhas{
+  border: 3px solid black;
+  bor
 }
 
 </style>
