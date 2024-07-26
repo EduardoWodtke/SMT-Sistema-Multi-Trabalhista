@@ -2,7 +2,17 @@
 
 # O que teu marido não faz, nós fazemos
 
-Integrantes: Eduardo Roberto Wodtke, Evelin de Oliveira Rodrigues, Hugo Gross, Maria Eduarda da Silva e Victor Sedlak.
+Integrantes: 
+
+Eduardo Roberto Wodtke;
+
+Evelin de Oliveira Rodrigues;
+
+Hugo Gross;
+
+Maria Eduarda da Silva;
+
+Victor Sedlak.
 
 Turma: 3info2
 
