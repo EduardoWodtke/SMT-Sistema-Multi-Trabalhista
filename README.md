@@ -1,8 +1,8 @@
-## SMT- Sistema Multi-Trabalhista 
+# SMT- Sistema Multi-Trabalhista 
 
 # O que teu marido não faz, nós fazemos
 
-Integrantes: 
+##Integrantes: 
 
 Eduardo Roberto Wodtke;
 
