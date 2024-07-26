@@ -25,6 +25,8 @@ Data de entrega: não sabo
 
 https://lucid.app/lucidchart/3e466b8a-5ebe-4e40-b346-86cc57a02236/edit?viewport_loc=119%2C-122%2C1996%2C1245%2CHWEp-vi-RSFO&invitationId=inv_3a80de33-575f-4e46-891f-6b26b50aec0f
 
+![image](https://github.com/user-attachments/assets/5af12f18-8640-43e3-85b2-76c41213adef)
+
 https://www.figma.com/design/4ROQLlS6xu6xhNykQf6xVr/Untitled?node-id=0-1&t=5oAsPxyzX7wUatza-1
 
 ![image](https://github.com/user-attachments/assets/aa62eb36-3a82-4fa1-b3d9-38ed30a5c498)
