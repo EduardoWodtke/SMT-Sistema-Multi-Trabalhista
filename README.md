@@ -16,12 +16,15 @@ Victor Sedlak.
 
 
 
+## Informações Adicionais
 
 Turma: 3info2
 
 Data de início: 27/02
 
 Data de entrega: não sabo
+
+# Como está o projeto?
 
 https://lucid.app/lucidchart/3e466b8a-5ebe-4e40-b346-86cc57a02236/edit?viewport_loc=119%2C-122%2C1996%2C1245%2CHWEp-vi-RSFO&invitationId=inv_3a80de33-575f-4e46-891f-6b26b50aec0f
 
