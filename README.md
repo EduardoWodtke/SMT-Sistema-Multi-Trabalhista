@@ -5,7 +5,9 @@
 Integrantes: Eduardo Roberto Wodtke, Evelin de Oliveira Rodrigues, Hugo Gross, Maria Eduarda da Silva e Victor Sedlak.
 
 Turma: 3info2
+
 Data de início: 27/02
+
 Data de entrega: não sabo
 
 https://lucid.app/lucidchart/3e466b8a-5ebe-4e40-b346-86cc57a02236/edit?viewport_loc=119%2C-122%2C1996%2C1245%2CHWEp-vi-RSFO&invitationId=inv_3a80de33-575f-4e46-891f-6b26b50aec0f
