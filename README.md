@@ -1,4 +1,4 @@
-# SMT- Sistema Multi-Trabalhista 
+## SMT- Sistema Multi-Trabalhista 
 
 # O que teu marido não faz, nós fazemos
 
@@ -12,7 +12,7 @@ Hugo Gross;
 
 Maria Eduarda da Silva;
 
-*Victor Sedlak.*
+Victor Sedlak.
 
 
 
