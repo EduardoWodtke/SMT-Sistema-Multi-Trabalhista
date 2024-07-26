@@ -27,6 +27,9 @@ https://lucid.app/lucidchart/3e466b8a-5ebe-4e40-b346-86cc57a02236/edit?viewport_
 
 https://www.figma.com/design/4ROQLlS6xu6xhNykQf6xVr/Untitled?node-id=0-1&t=5oAsPxyzX7wUatza-1
 
+![image](https://github.com/user-attachments/assets/aa62eb36-3a82-4fa1-b3d9-38ed30a5c498)
+
+
 # O que podemos oferecer?
 
 O objetivo do sistema multi-trabalhista é ajudar oferecendo alguns serviços no estilo “marido de aluguel”. Diante disso é notado a necessidade do sistema conter dois tipos de logins, um para que o cliente acesse o sistema e outro para que o trabalhador possa ofertar seus serviços, terá que ser um sistema seguro, para que isso aconteça da melhor forma possível, informará a localização dos trabalhadores, e será colocado uma certa restrição de idade para melhor segurança de menores, será recomendado os melhores serviços já efetuados com as melhores avaliações, para segurança de todos os envolvidos também deverá ser incrementado um método de denúncia ao serviço, e os clientes poderão ser avaliados pelos trabalhadores, vale ressaltar que o trabalhador só receberá o seu devido pagamento após o cliente enviar fotos e vídeos que comprovem que o serviço foi realmente efetuado, e também o sistema manterá uma certa porcentagem desse pagamento para melhorias do próprio sistema. 
