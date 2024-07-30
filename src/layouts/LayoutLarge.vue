@@ -1,6 +1,6 @@
 <script setup>
   import LargeHeader from '@/components/templates/large/LargeHeader.vue';
-  import LargeAside from '@/components/templates/large/LargeAside.vue';
+  import LargeNav from '@/components/templates/large/LargeNav.vue';
   import LargeFooter from '@/components/templates/large/LargeFooter.vue';
 </script>
 <template>
@@ -9,7 +9,7 @@
       <large-header />
     </header>
     <aside>
-      <large-aside />
+      <large-nav />
     </aside>
     <main>
       <router-view />
