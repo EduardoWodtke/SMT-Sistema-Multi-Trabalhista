@@ -1,6 +1,6 @@
 # SMT- Sistema Multi-Trabalhista 
 
-*O que teu marido não faz, nós fazemos!*
+## O que TEU marido não faz, NÓS fazemos!
 
 ## Integrantes: 
 
