@@ -6,7 +6,8 @@
       <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
     </div>
     <div class="barra-pesquisa">
-      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços" />
+      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços"  />
+      
     </div>
     <div class="icons">
       <i class="mdi mdi-account-hard-hat-outline" />
@@ -17,7 +18,7 @@
 
 <style scoped>
 .icons {
-  font-size: 8vh;
+  font-size: 5vh;
   padding-right: 2vh;
 }
 
@@ -28,22 +29,29 @@ header {
   background-color: #00173d;
   width: 100%;
   align-items: center;
-  height: 30%;
+  height: 8vh;
 }
 
 .logo-img {
-  width: 13vh;
+  width: 9vh;
 }
 
 #barra-pesquisa {
   width: 600px;
-  height: 45px;
-  border-radius: 10px;
+  height: 35px;
+  border-radius: 8px;
   font-size: 20px;
   margin-right: 5vh;
-  text-align: center;
+  text-align: center;    
   border: 3px solid;
-  box-shadow: 0 10px 30px 0 black;
+  
   font-family: "Ubunto" sans-serif;
+  color: rgb(44, 44, 44);
 }
-</style>
+
+.botaopesquisa {
+  height: 20px;
+  width: 100px;
+  
+}
+</style>  
