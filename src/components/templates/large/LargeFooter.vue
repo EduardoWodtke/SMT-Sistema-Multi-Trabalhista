@@ -16,20 +16,21 @@
             <li>Politica de privacidade</li>
             <li>Termos de uso</li>
         </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </footer>
 </template>
 <style scoped>
+#termos{
+    list-style: none;
+    font-size: 23px;
+    font-family: "Ubuntu" sans-serif;
+}
 footer {
     background-color: black;
     display: flex;
     flex-direction: row;
     padding-top: 2vh;
     border-top: 1vh #00173d solid;
+    justify-content: space-around;
 }
 
 .contatos h2 {
