@@ -17,8 +17,7 @@ import Menu from "vue-material-design-icons/Menu.vue";
     </nav>
 </template>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 .info {
   display: flex;
   flex-direction: row;

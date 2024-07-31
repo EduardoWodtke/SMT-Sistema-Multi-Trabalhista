@@ -19,7 +19,6 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
 header {
   display: flex;
   flex-direction: column;
