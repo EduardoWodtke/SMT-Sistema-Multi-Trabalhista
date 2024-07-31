@@ -1,5 +1,6 @@
 import './assets/main.css'
 import './plugins/axios.js';
+import Menu from "vue-material-design-icons/Menu.vue";
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

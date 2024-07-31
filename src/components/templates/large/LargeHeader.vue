@@ -6,21 +6,21 @@
       <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
     </div>
     <div class="barra-pesquisa">
-      <input
-        size="100"
-        type="text"
-        v-model="search"
-        id="barra-pesquisa"
-        placeholder="Procurar serviços"
-      />
+      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços" />
     </div>
-    <div class="perfil">
-      <img style="width: 10vh;" src="@/assets/perfil.png" alt="">
+    <div class="icons">
+      <i class="mdi mdi-account-hard-hat-outline" />
+      <!-- <img style="width: 10vh;" src="@/assets/perfil.png" alt=""> -->
     </div>
   </header>
 </template>
 
 <style scoped>
+.icons {
+  font-size: 8vh;
+  padding-right: 2vh;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -31,20 +31,19 @@ header {
   height: 30%;
 }
 
-
-
 .logo-img {
   width: 13vh;
 }
+
 #barra-pesquisa {
   width: 600px;
   height: 45px;
   border-radius: 10px;
-  font-size: 22px;  
+  font-size: 20px;
   margin-right: 5vh;
   text-align: center;
   border: 3px solid;
   box-shadow: 0 10px 30px 0 black;
+  font-family: "Ubunto" sans-serif;
 }
-
 </style>

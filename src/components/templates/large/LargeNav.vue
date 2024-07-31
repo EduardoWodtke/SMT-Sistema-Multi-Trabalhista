@@ -1,5 +1,4 @@
 <script setup>
-import Menu from "vue-material-design-icons/Menu.vue";
 </script>
 <template>
     <nav>
@@ -31,6 +30,7 @@ import Menu from "vue-material-design-icons/Menu.vue";
 }
 .mdi{
 padding-top: 0.3%;  
+font-size: 5vh;
 }
 ul {
   display: flex;

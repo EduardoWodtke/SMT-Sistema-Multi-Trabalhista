@@ -20,4 +20,7 @@
   </div>
 </template>
 <style scoped>
+footer{
+  margin: 32.4% 0 0 0;
+}
 </style>
