@@ -18,20 +18,20 @@ import Menu from "vue-material-design-icons/Menu.vue";
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 .info {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: black;
   width: 100%;
   align-items: center;
   height: 35px;
-  padding-top: 1vh;
   margin-top: 0;
-  font-family: "Lakki Reddy", serif;
+  font-family: "Ubuntu", sans-serif;
 }
-.menu {
-  padding: 1.5vh 5vh 1vh 3vh;
+.mdi{
+padding-top: 0.3%;  
 }
 ul {
   display: flex;
@@ -40,7 +40,7 @@ ul {
 li {
   font-size: 2vh;
   text-align: center;
-  padding: 0 7vh 0 7vh;
+  padding: 0 10vh;
   list-style: none;
 }
 

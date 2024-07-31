@@ -15,11 +15,6 @@ const router = createRouter({
           name: 'Home',
           component: HomeSMT,
         },
-        {
-          path: '/login',
-          name: 'Login',
-          component: () => import('@/views/LoginView.vue'),
-        },
       ],
     },
   ],
