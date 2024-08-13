@@ -1,16 +1,15 @@
 <script setup>
-  import LargeHeader from '@/components/templates/large/LargeHeader.vue';
-  import LargeNav from '@/components/templates/large/LargeNav.vue';
-  import LargeFooter from '@/components/templates/large/LargeFooter.vue';
+import LargeHeader from '@/components/templates/large/LargeHeader.vue'
+import LargeNav from '@/components/templates/large/LargeNav.vue'
+import LargeFooter from '@/components/templates/large/LargeFooter.vue'
 </script>
 <template>
   <div id="layout-large">
     <header>
       <large-header />
-    </header>
-    <aside>
       <large-nav />
-    </aside>
+    </header>
+    <!-- <aside></aside> -->
     <main>
       <router-view />
     </main>
@@ -20,7 +19,7 @@
   </div>
 </template>
 <style scoped>
-footer{
+footer {
   margin: 35% 0 0 0;
 }
 </style>

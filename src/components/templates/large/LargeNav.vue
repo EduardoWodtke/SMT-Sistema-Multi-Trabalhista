@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from 'vue'
+
+const isPrestador = ref(false)
 // import { useRouter } from 'vue-router';
 
 // const router = useRouter()
@@ -6,23 +9,42 @@
 <template>
   <nav>
     <div class="info">
-      <Menu class="mdi mdi-menu" size="5vh" />
+      <Menu class="mdi mdi-menu" size="5vh" @click="isPrestador = !isPrestador" />
       <ul>
-        <router-link to="/" class= "underline">
-          <li>Ranking</li>
-        </router-link>
-        <router-link to="/" class="underline">
-          <li>Bate-papo</li>
-        </router-link>
-        <router-link to="/" class="underline">
-          <li>Trabalhadores</li>
-        </router-link>
-        <router-link to="/" class="underline">
-          <li>Histórico</li>
-        </router-link>
-        <router-link to="/" class="underline">
-          <li>Favoritos</li>
-        </router-link>
+        <template v-if="isPrestador">
+          <router-link to="/" class="underline">
+            <li>Ranking</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Bate-papo</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Trabalhadores</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Histórico</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Favoritos</li>
+          </router-link>
+        </template>
+        <template v-else>
+          <router-link to="/" class="underline">
+            <li>Ranking do cliente</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Bate-papo do cliente</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Trabalhadores</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Histórico</li>
+          </router-link>
+          <router-link to="/" class="underline">
+            <li>Favoritos</li>
+          </router-link>
+        </template>
       </ul>
     </div>
   </nav>

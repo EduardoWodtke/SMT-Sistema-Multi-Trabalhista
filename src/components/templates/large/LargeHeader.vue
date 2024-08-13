@@ -12,7 +12,6 @@
     </div>
     <div class="icons">
       <i class="mdi mdi-account-hard-hat-outline" />
-      <!-- <img style="width: 10vh;" src="@/assets/perfil.png" alt=""> -->
     </div>
   </header>
 </template>
@@ -23,10 +22,11 @@
   flex-direction: row;
 }
 .logo h1 {
-  font-size: 6vh;
+  font-size: 7vh;
   font-weight: bold;
   color: #ffffff;
   margin-left: 2vh;
+  margin-top: 10px;
 }
 .icons {
   font-size: 5vh;
@@ -45,6 +45,8 @@ header {
 
 .logo-img {
   width: 9vh;
+  height: 9vh;
+  margin-top: 16px;
 }
 
 #barra-pesquisa {
