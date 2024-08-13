@@ -1,29 +1,29 @@
 <script setup>
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 
-const router = useRouter()
+// const router = useRouter()
 </script>
 <template>
   <nav>
     <div class="info">
       <Menu class="mdi mdi-menu" size="5vh" />
       <ul>
-        <router-link to="/">
+        <router-link to="/" class= "underline">
           <li>Ranking</li>
         </router-link>
-        <router-link>
+        <router-link to="/" class="underline">
           <li>Suporte</li>
         </router-link>
-        <router-link>
+        <router-link to="/" class="underline">
           <li>Perguntas</li>
         </router-link>
-        <router-link>
+        <router-link to="/" class="underline">
           <li>Histórico</li>
         </router-link>
-        <router-link>
+        <router-link to="/" class="underline">
           <li>Favoritos</li>
         </router-link>
-        <router-link>
+        <router-link to="/" class="underline">
           <li>Configurações</li>
         </router-link>
       </ul>
@@ -31,6 +31,9 @@ const router = useRouter()
   </nav>
 </template>
 <style scoped>
+.underline {
+  text-decoration: none;
+}
 .info {
   display: flex;
   flex-direction: row;
@@ -40,7 +43,6 @@ const router = useRouter()
   align-items: center;
   height: 35px;
   margin-top: 0;
-  font-family: "Ubuntu", sans-serif;
 }
 
 .mdi {
