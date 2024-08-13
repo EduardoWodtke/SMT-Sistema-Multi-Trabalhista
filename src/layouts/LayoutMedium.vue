@@ -1,6 +1,7 @@
 <script setup>
-  import MediumHeader from '@/components/templates/medium/MediumHeader.vue';
-  import MediumFooter from '@/components/templates/medium/MediumFooter.vue';
+import MediumHeader from "@/components/templates/medium/MediumHeader.vue";
+import MediumFooter from "@/components/templates/medium/MediumFooter.vue";
+import MediumNav from "@/components/templates/medium/MediumNav.vue";
 </script>
 
 <template>
@@ -8,6 +9,9 @@
     <header>
       <medium-header />
     </header>
+    <nav>
+      <medium-nav />
+    </nav>
     <main>
       <router-view />
     </main>

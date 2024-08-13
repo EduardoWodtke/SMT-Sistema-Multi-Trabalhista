@@ -1,6 +1,11 @@
 <script setup></script>
 <template>
     <footer>
+        <ul id="suporte">
+            <li>Ajuda</li>
+            <li>Perguntas</li>
+            <li>Sobre Nós</li>
+        </ul>
         <div class="contatos">
             <h2>Contate-nos</h2>
             <ul id="redes-sociais">
@@ -19,10 +24,10 @@
     </footer>
 </template>
 <style scoped>
-#termos{
+ul{
     list-style: none;
     font-size: 23px;
-    font-family: "Ubuntu" sans-serif;
+    margin-top: 3vh;
 }
 footer {
     background-color: black;
@@ -36,16 +41,16 @@ footer {
 .contatos h2 {
     text-align: center;
     font-size: 4vh;
-    font-family: "Ubuntu", sans-serif;
 }
 
 #redes-sociais {
     display: flex;
     flex-direction: row;
     font-size: 5vh;
+    margin-top: 5px;
 }
 
 #redes-sociais i {
-    padding: 2vh;
+    padding: 1vh;
 }
 </style>
