@@ -12,19 +12,16 @@
           <li>Ranking</li>
         </router-link>
         <router-link to="/" class="underline">
-          <li>Suporte</li>
+          <li>Bate-papo</li>
         </router-link>
         <router-link to="/" class="underline">
-          <li>Perguntas</li>
+          <li>Trabalhadores</li>
         </router-link>
         <router-link to="/" class="underline">
           <li>Histórico</li>
         </router-link>
         <router-link to="/" class="underline">
           <li>Favoritos</li>
-        </router-link>
-        <router-link to="/" class="underline">
-          <li>Configurações</li>
         </router-link>
       </ul>
     </div>
@@ -37,7 +34,6 @@
 .info {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   background-color: black;
   width: 100%;
   align-items: center;
@@ -58,7 +54,7 @@ ul {
 li {
   font-size: 2vh;
   text-align: center;
-  padding: 0 10vh;
+  padding: 0 15vh;
   list-style: none;
 }
 </style>
