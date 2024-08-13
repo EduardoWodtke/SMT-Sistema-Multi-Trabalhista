@@ -30,7 +30,6 @@ https://lucid.app/lucidchart/3e466b8a-5ebe-4e40-b346-86cc57a02236/edit?viewport_
 
 ![image](https://github.com/user-attachments/assets/35e0363b-f98d-400a-819e-7d4f7be38c1d)
 
-
 https://www.figma.com/design/4ROQLlS6xu6xhNykQf6xVr/Untitled?node-id=0-1&t=5oAsPxyzX7wUatza-1
 
 ![image](https://github.com/user-attachments/assets/875abafc-cede-4686-8b4b-da9b24245e18)
