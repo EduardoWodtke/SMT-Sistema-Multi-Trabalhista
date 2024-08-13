@@ -4,6 +4,7 @@
   <header>
     <div class="logo">
       <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
+      <h1>SMT</h1>
     </div>
     <div class="barra-pesquisa">
       <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços"  />
@@ -17,6 +18,16 @@
 </template>
 
 <style scoped>
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+.logo h1 {
+  font-size: 6vh;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 2vh;
+}
 .icons {
   font-size: 5vh;
   padding-right: 2vh;

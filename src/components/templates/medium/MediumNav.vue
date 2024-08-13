@@ -1,4 +1,4 @@
-<script setup>
+  <script setup>
 // import { useRouter } from 'vue-router';
 
 // const router = useRouter()
@@ -6,7 +6,6 @@
 <template>
   <nav>
     <div class="info">
-      <Menu class="mdi mdi-menu" size="5vh" />
       <ul>
         <router-link to="/" class= "underline">
           <li>Ranking</li>
@@ -28,21 +27,16 @@
   </nav>
 </template>
 <style scoped>
+nav{
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
 .underline {
   text-decoration: none;
 }
-.info {
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  width: 100%;
-  align-items: center;
-  height: 35px;
-  margin-top: 0;
-}
-
 .mdi {
-  padding-top: 0.3%;
   font-size: 5vh;
 }
 
@@ -52,9 +46,8 @@ ul {
 }
 
 li {
-  font-size: 2vh;
   text-align: center;
-  padding: 0 15vh;
+  padding: 0 5vh;
   list-style: none;
 }
 </style>

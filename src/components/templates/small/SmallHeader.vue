@@ -26,21 +26,21 @@ header {
   background-color: #00173d;
   width: 100%;
   align-items: center;
-  height: 30vh;
+  height: 25vh;
 }
 .logo{
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-family: "Lakki Reddy", serif;
     font-size: 5vh;
     padding-right: 30px;
 }
 .logo h1{
-margin-top: 7vh;
+font-weight: bold;
+padding-top: 15px;
 }
 .logo-img {
-  width: 20vh;
+  width: 15vh;
 }
 #barra-pesquisa {
   width: 40vh;
@@ -50,7 +50,7 @@ margin-top: 7vh;
   text-align: center;
   border: 3px solid;
   box-shadow: 0 10px 30px 0 rgb(0, 0, 0);
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
 }
 
 </style>

@@ -21,6 +21,6 @@
 </template>
 <style scoped>
 footer{
-  margin: 50% 0 0 0;
+  margin: 35% 0 0 0;
 }
 </style>
