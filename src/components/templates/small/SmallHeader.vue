@@ -37,9 +37,10 @@ header {
 }
 .logo h1{
 font-weight: bold;
+padding-top: 15px;
 }
 .logo-img {
-  width: 17vh;
+  width: 15vh;
 }
 #barra-pesquisa {
   width: 40vh;
