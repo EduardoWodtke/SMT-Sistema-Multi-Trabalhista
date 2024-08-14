@@ -15,7 +15,7 @@ const router = createRouter({
           component: () => import('@/views/HomeSMT.vue'),
         },
         {
-          path: '/',
+          path: '/Ranking',
           name: 'Ranking',
           component: () => import('@/views/RankingSMT.vue'),
         },
