@@ -75,7 +75,7 @@ ul {
 li {
   font-size: 2vh;
   text-align: center;
-  padding: 0 15vh;
+  padding: 0 14vh;
   list-style: none;
 }
 </style>

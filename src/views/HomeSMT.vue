@@ -2,7 +2,7 @@
 <template>
   <div class="slide">
     <img src="@/assets/trabalhadores.jpeg" alt="" />
-    <h3>O que seu marido não faz nós fazemos...</h3>
+    <h3>O que teu marido não faz nós fazemos...</h3>
   </div>
   <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
