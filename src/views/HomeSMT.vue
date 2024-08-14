@@ -7,8 +7,27 @@
   <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
   </div>
+  <div class="servicos-principes">
+    <div class="servico">nfdjheg</div>
+    <div class="servico"><p>dhfhgvasehf</p></div>
+    <div class="servico">.</div>
+    <div class="servico">.</div>
+  </div>
 </template>
 <style>
+.servicos-principes {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.servico{
+  border-radius: 20vh;
+  width: 30vh;
+  height: 30vh;
+  background-color: brown;
+  border: solid 1px black;
+}
 .map img {
   width: 35%;
   display: block;
@@ -36,7 +55,7 @@ h3 {
 
 @media screen and (max-width: 1024px) {
   h3 {
-    font-size: 3.7vh; 
+    font-size: 3.7vh;
     -webkit-text-stroke: 0.7px white;
     margin: 15% 15%;
   }
@@ -46,12 +65,12 @@ h3 {
   }
 }
 @media screen and (max-width: 430px) {
-  h3{
+  h3 {
     font-size: 2.3vh;
     -webkit-text-stroke: 0.13;
     margin-top: 30%;
   }
-  .map img{
+  .map img {
     width: 60%;
     margin: 5% 0 0 20%;
   }
