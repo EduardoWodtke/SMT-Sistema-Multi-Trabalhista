@@ -10,32 +10,32 @@ const router = createRouter({
       component: LayoutFull,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'Home',
           component: () => import('@/views/HomeSMT.vue'),
         },
         {
-          path: '',
+          path: '/',
           name: 'Ranking',
           component: () => import('@/views/RankingSMT.vue'),
         },
         {
-          path: '',
+          path: '/Chat',
           name: 'Chat',
           component: () => import('@/views/ChatSMT.vue'),
         },
         {
-          path: '',
+          path: '/Favoritos',
           name: 'Favoritos',
           component: () => import('@/views/FavoritosSMT.vue'),
         },
         {
-          path: '',
+          path: '/Historico',
           name: 'Historico',
           component: () => import('@/views/HistoricoSMT.vue'),
         },
         {
-          path: '',
+          path: 'Trabalhadores',
           name: 'Trabalhadores',
           component: () => import('@/views/TrabalhadoresSMT.vue'),
         },

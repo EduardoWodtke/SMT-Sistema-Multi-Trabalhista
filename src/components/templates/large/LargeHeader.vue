@@ -2,10 +2,10 @@
 </script>
 <template>
   <header>
-    <div class="logo">
+  <router-link to="/" class="logo">
       <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
       <h1>SMT</h1>
-    </div>
+  </router-link>
     <div class="barra-pesquisa">
       <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços"  />
       
@@ -20,6 +20,7 @@
 .logo{
   display: flex;
   flex-direction: row;
+  text-decoration: none;
 }
 .logo h1 {
   font-size: 7vh;

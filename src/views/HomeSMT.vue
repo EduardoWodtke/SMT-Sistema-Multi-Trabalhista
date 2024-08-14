@@ -34,4 +34,15 @@ h3 {
   -webkit-text-stroke: 2px white;
   font-family: 'New Amsterdam', sans-serif;
 }
+@media screen {
+  h3{
+    font-size: 4vh;
+    -webkit-text-stroke: 0.5px white;
+    margin-left: 15%;
+  }
+  .map img{
+    width: 50%;
+    margin-top: 2.5vh;
+  }
+}
 </style>
