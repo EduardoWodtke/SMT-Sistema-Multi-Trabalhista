@@ -9,7 +9,6 @@ import LargeFooter from '@/components/templates/large/LargeFooter.vue'
       <large-header />
       <large-nav />
     </header>
-    <!-- <aside></aside> -->
     <main>
       <router-view />
     </main>
@@ -19,7 +18,4 @@ import LargeFooter from '@/components/templates/large/LargeFooter.vue'
   </div>
 </template>
 <style scoped>
-footer {
-  margin: 35% 0 0 0;
-}
 </style>

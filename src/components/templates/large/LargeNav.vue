@@ -13,7 +13,7 @@ const isPrestador = ref(false)
       <ul>
         <template v-if="isPrestador">
           <router-link to="/" class="underline">
-            <li>Ranking</li>
+            <li>Ranking trabalhador</li>
           </router-link>
           <router-link to="/" class="underline">
             <li>Bate-papo</li>
@@ -30,10 +30,10 @@ const isPrestador = ref(false)
         </template>
         <template v-else>
           <router-link to="/" class="underline">
-            <li>Ranking do cliente</li>
+            <li>Ranking</li>
           </router-link>
           <router-link to="/" class="underline">
-            <li>Bate-papo do cliente</li>
+            <li>Bate-papo</li>
           </router-link>
           <router-link to="/" class="underline">
             <li>Trabalhadores</li>
