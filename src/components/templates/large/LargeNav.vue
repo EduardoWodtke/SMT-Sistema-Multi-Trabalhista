@@ -1,51 +1,50 @@
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
+// const isPrestador = ref(false)
 
-const isPrestador = ref(false)
-// import { useRouter } from 'vue-router';
-
-// const router = useRouter()
 </script>
 <template>
   <nav>
     <div class="info">
-      <Menu class="mdi mdi-menu" size="5vh" @click="isPrestador = !isPrestador" />
+      <Menu class="mdi mdi-menu" size="5vh"/>
       <ul>
-        <template v-if="isPrestador">
-          <router-link to="/" class="underline">
-            <li>Ranking trabalhador</li>
-          </router-link>
-          <router-link to="/" class="underline">
-            <li>Bate-papo</li>
-          </router-link>
-          <router-link to="/" class="underline">
-            <li>Trabalhadores</li>
-          </router-link>
-          <router-link to="/" class="underline">
-            <li>Histórico</li>
-          </router-link>
-          <router-link to="/" class="underline">
-            <li>Favoritos</li>
-          </router-link>
-        </template>
-        <template v-else>
-          <router-link to="/" class="underline">
+        <!-- <template v-if> -->
+          <router-link to="Ranking" class="underline">
             <li>Ranking</li>
           </router-link>
-          <router-link to="/" class="underline">
+          <router-link to="Chat" class="underline">
             <li>Bate-papo</li>
           </router-link>
-          <router-link to="/" class="underline">
+          <router-link to="Trabalhadores" class="underline">
             <li>Trabalhadores</li>
           </router-link>
-          <router-link to="/" class="underline">
+          <router-link to="Historico" class="underline">
             <li>Histórico</li>
           </router-link>
-          <router-link to="/" class="underline">
+          <router-link to="Favoritos" class="underline">
             <li>Favoritos</li>
           </router-link>
-        </template>
+        <!-- </template> -->
       </ul>
+      
+      <!-- <template v-else="isPrestador">
+        <button  @click="isPrestador = !isPrestador"></button>
+        <router-link to="/" class="underline">
+          <li>Ranking trabalhador</li>
+        </router-link>
+        <router-link to="/" class="underline">
+          <li>Bate-papo</li>
+        </router-link>
+        <router-link to="/" class="underline">
+          <li>Trabalhadores</li>
+        </router-link>
+        <router-link to="/" class="underline">
+          <li>Histórico</li>
+        </router-link>
+        <router-link to="/" class="underline">
+          <li>Favoritos</li>
+        </router-link>
+      </template> -->
     </div>
   </nav>
 </template>
