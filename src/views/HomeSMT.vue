@@ -7,33 +7,43 @@
   <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
   </div>
+    <div class="avaliados">
+    <h4>Melhores avaliados</h4>
+    </div>
   <div class="servicos-principes">
-    <div class="servico">nfdjheg</div>
-    <div class="servico"><p>dhfhgvasehf</p></div>
-    <div class="servico">.</div>
-    <div class="servico">.</div>
+    <div class="servico"><p>1</p></div>
+    <div class="servico"><p>2</p></div>
+    <div class="servico"><p>3</p></div>
+    <div class="servico"><p>4</p></div>
   </div>
 </template>
 <style>
+.avaliados h4 {
+  color: black;
+  font-size: 7vh;
+  text-align: center;
+}
 .servicos-principes {
-  background-color: aqua;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.servico{
+.servico {
   border-radius: 20vh;
   width: 30vh;
   height: 30vh;
   background-color: brown;
   border: solid 1px black;
+  margin-bottom: 2vh;
+  text-align: center;
 }
 .map img {
-  width: 35%;
+  width: 50%;
   display: block;
   margin: 5vh auto;
   box-shadow: 3px 0.3vh 2vh black;
   border: solid black 3px;
+  height: 35vh;
 }
 .slide {
   display: flex;
