@@ -39,6 +39,11 @@ const router = createRouter({
           name: 'Trabalhadores',
           component: () => import('@/views/TrabalhadoresSMT.vue'),
         },
+        {
+          path: 'Login',
+          name: 'Login',
+          component: () => import('@/views/LoginSMT.vue'),
+        },
       ],
     },
   ],
