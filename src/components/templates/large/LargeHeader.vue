@@ -11,7 +11,9 @@
       
     </div>
     <div class="icons">
-      <i class="mdi mdi-account-hard-hat-outline" />
+      <router-link to="/Login">
+        <i class="mdi mdi-account-hard-hat-outline" />
+      </router-link>
     </div>
   </header>
 </template>
