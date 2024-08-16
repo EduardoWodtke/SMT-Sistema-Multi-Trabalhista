@@ -47,7 +47,8 @@ ul {
 
 li {
   text-align: center;
-  padding: 0 5vh;
+  padding: 0 4vh;
   list-style: none;
+  font-size: 2vh;
 }
 </style>
