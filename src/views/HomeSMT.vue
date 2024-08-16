@@ -99,12 +99,23 @@ h3 {
     margin-top: 30%;
   }
   .map img {
-    width: 60%;
-    margin: 5% 0 0 20%;
+    width: 80%;
+    margin: 5% 0 0 10%;
   }
   .slide img {
     width: 100%;
     height: 25vh;
+  }
+  .avaliados h4 {
+    margin-top: 5%;
+    font-size: 6vh;
+  }
+  .servico {
+    width: 25vh;
+    height: 25vh;
+  }
+  .servicos-principes {
+    margin-bottom: 35%;
   }
 }
 </style>

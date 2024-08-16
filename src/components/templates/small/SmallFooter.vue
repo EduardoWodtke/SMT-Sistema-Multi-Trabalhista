@@ -12,7 +12,7 @@
 <style scoped>
 footer {
     display: flex;
-    position: absolute;
+    position: fixed ;
     width: 100%;
     bottom: 0;
     border: #00173d solid 5px;
