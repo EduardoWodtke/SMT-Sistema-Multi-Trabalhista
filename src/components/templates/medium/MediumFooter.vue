@@ -15,7 +15,7 @@
 footer {
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   width: 100%;
   align-items: center;
   bottom: 0;
