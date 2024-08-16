@@ -29,6 +29,7 @@ ul{
     font-size: 23px;
     margin-top: 3vh;
 }
+
 footer {
     background-color: black;
     display: flex;
@@ -36,6 +37,7 @@ footer {
     padding-top: 2vh;
     border-top: 1vh #00173d solid;
     justify-content: space-around;
+    
 }
 
 .contatos h2 {
