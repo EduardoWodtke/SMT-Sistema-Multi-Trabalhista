@@ -70,6 +70,7 @@
 ul {
   display: flex;
   flex-direction: row;
+  margin-left: 10.05vh;
 }
 
 li {
