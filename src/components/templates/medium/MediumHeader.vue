@@ -38,7 +38,7 @@ header {
   height: 45px;
   border-radius: 10px;
   font-size: 22px;  
-  margin-right: 5vh;
+  margin-right: 12vh;
   text-align: center;
   border: 3px solid;
   box-shadow: 0 10px 30px 0 black;
