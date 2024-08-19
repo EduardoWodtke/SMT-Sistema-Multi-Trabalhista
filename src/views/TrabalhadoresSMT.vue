@@ -39,4 +39,20 @@
     width: 20vh;
     border-radius: 20vh;
 }
+
+@media screen and (max-width: 1024px) {
+    #container{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .trabalhador{
+        width: 30vh;
+        height: 10vh;
+        margin: 2vh;
+        font-size: 3vh;
+    }
+    .bolinha{
+        width: 10vh;
+    }
+}
 </style>
