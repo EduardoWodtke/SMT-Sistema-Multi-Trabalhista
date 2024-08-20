@@ -1,12 +1,21 @@
 <script setup>
-// import { ref } from 'vue'
+import { ref } from 'vue'
+
 // const isPrestador = ref(false)
 
+const servicos = ref(false)
+
+const clickHamburguer = () => {
+  servicos.value = !servicos.value
+}
 </script>
 <template>
   <nav>
-    <div class="info">
-      <Menu class="mdi mdi-menu" size="5vh"/>
+    <div id="info" :class="servicos" ? >
+      <div v-if="servicos" @click="clickHamburguer()">
+        <button class="butao mdi mdi-alpha-x"></button>
+      </div>
+      <Menu v-else @click="clickHamburguer()" class="mdi mdi-menu" size="5vh"/>
       <ul>
         <!-- <template v-if> -->
           <router-link to="Ranking" class="underline">
@@ -52,7 +61,7 @@
 .underline {
   text-decoration: none;
 }
-.info {
+#info {
   display: flex;
   flex-direction: row;
   background-color: black;
