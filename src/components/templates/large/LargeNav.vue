@@ -1,17 +1,16 @@
 <script setup>
-import { ref, onUnmounted } from 'vue';
+import { ref } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 
-
-const servicos = ref(false);
+const servicos = ref(false)
 
 const clickHamburguer = () => {
-  servicos.value = !servicos.value;
-};
+  servicos.value = !servicos.value
+}
 
-onUnmounted(() => {
-  servicos.value = false; 
-});
-
+onBeforeRouteUpdate(() => {
+  servicos.value = false
+})
 </script>
 <template>
   <nav>
@@ -72,10 +71,10 @@ onUnmounted(() => {
   </nav>
 </template>
 <style scoped>
-p{
+p {
   text-shadow: gray 3px 3px 5px;
 }
-.butao{
+.butao {
   display: flex;
   font-size: 5vh;
   position: relative;
@@ -84,7 +83,7 @@ p{
   left: 20vh;
   bottom: 1vh;
 }
-.hamburguer{
+.hamburguer {
   display: block;
   background-color: #00173d;
   position: absolute;
