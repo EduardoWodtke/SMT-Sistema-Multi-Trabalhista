@@ -1,17 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue';
 
-// const isPrestador = ref(false)
 
-const servicos = ref(false)
+const servicos = ref(false);
 
 const clickHamburguer = () => {
-  servicos.value = !servicos.value
-}
+  servicos.value = !servicos.value;
+};
+
+onUnmounted(() => {
+  servicos.value = false; 
+});
+
 </script>
 <template>
   <nav>
-    <div id="info" :class="servicos">
+    <div id="info">
       <div v-if="servicos" class="hamburguer">
         <p>Limpador de vidro</p>
         <p>Engenheiro</p>
