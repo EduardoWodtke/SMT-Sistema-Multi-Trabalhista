@@ -3,7 +3,7 @@
 <template>
   <header>
     <div class="logo">
-      <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
+      <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
     </div>
     <div class="barra-pesquisa">
       <input

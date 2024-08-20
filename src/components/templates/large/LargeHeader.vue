@@ -3,12 +3,11 @@
 <template>
   <header>
   <router-link to="/" class="logo">
-      <img class="logo-img" src="@/assets/logoSMT.png" alt="SMT" />
+      <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
       <h1>SMT</h1>
   </router-link>
     <div class="barra-pesquisa">
       <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços"  />
-      
     </div>
     <div class="icons">
       <router-link to="/Login">
@@ -40,7 +39,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #00173d;
+  background-color: rgb(0, 23, 61);
   width: 100%;
   align-items: center;
   height: 8vh;
@@ -60,7 +59,6 @@ header {
   margin-right: 5vh;
   text-align: center;    
   border: 3px solid;
-  
   font-family: "Ubunto" sans-serif;
   color: rgb(44, 44, 44);
 }

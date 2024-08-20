@@ -19,7 +19,6 @@
 @media (max-width: 1240px){
     .conteiner{
      margin: 0 0 10% 0;
-     /* background-color: blue  */
     }
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup></script>
 <template>
     <footer>
+        <div class="footer">
         <ul id="suporte">
             <li>Ajuda</li>
             <li>Perguntas</li>
@@ -21,21 +22,41 @@
             <li>Politica de privacidade</li>
             <li>Termos de uso</li>
         </ul>
+    </div>
+        <div class="smt">
+            <div>
+            <p>©SistemaMultiTrabalhista, LLF</p>
+        </div>
+    </div>
     </footer>
 </template>
 <style scoped>
+.smt {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.smt div {
+  width: 50%;
+  border-top: 0.1vh solid white;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5vh;
+}
 ul{
     list-style: none;
     font-size: 23px;
     margin-top: 3vh;
 }
-
-footer {
-    background-color: black;
-    display: flex;
-    flex-direction: row;
+footer{
     padding-top: 2vh;
     border-top: 1vh #00173d solid;
+    background-color: black;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     
 }
