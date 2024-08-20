@@ -20,7 +20,7 @@
     margin: 5vh;
 }
 .trabalhador{
-    background-color: blueviolet;
+    background-color: #00173d;
     width: 54vh;
     font-size: 5vh;
     text-align: center;
@@ -32,10 +32,14 @@
     padding-right: 5vh;
     border-bottom-left-radius: 10vh;
     border-top-left-radius: 10vh;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    border: 3px black solid;
+    box-shadow: 5px 5px 20px black;
 }
 .bolinha{
     background-color: yellow;
-    border: 3px solid black;
+    border: 1px solid black;
     width: 20vh;
     border-radius: 20vh;
 }
