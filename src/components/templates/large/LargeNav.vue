@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
+import { useCategoriaStore } from '@/stores/categoria'
 
 const servicos = ref(false)
+const categoriaStore = useCategoriaStore()
 
 const clickHamburguer = () => {
   servicos.value = !servicos.value
@@ -11,24 +13,22 @@ const clickHamburguer = () => {
 onBeforeRouteUpdate(() => {
   servicos.value = false
 })
+
+onMounted(async () => {
+  categoriaStore.buscarTodasAsCategorias()
+})
 </script>
 <template>
   <nav>
     <div id="info">
       <div v-if="servicos" class="hamburguer">
-        <p>Limpador de vidro</p>
-        <p>Engenheiro</p>
-        <p>Encanador</p>
-        <p>Eletricista</p>
-        <p>Jardineiro</p>
-        <p>Arquiteto</p>
-        <p>Pedreiro</p>
-        <p>Diarista</p>
-        <p>Pintor</p>
-        <p>Baba</p>
-        <div>
-          <button class="butao mdi mdi-alpha-x" @click="clickHamburguer()"></button>
+        <div class="logox">
+          <img src="@/assets/logo.png" alt="">
+          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="clickHamburguer()"></button>
         </div>
+        <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
+          {{ categoria.nome }}
+        </p>
       </div>
       <Menu @click="clickHamburguer()" class="mdi mdi-menu" size="5vh" />
       <ul>
@@ -71,29 +71,38 @@ onBeforeRouteUpdate(() => {
   </nav>
 </template>
 <style scoped>
+.logox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -2vh;
+}
+.logox img{
+  width: 12vh;
+}
 p {
   text-shadow: gray 3px 3px 5px;
 }
 .butao {
   display: flex;
-  font-size: 5vh;
   position: relative;
   background: none;
   border: none;
-  left: 20vh;
-  bottom: 1vh;
+  padding-right: 3vh;
+  top: 1vh;
 }
 .hamburguer {
   display: block;
   background-color: #00173d;
-  position: absolute;
-  padding: 2vh 0 0 3vh;
-  width: 15%;
-  line-height: 6vh;
-  bottom: 21%;
+  position: fixed;
+  padding-left: 5vh;
+  width: 20%;
+  line-height: 280%;
   border: solid black 3px;
   font-size: 3vh;
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;
+  top: 0;
+  height: 100%;
 }
 .underline {
   text-decoration: none;

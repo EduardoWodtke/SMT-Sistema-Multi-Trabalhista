@@ -7,7 +7,7 @@
       <h1>SMT</h1>
   </router-link>
     <div class="barra-pesquisa">
-      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar serviços"  />
+      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar trabalhadores"  />
     </div>
     <div class="icons">
       <router-link to="/Login">
