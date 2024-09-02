@@ -33,7 +33,8 @@ onMounted(async () => {
             @click="clickHamburguer()"
           ></button>
         </div>
-        <p>Seja bem vindo, {{ authStore.user.email }}</p>
+        <p class="bemvindo">Seja bem vindo,</p>
+        <p class="usuario">{{ authStore.user.email }}</p>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
         </p>
@@ -60,8 +61,8 @@ onMounted(async () => {
         </div>
         <router-link v-else to="/login">Login</router-link>
       </ul>
-
-      <!-- <template v-else="isPrestador">
+      
+       <!-- <template v-else="isPrestador">
         <button  @click="isPrestador = !isPrestador"></button>
         <router-link to="/" class="underline">
           <li>Ranking trabalhador</li>
@@ -83,6 +84,12 @@ onMounted(async () => {
   </nav>
 </template>
 <style scoped>
+.usuario{
+  font-size: 2.5vh;
+}
+.bemvindo{
+  font-size: 5vh;
+}
 .logox {
   display: flex;
   flex-direction: row;
@@ -109,7 +116,7 @@ p {
   position: fixed;
   padding-left: 5vh;
   width: 26%;
-  line-height: 280%;
+  line-height: 240%;
   border: solid black 3px;
   font-size: 3vh;
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;
