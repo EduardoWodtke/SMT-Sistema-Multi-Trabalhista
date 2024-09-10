@@ -21,24 +21,43 @@ onMounted(async () => {
 <template>
   <footer>
     <div class="icones">
-      <router-link to="/"> <i class="mdi mdi-account-outline"></i> </router-link>
+      <router-link to="Login"> <i class="mdi mdi-account-outline"></i> </router-link>
       <router-link to="/"> <i class="mdi mdi-home-outline"></i> </router-link>
-      <Menu @click="clickHamburguer()" class="mdi mdi-menu" size="5vh" />    </div>
+      <Menu @click="clickHamburguer()" class="mdi mdi-menu" size="5vh" />
+    </div>
   </footer>
   <div v-if="servicos" class="hamburguer">
-        <div class="xis">
-          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="clickHamburguer()"></button>
-        </div>
-        <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
-          {{ categoria.nome }}
-        </p>
-      </div>
+    <div class="xis">
+      <button
+        class="butao mdi mdi-alpha-x"
+        style="font-size: 8vh"
+        @click="clickHamburguer()"
+      ></button>
+    </div>
+    <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
+      {{ categoria.nome }}
+    </p>
+  </div>
 </template>
 <style scoped>
-.hamburguer{
-  background-color: red;
-  width: 50vh;
-  bottom: 50vh;
+button {
+  display: flex;
+  position: relative;
+  background: none;
+  border: none;
+}
+.hamburguer {
+  background-color: #00173d;
+  width: 40%;
+  text-align: end;
+  padding-right: 4vh;
+  bottom: 15%;
+  right: 0;
+  display: flex;
+  position: fixed;
+  font-size: 3vh;
+  flex-direction: column;
+  border: black 0.5vh solid;
 }
 * {
   margin: 0 0 0 0;
