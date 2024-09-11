@@ -1,25 +1,57 @@
 <script setup></script>
+
 <template>
     <div id="container">
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
-        <div class="trabalhador"><div class="bolinha">IMG</div><p>Nome</p></div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
+        <div class="trabalhador">
+            <div class="bolinha">IMG</div>
+            <p>Nome</p>
+        </div>
     </div>
 </template>
+
 <style scoped>
-#container{
+
+
+#container {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
     margin: 5vh;
 }
-.trabalhador{
+
+.trabalhador {
     background-color: #00173d;
     width: 54vh;
     font-size: 5vh;
@@ -37,7 +69,8 @@
     border: 3px black solid;
     box-shadow: 5px 5px 20px black;
 }
-.bolinha{
+
+.bolinha {
     background-color: yellow;
     border: 1px solid black;
     width: 20vh;
@@ -45,18 +78,26 @@
 }
 
 @media screen and (max-width: 1024px) {
-    #container{
+    #container {
         display: grid;
         grid-template-columns: auto auto;
     }
-    .trabalhador{
+
+    .trabalhador {
         width: 30vh;
         height: 10vh;
         margin: 2vh;
         font-size: 3vh;
     }
-    .bolinha{
+
+    .bolinha {
         width: 10vh;
+    }
+}
+@media screen and (max-width: 430px) {
+     #container {
+       grid-template-columns: auto; 
+
     }
 }
 </style>
