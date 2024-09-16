@@ -9,7 +9,7 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div class="container">
+  <div id="container">
     <div class="trabalhador">
       <div class="bolinha">IMG</div>
       <p>Nome</p>
@@ -56,7 +56,7 @@ onMounted(async () => {
   font-size: 500vh;
   background-color: #00173d;
 }
-.container {
+#container {
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
@@ -88,10 +88,10 @@ onMounted(async () => {
 }
 
 @media screen and (max-width: 1024px) {
-  .container {
+  #container {
     display: grid;
     grid-template-columns: auto auto;
-    margin: 0 0 30vh 0  
+    margin: 0 0 30vh 0;
   }
   .trabalhador {
     width: 30vh;
@@ -102,6 +102,23 @@ onMounted(async () => {
   .bolinha {
     width: 10vh;
     background-color: red;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40% 0;
+  }
+  .bolinha{
+    width: 11vh;
+    background-color: pink;
+  }
+  .trabalhador{
+    margin: 5% 0 2% 0;
+    width: 40vh;
+    height: 20vh;
   }
 }
 </style>
