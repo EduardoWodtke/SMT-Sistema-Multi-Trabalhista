@@ -2,9 +2,9 @@
 
 <template>
     
-    <div id="container">
-        <div class="barra-pesquisa">
-      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar trabalhadores"  />
+    <div class="container">
+        <div >
+      <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores"  />
     </div>
         <div class="trabalhador">
             <div class="bolinha">IMG</div>
@@ -58,21 +58,28 @@
 <style scoped>
 
 
-#container {
+.container {
     
-    grid-template-columns: auto ;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 5vh;
     
 }
-#barra-pesquisa {
+.barra-pesquisa {
   width: 600px;
   height: 35px;
   border-radius: 8px;
   font-size: 20px;
   margin-right: 5vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  font-display: center ;
+  margin-left: 10vh;
+
+
   
      
   border: 3px solid;

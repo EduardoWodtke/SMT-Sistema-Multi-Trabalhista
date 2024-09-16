@@ -71,7 +71,7 @@
 }
 
 .bolinha {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 153, 255);
     border: 1px solid black;
     width: 20vh;
     border-radius: 20vh;
