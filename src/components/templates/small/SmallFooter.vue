@@ -42,7 +42,7 @@ onMounted(async () => {
       <button
         class="butao mdi mdi-alpha-x"
         style="font-size: 10vh"
-        @click="clickServicos()"
+        @click="clickHamburguer()"
       ></button>
     </div>
     <ul>
