@@ -9,10 +9,10 @@ const categoriaStore = useCategoriaStore()
 const clickHamburguer = () => {
   servicos.value = !servicos.value
 }
-function  closeHamburguer() {
-              servicos.value = false
-              document.getElementById('fechar').classList.remove('hamburguer').classList.add('close');
-        }
+function closeHamburguer() {
+  servicos.value = false
+  document.getElementById('fechar').classList.remove('hamburguer').classList.add('close')
+}
 
 onBeforeRouteUpdate(() => {
   servicos.value = false
@@ -27,8 +27,12 @@ onMounted(async () => {
     <div id="info">
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
-          <img src="@/assets/logo.png" alt="">
-          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
+          <img src="@/assets/logo.png" alt="" />
+          <button
+            class="butao mdi mdi-alpha-x"
+            style="font-size: 10vh"
+            @click="closeHamburguer()"
+          ></button>
         </div>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
@@ -75,37 +79,35 @@ onMounted(async () => {
   </nav>
 </template>
 <style scoped>
-
-@keyframes closeAnimation{
-  0%{
+@keyframes closeAnimation {
+  0% {
     left: 0%;
   }
-  50%{
+  50% {
     left: 0%;
   }
-  100%{
+  100% {
     left: -20%;
   }
 }
-@keyframes hamburguer{
-  0%{
+@keyframes hamburguer {
+  0% {
     left: -20%;
   }
-  50%{
+  50% {
     left: 0%;
   }
-  100%{
+  100% {
     left: 0%;
   }
-  
 }
-.logox{
+.logox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -2vh;
 }
-.logox img{
+.logox img {
   width: 12vh;
 }
 p {
@@ -118,13 +120,8 @@ p {
   border: none;
   padding-right: 3vh;
   top: 1vh;
-  
-
-  
- 
-
 }
-.close{
+.close {
   animation: closeAnimation 0.5s forwards;
 }
 .hamburguer {
@@ -139,11 +136,7 @@ p {
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;
   top: 0;
   height: 100%;
-  
   animation: hamburguer 2s;
-  
-  
-
 }
 .underline {
   text-decoration: none;
@@ -166,7 +159,7 @@ p {
 ul {
   display: flex;
   flex-direction: row;
-  margin-left: 10.05vh;
+  margin-left: 16vh;
 }
 
 li {

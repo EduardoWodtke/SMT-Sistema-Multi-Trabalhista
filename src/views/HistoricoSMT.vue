@@ -164,7 +164,7 @@
     width: 20vh;
   }
   .apagar{
-  margin-top: 35  %;
+  margin-top: 35%;
   width: 10vh;
   font-size: 2vh;
   height: 5vh;
