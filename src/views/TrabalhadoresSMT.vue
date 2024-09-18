@@ -91,34 +91,34 @@ onMounted(async () => {
   #container {
     display: grid;
     grid-template-columns: auto auto;
-    margin: 0 0 30vh 0;
+    margin: 0 0 25% 0;
   }
   .trabalhador {
     width: 30vh;
-    height: 10vh;
+    height: 15vh;
     margin: 3vh 0 0vh 8%;
     font-size: 3vh;
   }
   .bolinha {
-    width: 10vh;
+    width: 15vh;
     background-color: red;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 430px) {
   #container{
     display: flex;
     flex-direction: column;
     margin: 0 0 40% 0;
   }
   .bolinha{
-    width: 11vh;
+    width: 15vh;
     background-color: pink;
   }
   .trabalhador{
     margin: 5% 0 2% 0;
     width: 40vh;
-    height: 20vh;
+    height: 15vh;
   }
 }
 </style>
