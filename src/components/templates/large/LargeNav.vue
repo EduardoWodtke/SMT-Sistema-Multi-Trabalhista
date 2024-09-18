@@ -9,6 +9,10 @@ const categoriaStore = useCategoriaStore()
 const clickHamburguer = () => {
   servicos.value = !servicos.value
 }
+function  closeHamburguer() {
+              servicos.value = false
+              document.getElementById('fechar').classList.remove('hamburguer').classList.add('close');
+        }
 
 onBeforeRouteUpdate(() => {
   servicos.value = false
@@ -21,10 +25,10 @@ onMounted(async () => {
 <template>
   <nav>
     <div id="info">
-      <div v-if="servicos" class="hamburguer">
+      <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <img src="@/assets/logo.png" alt="">
-          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="clickHamburguer()"></button>
+          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
         </div>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
@@ -71,6 +75,30 @@ onMounted(async () => {
   </nav>
 </template>
 <style scoped>
+
+@keyframes closeAnimation{
+  0%{
+    left: 0%;
+  }
+  50%{
+    left: 0%;
+  }
+  100%{
+    left: -20%;
+  }
+}
+@keyframes hamburguer{
+  0%{
+    left: -20%;
+  }
+  50%{
+    left: 0%;
+  }
+  100%{
+    left: 0%;
+  }
+  
+}
 .logox{
   display: flex;
   flex-direction: row;
@@ -90,6 +118,14 @@ p {
   border: none;
   padding-right: 3vh;
   top: 1vh;
+  
+
+  
+ 
+
+}
+.close{
+  animation: closeAnimation 0.5s forwards;
 }
 .hamburguer {
   display: block;
@@ -103,6 +139,11 @@ p {
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;
   top: 0;
   height: 100%;
+  
+  animation: hamburguer 2s;
+  
+  
+
 }
 .underline {
   text-decoration: none;

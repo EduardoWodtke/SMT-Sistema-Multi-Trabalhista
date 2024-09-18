@@ -1,3 +1,4 @@
+
 <script setup>
 import { onMounted } from 'vue'
 import { useUserStore } from '@/stores/user'
@@ -51,6 +52,7 @@ onMounted(async () => {
     </p>
   </div>
 </template>
+
 <style scoped>
 .user {
   font-size: 500vh;
