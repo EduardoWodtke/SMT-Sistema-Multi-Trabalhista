@@ -7,9 +7,9 @@ const trabalhoService = new TrabalhoService();
 export const useTrabalhoStore = defineStore('trabalho', () => {
   const trabalhos = ref([]);
 
-  async function buscarTodasAsTrabalhos() {
-    trabalhos.value = await trabalhoService.buscarTodasAsTrabalhos();
+  async function buscarTodosOsTrabalhos() {
+    trabalhos.value = await trabalhoService.buscarTodosOsTrabalhos();
   }
 
-  return { trabalhos, buscarTodasAsTrabalhos };
+  return { trabalhos, buscarTodosOsTrabalhos };
 });

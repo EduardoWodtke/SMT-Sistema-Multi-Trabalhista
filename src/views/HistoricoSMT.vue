@@ -1,19 +1,25 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue';
+import { useTrabalhoStore } from '@/stores/trabalho';
+
+const trabalhoStore = useTrabalhoStore()
+
+onMounted(async () => {
+  trabalhoStore.buscarTodosOsTrabalhos()
+})
+</script>
 
 <template>
   <div class="barra">
-    <input
-      size="100"
-      type="text"
-      v-model="search"
-      class="barra-pesquisa"
-      placeholder="Procurar trabalhadores"
-    />
+    <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
   </div>
   <div class="container">
     <div class="trabalhador">
       <div class="bolinha">IMG</div>
       <p>Nome</p>
+      <p v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" style="background-color: brown;">
+        {{ trabalho }}
+      </p>
       <button class="apagar">Excluir</button>
     </div>
     <div class="trabalhador">
@@ -60,18 +66,20 @@
 </template>
 
 <style scoped>
-.barra{
+.barra {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5vh;
 }
+
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   margin: 5vh;
 }
+
 .barra-pesquisa {
   width: 600px;
   height: 35px;
@@ -93,10 +101,12 @@
   font-size: 20px;
   margin-top: 13%;
 }
+
 .apagar:hover {
   background-color: #6771ff;
   transition: 0.5s;
 }
+
 .trabalhador {
   display: flex;
   background-color: #00173d;
@@ -142,32 +152,38 @@
     width: 15vh;
     background-color: yellow;
   }
+
   .apagar {
-   margin-top: 35%;
+    margin-top: 35%;
   }
 }
+
 @media screen and (max-width: 430px) {
   .container {
     display: flex;
     flex-direction: column;
     margin-bottom: 30%;
   }
-  .barra-pesquisa{
+
+  .barra-pesquisa {
     width: 90%;
   }
-  .trabalhador{
+
+  .trabalhador {
     width: 95%;
     font-size: 3vh;
     height: 20vh;
   }
-  .bolinha{
+
+  .bolinha {
     width: 20vh;
   }
-  .apagar{
-  margin-top: 35%;
-  width: 10vh;
-  font-size: 2vh;
-  height: 5vh;
+
+  .apagar {
+    margin-top: 35%;
+    width: 10vh;
+    font-size: 2vh;
+    height: 5vh;
   }
 }
 </style>

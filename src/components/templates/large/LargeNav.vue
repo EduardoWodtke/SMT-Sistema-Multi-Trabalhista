@@ -28,11 +28,7 @@ onMounted(async () => {
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <img src="@/assets/logo.png" alt="" />
-          <button
-            class="butao mdi mdi-alpha-x"
-            style="font-size: 10vh"
-            @click="closeHamburguer()"
-          ></button>
+          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
         </div>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
@@ -83,36 +79,45 @@ onMounted(async () => {
   0% {
     left: 0%;
   }
+
   50% {
     left: 0%;
   }
+
   100% {
     left: -20%;
   }
 }
+
 @keyframes hamburguer {
   0% {
     left: -20%;
   }
+
   50% {
     left: 0%;
   }
+
   100% {
     left: 0%;
   }
 }
+
 .logox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -2vh;
 }
+
 .logox img {
   width: 12vh;
 }
+
 p {
   text-shadow: gray 3px 3px 5px;
 }
+
 .butao {
   display: flex;
   position: relative;
@@ -121,9 +126,11 @@ p {
   padding-right: 3vh;
   top: 1vh;
 }
+
 .close {
   animation: closeAnimation 0.5s forwards;
 }
+
 .hamburguer {
   display: block;
   background-color: #00173d;
@@ -138,9 +145,11 @@ p {
   height: 100%;
   animation: hamburguer 2s;
 }
+
 .underline {
   text-decoration: none;
 }
+
 #info {
   display: flex;
   flex-direction: row;
@@ -159,7 +168,7 @@ p {
 ul {
   display: flex;
   flex-direction: row;
-  margin-left: 16vh;
+  margin-left: 5%;
 }
 
 li {
