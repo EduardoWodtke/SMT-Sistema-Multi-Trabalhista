@@ -5,11 +5,11 @@ import UserService from '@/service/user';
 const userService = new UserService();
 
 export const useUserStore = defineStore('user', () => {
-  const user = ref([]);
+  const users = ref([]);
 
-  async function buscarTodasAsUsers() {
-    user.value = await userService.buscarTodosOsUsers();
+  async function buscarTodosOsUsers() {
+    users.value = await userService.buscarTodosOsUsers();
   }
 
-  return { user, buscarTodasAsUsers };
+  return { users, buscarTodosOsUsers };
 });

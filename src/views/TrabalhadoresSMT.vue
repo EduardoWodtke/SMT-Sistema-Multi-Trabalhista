@@ -11,13 +11,14 @@ onMounted(async () => {
 </script>
 <template>
   <div id="container">
+    <!-- <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
+      <div class="bolinha">IMG</div>
+      <p>{{ user }}</p>
+    </div> -->
     <div class="trabalhador">
       <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
+      <p>nome</p>
+      <p v-for="user in userStore.users" :key="user.id">{{ user.email }}</p>
     </div>
     <div class="trabalhador">
       <div class="bolinha">IMG</div>
@@ -80,10 +81,10 @@ onMounted(async () => {
   border-top-right-radius: 1vh;
   border-bottom-right-radius: 1vh;
   border: 3px black solid;
-  box-shadow: 5px 5px 20px black;
+  box-shadow: 10px 10px 40px black;
 }
 .bolinha {
-  background-color: yellow;
+  background-color: rgb(0, 255, 13);
   border: 1px solid black;
   width: 20vh;
   border-radius: 20vh;

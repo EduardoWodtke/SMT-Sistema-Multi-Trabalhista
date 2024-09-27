@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted } from 'vue';
-import { useTrabalhoStore } from '@/stores/trabalho';
+import { onMounted } from 'vue'
+import { useTrabalhoStore } from '@/stores/trabalho'
 
 const trabalhoStore = useTrabalhoStore()
 
@@ -11,61 +11,34 @@ onMounted(async () => {
 
 <template>
   <div class="barra">
-    <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
+    <input
+      size="100"
+      type="text"
+      v-model="search"
+      class="barra-pesquisa"
+      placeholder="Procurar trabalhadores"
+    />
   </div>
   <div class="container">
-    <div class="trabalhador">
+    <div v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" class="trabalhador">
       <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <p v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" style="background-color: brown;">
-        {{ trabalho }}
-      </p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-      <button class="apagar">Excluir</button>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
+      <div class="info">
+        <p>Feito por: {{ trabalho.nome }}</p>
+        <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
+        <p>Valor: {{ trabalho.preco }}</p>
+      </div>
       <button class="apagar">Excluir</button>
     </div>
   </div>
 </template>
 
 <style scoped>
+.info {
+  font-size: 3vh;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
 .barra {
   display: flex;
   flex-direction: column;
@@ -111,7 +84,6 @@ onMounted(async () => {
   display: flex;
   background-color: #00173d;
   width: 54vh;
-  font-size: 5vh;
   text-align: center;
   margin: 5vh;
   height: 20vh;
