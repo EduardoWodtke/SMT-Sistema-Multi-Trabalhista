@@ -11,53 +11,40 @@ onMounted(async () => {
 </script>
 <template>
   <div id="container">
-    <!-- <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>{{ user }}</p>
-    </div> -->
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>nome</p>
-      <p v-for="user in userStore.users" :key="user.id">{{ user.email }}</p>
+    <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
+      <div class="bolinha">{{ user.foto }}</div>
+      <div class="info">
+        <p>{{ user.name }}</p>
+        <p>{{ user.categoria }}</p>
+        <p>{{ user.nota }}</p>
+      </div>
     </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
+    <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
+      <div class="bolinha">{{ user.foto }}</div>
+      <div class="info">
+        <p>{{ user.name }}</p>
+        <p>{{ user.categoria }}</p>
+        <p>{{ user.nota }}</p>
+      </div>
     </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
+    <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
+      <div class="bolinha">{{ user.foto }}</div>
+      <div class="info">
+        <p>{{ user.name }}</p>
+        <p>{{ user.categoria }}</p>
+        <p>{{ user.nota }}</p>
+      </div>
     </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <div class="trabalhador">
-      <div class="bolinha">IMG</div>
-      <p>Nome</p>
-    </div>
-    <p v-for="user in userStore.users" :key="user.id" class="user">
-      {{ user.nome }}
-    </p>
   </div>
 </template>
 
 <style scoped>
-.user {
-  font-size: 500vh;
-  background-color: #00173d;
+
+.info {
+  font-size: 3vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 #container {
   display: grid;
@@ -68,7 +55,6 @@ onMounted(async () => {
 .trabalhador {
   background-color: #00173d;
   width: 54vh;
-  font-size: 5vh;
   text-align: center;
   margin: 3vh;
   height: 20vh;
