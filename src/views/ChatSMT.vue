@@ -1,11 +1,16 @@
 <script setup></script>
 <template>
   <div id="container">
+    <div class="apareci">OI</div>
     <div class="historico">
       <h4>Histórico de conversas</h4>
     </div>
     <div class="chat">
-      <h3>Fulano</h3>
+      <div class="demonio"> 
+        <div class="bolinha">IMG</div>
+        <h3>Fulano</h3>
+      </div>
+     
       <div class="conversar">
         <input size="50" type="text" v-model="chat" id="conversar" placeholder="Digitar..." />
       </div>
@@ -26,32 +31,72 @@
   display: flex;
   flex-direction: row;
 }
-.historico {
+.historico{
   background-color: rgb(221, 221, 221);
   box-shadow: 0.5vh 2vh 3vh 0.5vh black;
   height: 70vh;
-  width: 30vh;
+  width: 50vh;
+  display: none;
+  animation: historico 2s;
+  
 }
-.chat {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between ;
-  align-items: center;
-  width: 100%;
-  margin: 2vh;
+.apareci{
+  font-size: 10px;
+  color: black;
+  width: 2vh;
+  height: 70vh;
+  background-color: blue;
 }
+
+.apareci:hover + .historico {
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0.5vh 2vh 3vh 0.5vh black;
+  height: 70vh;
+  width: 50vh;
+  display: block;
+  animation: historico 2s;
+  
+}
+@keyframes historico {
+  0% {
+    left: -20%;
+  }
+
+  50% {
+    left: 0%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.demonio{
+  background-color: #0045b4;
+  width: 50vh;
+  height:5vh;
+  
+}
+
+.bolinha {
+  background-color: rgb(0, 153, 255);
+  border: 1px solid black;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 20vh;
+}
+
+
 h4 {
   font-size: 3vh;
   text-align: center;
-  margin-top: 1vh;
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: #00173d;
+    
 }
-h3 {
-  font-size: 3vh;
-  margin: 1vh 3vh 0 0;
-  color: black;
-  padding-right: 12vh;
-}
+
+
+
 @media screen and (max-width: 1024px) {
   #conversar {
     margin: 0 0 2vh 0;
@@ -88,4 +133,6 @@ h3 {
     font-size: 0;
   }
 }
+
+
 </style>
