@@ -12,6 +12,7 @@ export function useLayout() {
     } else if (width < 1200) {
       layout.value = defineAsyncComponent(() =>
         import('@/layouts/LayoutMedium.vue'),
+      
       );
     } else {
       layout.value = defineAsyncComponent(() =>
