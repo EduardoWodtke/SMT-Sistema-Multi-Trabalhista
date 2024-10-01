@@ -1,15 +1,14 @@
 <script setup></script>
 <template>
   <div id="container">
-    <div class="apareci">OI</div>
-    <div class="historico">
-      <h4>Histórico de conversas</h4>
+    <div class="tabela-container">
+      <p>AMIGOS</p>
+        <div class="tabela">
+            
+        </div>
     </div>
     <div class="chat">
-      <div class="demonio"> 
-        <div class="bolinha">IMG</div>
-        <h3>Fulano</h3>
-      </div>
+      <div class="demonio"> <div class="bolinha">IMG</div>  <h3>Fulano</h3></div>
      
       <div class="conversar">
         <input size="50" type="text" v-model="chat" id="conversar" placeholder="Digitar..." />
@@ -37,46 +36,64 @@
   height: 70vh;
   width: 50vh;
   display: none;
-  animation: historico 2s;
+  
   
 }
-.apareci{
-  font-size: 10px;
-  color: black;
-  width: 2vh;
-  height: 70vh;
-  background-color: blue;
-}
 
-.apareci:hover + .historico {
-  background-color: rgb(221, 221, 221);
-  box-shadow: 0.5vh 2vh 3vh 0.5vh black;
-  height: 70vh;
-  width: 50vh;
-  display: block;
-  animation: historico 2s;
-  
-}
-@keyframes historico {
-  0% {
-    left: -20%;
-  }
 
-  50% {
-    left: 0%;
-  }
-
-  100% {
-    left: 0%;
-  }
-}
 
 .demonio{
-  background-color: #0045b4;
-  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  width: 170vh;
   height:5vh;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 10px;
+
+
   
 }
+
+
+.tabela-container {
+            height:  70vh;
+            width: 50px; /* Largura inicial da tabela */
+            overflow: hidden; /* Esconde o conteúdo que não cabe */
+            position: relative;
+            transition: width 0.3s; /* Suaviza a transição */
+            background-color: #00173d;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .tabela {
+            width: 100%; /* Largura da tabela */
+            background-color: #2980b9;
+            transition: all 0.3s ease; /* Suaviza a transição da tabela */
+        }
+
+        .tabela-container:hover {
+            /* Largura da tabela ao passar o mouse */
+            width: 40vh;
+            height: 70vh;
+        }
+
+        .tabela-container:hover .tabela {
+            transform: translateX(-100%); /* Move a tabela para a esquerda */
+        }
+
+        .conteudo {
+            padding: 10px;
+            color: black;
+            /* Começa invisível */
+            transition: opacity 0.3s ease; /* Suaviza a transição da opacidade */
+        }
+
+        .tabela-container:hover .conteudo {
+            opacity: 1; /* Torna o conteúdo visível ao passar o mouse */
+        }
 
 .bolinha {
   background-color: rgb(0, 153, 255);
