@@ -25,7 +25,7 @@
     </div>
         <div class="smt">
             <div>
-            <p>©SistemaMultiTrabalhista, LLF</p>
+            <h5>©SistemaMultiTrabalhista, LLF</h5>
         </div>
     </div>
     </footer>
@@ -56,13 +56,12 @@ footer{
     display: block;
     width: 100%;
     bottom: 0;
-    position: relative;
+    /* position: relative; */
 }
 .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
 }
 
 .contatos h2 {

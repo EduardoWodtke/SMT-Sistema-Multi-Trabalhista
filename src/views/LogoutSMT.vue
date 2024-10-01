@@ -18,7 +18,10 @@ onMounted(() => {
 </template>
 
 <style>
+h1{
+  color: black;
+}
 p{
-  background-color: aqua;
+  color: black;
 }
 </style>

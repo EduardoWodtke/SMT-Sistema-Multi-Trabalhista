@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import { useCategoriaStore } from '@/stores/categoria'
-import { PassageUser } from '@passageidentity/passage-elements/passage-user'
+// import { PassageUser } from '@passageidentity/passage-elements/passage-user'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
@@ -31,7 +31,11 @@ onMounted(async () => {
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <img src="@/assets/logo.png" alt="" />
-          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
+          <button
+            class="butao mdi mdi-alpha-x"
+            style="font-size: 10vh"
+            @click="closeHamburguer()"
+          ></button>
         </div>
         <p class="bemvindo">Seja bem vindo,</p>
         <p class="usuario">{{ authStore.user.email }}</p>
@@ -56,13 +60,8 @@ onMounted(async () => {
         <router-link to="Favoritos" class="underline">
           <li>Favoritos</li>
         </router-link>
-        <div v-if="authStore.loggedIn">
-          <router-link to="/logout">Logout</router-link>
-        </div>
-        <router-link v-else to="/login">Login</router-link>
       </ul>
-      
-       <!-- <template v-else="isPrestador">
+      <!-- <template v-else="isPrestador">
         <button  @click="isPrestador = !isPrestador"></button>
         <router-link to="/" class="underline">
           <li>Ranking trabalhador</li>
