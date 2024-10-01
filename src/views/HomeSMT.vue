@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="slide">
-    <img src="@/assets/trabalhadores.jpeg" alt="" />
+    <img src="@/assets/trab.png" alt="" />
     <h3>O que teu marido não faz nós fazemos!</h3>
   </div>
   <div class="map">
@@ -77,6 +77,7 @@ onMounted(() => {
   border: solid black 3px;
   width: 100%;
   box-shadow: 3px 0.3vh 2vh black;
+  height: 45vh;
 }
 h3 {
   color: rgb(0, 0, 0);
