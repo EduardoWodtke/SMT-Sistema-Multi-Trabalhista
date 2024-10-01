@@ -53,6 +53,10 @@ footer{
     padding-top: 2vh;
     border-top: 1vh #00173d solid;
     background-color: black;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    position: relative;
 }
 .footer {
     display: flex;

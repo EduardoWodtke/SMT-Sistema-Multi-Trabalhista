@@ -12,6 +12,10 @@ const categoriaStore = useCategoriaStore()
 const clickHamburguer = () => {
   servicos.value = !servicos.value
 }
+function closeHamburguer() {
+  servicos.value = false
+  document.getElementById('fechar').classList.remove('hamburguer').classList.add('close')
+}
 
 onBeforeRouteUpdate(() => {
   servicos.value = false
@@ -24,14 +28,10 @@ onMounted(async () => {
 <template>
   <nav>
     <div id="info">
-      <div v-if="servicos" class="hamburguer">
+      <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <img src="@/assets/logo.png" alt="" />
-          <button
-            class="butao mdi mdi-alpha-x"
-            style="font-size: 10vh"
-            @click="clickHamburguer()"
-          ></button>
+          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
         </div>
         <p class="bemvindo">Seja bem vindo,</p>
         <p class="usuario">{{ authStore.user.email }}</p>
@@ -84,12 +84,34 @@ onMounted(async () => {
   </nav>
 </template>
 <style scoped>
-.usuario{
-  font-size: 2.5vh;
+@keyframes closeAnimation {
+  0% {
+    left: 0%;
+  }
+
+  50% {
+    left: 0%;
+  }
+
+  100% {
+    left: -20%;
+  }
 }
-.bemvindo{
-  font-size: 5vh;
+
+@keyframes hamburguer {
+  0% {
+    left: -20%;
+  }
+
+  50% {
+    left: 0%;
+  }
+
+  100% {
+    left: 0%;
+  }
 }
+
 .logox {
   display: flex;
   flex-direction: row;
@@ -99,9 +121,11 @@ onMounted(async () => {
 .logox img {
   width: 12vh;
 }
+
 p {
   text-shadow: gray 3px 3px 5px;
 }
+
 .butao {
   display: flex;
   position: relative;
@@ -110,6 +134,11 @@ p {
   padding-right: 3vh;
   top: 1vh;
 }
+
+.close {
+  animation: closeAnimation 0.5s forwards;
+}
+
 .hamburguer {
   display: block;
   background-color: #00173d;
@@ -122,10 +151,13 @@ p {
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;
   top: 0;
   height: 100%;
+  animation: hamburguer 2s;
 }
+
 .underline {
   text-decoration: none;
 }
+
 #info {
   display: flex;
   flex-direction: row;
@@ -144,7 +176,7 @@ p {
 ul {
   display: flex;
   flex-direction: row;
-  margin-left: 10.05vh;
+  margin-left: 5%;
 }
 
 li {

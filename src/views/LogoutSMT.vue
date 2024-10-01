@@ -14,6 +14,11 @@ onMounted(() => {
 
 <template>
   <h1>Logging out..</h1>
+  <p>dfjkhasesgfhuagfhiu</p>
 </template>
 
-<style></style>
+<style>
+p{
+  background-color: aqua;
+}
+</style>

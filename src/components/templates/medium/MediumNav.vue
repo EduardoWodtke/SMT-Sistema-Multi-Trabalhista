@@ -7,19 +7,19 @@
   <nav>
     <div class="info">
       <ul>
-        <router-link to="/" class= "underline">
+        <router-link to="Ranking" class= "underline">
           <li>Ranking</li>
         </router-link>
-        <router-link to="/" class="underline">
+        <router-link to="Chat" class="underline">
           <li>Bate-papo</li>
         </router-link>
-        <router-link to="/" class="underline">
+        <router-link to="Trabalhadores" class="underline">
           <li>Trabalhadores</li>
         </router-link>
-        <router-link to="/" class="underline">
+        <router-link to="Historico" class="underline">
           <li>Histórico</li>
         </router-link>
-        <router-link to="/" class="underline">
+        <router-link to="Favoritos" class="underline">
           <li>Favoritos</li>
         </router-link>
       </ul>
@@ -47,7 +47,7 @@ ul {
 
 li {
   text-align: center;
-  padding: 0 4vh;
+  padding: 0 3.5vh;
   list-style: none;
   font-size: 2vh;
 }

@@ -3,7 +3,9 @@
 <template>
   <header>
     <div class="logo">
-      <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
+      <router-link to="/">
+        <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
+      </router-link>
     </div>
     <div class="barra-pesquisa">
       <input
