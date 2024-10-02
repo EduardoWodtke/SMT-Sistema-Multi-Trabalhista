@@ -83,7 +83,7 @@ onMounted(async () => {
   </nav>
 </template>
 <style scoped>
-@keyframes closeAnimation {
+@keyframes closeHamburguer {
   0% {
     left: 0%;
   }
