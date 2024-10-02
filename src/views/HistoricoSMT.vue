@@ -1,11 +1,16 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useTrabalhoStore } from '@/stores/trabalho'
+import { useUserStore } from '@/stores/user'
 
 const trabalhoStore = useTrabalhoStore()
+const userStore = useUserStore()
 
 onMounted(async () => {
   trabalhoStore.buscarTodosOsTrabalhos()
+})
+onMounted(async () => {
+  userStore.buscarTodosOsUsers()
 })
 </script>
 
@@ -15,11 +20,13 @@ onMounted(async () => {
   </div>
   <div class="container">
     <div v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" class="trabalhador">
-      <div class="info">
+      <div v-for="user in userStore.users" :key="user.id" class="info">
         <div class="bolinha">IMG</div>
         <div class="text">
+          <p>Feito por: {{ user.name }}</p>
           <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
           <p>Valor: {{ trabalho.preco }}</p>
+          <p></p>
         </div>
       </div>
       <button class="apagar">Excluir</button>
