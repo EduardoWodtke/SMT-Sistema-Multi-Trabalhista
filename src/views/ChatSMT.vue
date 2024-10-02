@@ -97,9 +97,7 @@
   position: relative;
   transition: width 0.3s;
   background-color: #00173d;
-  
-  text-align: center;
-  
+
 }
 
 .tabela {
