@@ -1,16 +1,28 @@
 <script setup>
+import { useAuthStore } from '@/stores/auth'
+
+const authStore = useAuthStore()
 </script>
 <template>
   <header>
-  <router-link to="/" class="logo">
+    <router-link to="/" class="logo">
       <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
       <h1>SMT</h1>
-  </router-link>
+    </router-link>
     <div class="barra-pesquisa">
-      <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar trabalhadores"  />
+      <input
+        size="100"
+        type="text"
+        v-model="search"
+        id="barra-pesquisa"
+        placeholder="Procurar trabalhadores"
+      />
     </div>
     <div class="icons">
-      <router-link to="/Login">
+      <div v-if="loggedIn">
+        <router-link to="/Logout">Logout</router-link>
+      </div>
+      <router-link v-else to="/Login">
         <i class="mdi mdi-account-hard-hat-outline" />
       </router-link>
     </div>
@@ -18,7 +30,7 @@
 </template>
 
 <style scoped>
-.logo{
+.logo {
   display: flex;
   flex-direction: row;
   text-decoration: none;
@@ -57,15 +69,14 @@ header {
   border-radius: 8px;
   font-size: 20px;
   margin-right: 5vh;
-  text-align: center;    
+  text-align: center;
   border: 3px solid;
-  font-family: "Ubunto" sans-serif;
+  font-family: 'Ubunto' sans-serif;
   color: rgb(44, 44, 44);
 }
 
 .botaopesquisa {
   height: 20px;
   width: 100px;
-  
 }
-</style>  
+</style>

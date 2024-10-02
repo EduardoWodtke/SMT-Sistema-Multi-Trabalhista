@@ -2,7 +2,10 @@
 import { ref, onMounted } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import { useCategoriaStore } from '@/stores/categoria'
+// import { PassageUser } from '@passageidentity/passage-elements/passage-user'
+import { useAuthStore } from '@/stores/auth'
 
+const authStore = useAuthStore()
 const servicos = ref(false)
 const categoriaStore = useCategoriaStore()
 
@@ -28,8 +31,14 @@ onMounted(async () => {
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <img src="@/assets/logo.png" alt="" />
-          <button class="butao mdi mdi-alpha-x" style="font-size: 10vh" @click="closeHamburguer()"></button>
+          <button
+            class="butao mdi mdi-alpha-x"
+            style="font-size: 10vh"
+            @click="closeHamburguer()"
+          ></button>
         </div>
+        <p class="bemvindo">Seja bem vindo,</p>
+        <p class="usuario">{{ authStore.user.email }}</p>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
         </p>
@@ -52,7 +61,6 @@ onMounted(async () => {
           <li>Favoritos</li>
         </router-link>
       </ul>
-
       <!-- <template v-else="isPrestador">
         <button  @click="isPrestador = !isPrestador"></button>
         <router-link to="/" class="underline">
@@ -109,7 +117,6 @@ onMounted(async () => {
   justify-content: space-between;
   margin-left: -2vh;
 }
-
 .logox img {
   width: 12vh;
 }
@@ -136,8 +143,8 @@ p {
   background-color: #00173d;
   position: fixed;
   padding-left: 5vh;
-  width: 20%;
-  line-height: 280%;
+  width: 26%;
+  line-height: 240%;
   border: solid black 3px;
   font-size: 3vh;
   box-shadow: rgb(29, 29, 29) 3px 4px 10px;

@@ -13,8 +13,7 @@
 
 <style>
 .conteiner{
-    margin: 8%;
-
+    margin: 8%; 
 }
 
 @media (max-width: 1240px){

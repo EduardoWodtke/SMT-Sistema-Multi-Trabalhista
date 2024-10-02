@@ -11,21 +11,16 @@ onMounted(async () => {
 
 <template>
   <div class="barra">
-    <input
-      size="100"
-      type="text"
-      v-model="search"
-      class="barra-pesquisa"
-      placeholder="Procurar trabalhadores"
-    />
+    <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
   </div>
   <div class="container">
     <div v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" class="trabalhador">
-      <div class="bolinha">IMG</div>
       <div class="info">
-        <p>Feito por: {{ trabalho.nome }}</p>
-        <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
-        <p>Valor: {{ trabalho.preco }}</p>
+        <div class="bolinha">IMG</div>
+        <div class="text">
+          <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
+          <p>Valor: {{ trabalho.preco }}</p>
+        </div>
       </div>
       <button class="apagar">Excluir</button>
     </div>
@@ -33,12 +28,18 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.info {
+.info{
+  display: flex;
+  flex-direction: row;
+}
+.text {
+  padding: 2vh;
   font-size: 3vh;
   display: flex;
   flex-direction: column;
   text-align: start;
 }
+
 .barra {
   display: flex;
   flex-direction: column;
@@ -82,6 +83,7 @@ onMounted(async () => {
 
 .trabalhador {
   display: flex;
+  /* flex-direction: column; */
   background-color: #00173d;
   width: 54vh;
   text-align: center;
@@ -117,16 +119,21 @@ onMounted(async () => {
     width: 33vh;
     height: 15vh;
     margin: 0 1vh 10% 1vh;
+  }
+  .text{
     font-size: 2vh;
   }
 
   .bolinha {
-    width: 15vh;
+    width: 20vh;
     background-color: yellow;
   }
 
   .apagar {
-    margin-top: 35%;
+    margin: 10vh 0 0 26vh ;
+    width: 5vh;
+    height: 3vh;
+    position: absolute;
   }
 }
 
@@ -137,25 +144,34 @@ onMounted(async () => {
     margin-bottom: 30%;
   }
 
+  .text{
+    font-size: 2vh;
+  }
+
+
   .barra-pesquisa {
     width: 90%;
   }
 
   .trabalhador {
+    display: flex;
+    flex-direction: column;
     width: 95%;
-    font-size: 3vh;
     height: 20vh;
   }
 
   .bolinha {
-    width: 20vh;
+    width: 25vh;
+    height: 19vh;
   }
 
   .apagar {
-    margin-top: 35%;
+    margin: 15vh 0 0 32vh;
     width: 10vh;
-    font-size: 2vh;
-    height: 5vh;
+    font-size: 1.5vh;
+    height: 3vh;
+    align-items: center;
+    position: absolute;
   }
 }
 </style>
