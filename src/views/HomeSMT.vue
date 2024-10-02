@@ -120,7 +120,7 @@ h3 {
 }
 @media screen and (max-width: 430px) {
   h3 {
-    font-size: 2.3vh;
+    font-size: 2.5vh;
     -webkit-text-stroke: 0.13;
     margin-top: 30%;
   }
