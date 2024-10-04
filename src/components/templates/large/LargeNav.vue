@@ -37,8 +37,7 @@ onMounted(async () => {
             @click="closeHamburguer()"
           ></button>
         </div>
-        <p class="bemvindo">Seja bem vindo,</p>
-        <p class="usuario">{{ authStore.user.email }}</p>
+        <h2 class="bemvindo">Seja bem vindo(a), {{ authStore.user.name }}</h2>
         <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
           {{ categoria.nome }}
         </p>
@@ -96,7 +95,6 @@ onMounted(async () => {
     left: -20%;
   }
 }
-
 @keyframes hamburguer {
   0% {
     left: -20%;
@@ -110,7 +108,6 @@ onMounted(async () => {
     left: 0%;
   }
 }
-
 .logox {
   display: flex;
   flex-direction: row;
@@ -120,11 +117,12 @@ onMounted(async () => {
 .logox img {
   width: 12vh;
 }
-
+h2{
+  text-shadow: gray 3px 3px 5px;
+}
 p {
   text-shadow: gray 3px 3px 5px;
 }
-
 .butao {
   display: flex;
   position: relative;
@@ -133,11 +131,9 @@ p {
   padding-right: 3vh;
   top: 1vh;
 }
-
 .close {
   animation: closeAnimation 0.5s forwards;
 }
-
 .hamburguer {
   display: block;
   background-color: #00173d;
@@ -152,11 +148,9 @@ p {
   height: 100%;
   animation: hamburguer 2s;
 }
-
 .underline {
   text-decoration: none;
 }
-
 #info {
   display: flex;
   flex-direction: row;
@@ -166,18 +160,15 @@ p {
   height: 35px;
   margin-top: 0;
 }
-
 .mdi {
   padding-top: 0.3%;
   font-size: 5vh;
 }
-
 ul {
   display: flex;
   flex-direction: row;
   margin-left: 5%;
 }
-
 li {
   font-size: 2vh;
   text-align: center;

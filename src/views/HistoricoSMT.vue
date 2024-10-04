@@ -20,10 +20,12 @@ onMounted(async () => {
   </div>
   <div class="container">
     <div v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" class="trabalhador">
-      <div v-for="user in userStore.users" :key="user.id" class="info">
-        <div class="bolinha">IMG</div>
+      <div class="info">
+        <div class="bolinha">
+          <!-- <img :src="trabalho.user.foto" alt=""> -->
+        </div>
         <div class="text">
-          <p>Feito por: {{ user.name }}</p>
+          <p>{{ trabalho.nome }}</p>
           <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
           <p>Valor: {{ trabalho.preco }}</p>
           <p></p>

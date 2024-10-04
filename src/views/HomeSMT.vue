@@ -1,28 +1,30 @@
 <script setup>
-import { onMounted } from 'vue';
-import { PassageUser } from '@passageidentity/passage-elements/passage-user';
-import { useAuthStore } from '@/stores/auth';
+import { onMounted } from 'vue'
+import { PassageUser } from '@passageidentity/passage-elements/passage-user'
+import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 
-const authStore = useAuthStore();
+const userStore = useUserStore()
+const authStore = useAuthStore()
 
 const getUserInfo = async () => {
   try {
-    const authToken = localStorage.getItem('psg_auth_token');
-    const passageUser = new PassageUser(authToken);
-    const user = await passageUser.userInfo(authToken);
+    const authToken = localStorage.getItem('psg_auth_token')
+    const passageUser = new PassageUser(authToken)
+    const user = await passageUser.userInfo(authToken)
     if (user) {
-      await authStore.setToken(authToken);
+      await authStore.setToken(authToken)
     } else {
-      authStore.unsetToken();
+      authStore.unsetToken()
     }
   } catch (error) {
-    authStore.unsetToken();
+    authStore.unsetToken()
   }
-};
+}
 
 onMounted(() => {
-  getUserInfo();
-});
+  getUserInfo()
+})
 </script>
 <template>
   <div class="slide">
@@ -35,11 +37,8 @@ onMounted(() => {
   <div class="avaliados">
     <h4>Melhores avaliados</h4>
   </div>
-  <div class="servicos-principes">
-    <div class="servico"><p>1</p></div>
-    <div class="servico"><p>2</p></div>
-    <div class="servico"><p>3</p></div>
-    <div class="servico"><p>4</p></div>
+  <div v-for="user in userStore.users" :key="user.id" class="servicos-principes">
+    <p>{{ user.name }}</p>
   </div>
 </template>
 <style>
