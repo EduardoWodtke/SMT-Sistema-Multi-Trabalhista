@@ -1,24 +1,57 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+const messages = ref([]);
+const chat = ref('');
+
+const sendMessage = () => {
+  if (chat.value.trim() !== '') {
+    messages.value.push(chat.value);
+    chat.value = '';
+  }
+};
+</script>
 <template>
   <div id="container">
     <div class="tabela-container">
-      <p>CONVERSAS</p>
-      <div class="tabela">
-
-      </div>
+      <p class="mdi mdi-chat-processing-outline">CONVERSAS</p>
     </div>
     <div class="chat">
       <div class="perfil">
         <div class="bolinha">IMG</div>
         <h3>Fulano</h3>
       </div>
-      <div class="conversar">
-        <input size="50" type="text" v-model="chat" id="conversar" placeholder="Digitar..." />
+      <div class="tabela">
+        <div v-for="(message, index) in messages" :key="index" class="conteudo">
+          <h4>{{ message }}</h4>
+        </div>
+      </div>
+      <div class="oi">
+        <input
+          size="50"
+          type="text"
+          v-model="chat"
+          @keyup.enter="sendMessage"
+          id="conversar"
+          placeholder="Digitar..."
+        />
       </div>
     </div>
   </div>
 </template>
 <style>
+.oi{
+  display: flex;
+  flex-direction: column;
+  background-color: #002566;
+  width: 100vh;
+  height: 5vh;
+  align-items: center;
+}
+.tabela {
+  padding: 10px;
+  overflow-y: auto; 
+  height: 55vh; 
+}
 .chat {
   display: flex;
   flex-direction: column;
@@ -32,19 +65,16 @@
   width: 70vh;
   height: 30px;
   font-size: 20px;
-  margin: 33% 10vh 0 0;
   text-align: center;
   border: 3px solid;
-  color: rgb(44, 44, 44);
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin-top: 50vh;
-  margin-right: 0vh;
   border-radius: 10px;
-
+  margin-top: 10px;
 
 }
 
@@ -76,14 +106,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: gray;
+  background-color: #002566;
   height: 10vh;
   width: 100vh;
   text-align: center;
   font-size: 30px;
-  border-radius: 10px;
   text-align: center;
-  /* justify-content: center; */
+ 
 
 
 
@@ -102,7 +131,7 @@
 
 .tabela {
   width: 100%;
-  background-color: #2980b9;
+  background-color: #1b34a5;
   transition: all 0.3s ease;
 }
 
@@ -138,7 +167,8 @@ h4 {
   font-size: 3vh;
   text-align: center;
   color: rgb(255, 255, 255);
-  background-color: #00173d;
+  background-color: #002869;
+  border-radius: 10px;
 
 }
 
