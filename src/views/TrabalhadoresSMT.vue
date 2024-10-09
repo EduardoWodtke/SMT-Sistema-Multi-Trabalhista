@@ -28,6 +28,7 @@ onMounted(async () => {
 .bolinha {
   border: 5px solid black;
   width: 19vh;
+  height: 19vh;
   border-radius: 20vh;
 }
 .user-foto {
