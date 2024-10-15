@@ -111,6 +111,7 @@
   max-width: 800px;
   list-style-type: none;
   padding: 0;
+  color: black !important;
 }
 
 .participants li {
@@ -119,6 +120,9 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+li{
+  color: rgb(85, 85, 85);
 }
 
 </style>
