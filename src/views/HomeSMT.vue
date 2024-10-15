@@ -1,31 +1,31 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 // import { PassageUser } from '@passageidentity/passage-elements/passage-user';
-import { useAuthStore } from '@/stores/auth';
-import { useUserStore } from '@/stores/user';
+import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 
-const userStore = useUserStore();
-const authStore = useAuthStore();
+const userStore = useUserStore()
+const authStore = useAuthStore()
 
 const getUserInfo = async () => {
   try {
-    const authToken = localStorage.getItem('psg_auth_token');
+    const authToken = localStorage.getItem('psg_auth_token')
     // const passageUser = new PassageUser(authToken);
     // const user = await passageUser.userInfo(authToken);
     // if (user) {
-      await authStore.setToken(authToken);
+    await authStore.setToken(authToken)
     // } else {
     //   authStore.unsetToken();
     // }
   } catch (error) {
-    authStore.unsetToken();
+    authStore.unsetToken()
   }
-};
+}
 
 onMounted(() => {
-  getUserInfo();
-  userStore.buscarTodosOsUsers();
-});
+  getUserInfo()
+  userStore.buscarTodosOsUsers()
+})
 </script>
 <template>
   <div class="slide">
@@ -39,14 +39,22 @@ onMounted(() => {
     <h4>Melhores avaliados</h4>
   </div>
 
-  <div v-for="user in userStore.users" :key="user.id" class="servicos-principes">  
-    <div class="servico"><p>{{ user.name }}</p></div>
-    <div class="servico"><p>2</p></div>
-    <div class="servico"><p>3</p></div>
-    <div class="servico"><p>4</p></div>
+  <div class="servicos-principes">
+    <div v-for="user in userStore.users" :key="user.id">
+      <div class="servico">
+        <img :src="user.foto" alt="" />
+      </div>
+      <!-- <div class="servico"><p>2</p></div>
+      <div class="servico"><p>3</p></div>
+      <div class="servico"><p>4</p></div>
+      -->
+    </div>
   </div>
 </template>
 <style>
+img{
+  width: 30vh;
+}
 .avaliados h4 {
   color: black;
   font-size: 7vh;
@@ -58,10 +66,10 @@ onMounted(() => {
   justify-content: space-around;
 }
 .servico {
-  border-radius: 20vh;
+  border-radius: 50%;
   width: 30vh;
   height: 30vh;
-  background-color: brown;
+  background-color: rgb(70, 17, 194);
   border: solid 1px black;
   margin-bottom: 2vh;
   text-align: center;
