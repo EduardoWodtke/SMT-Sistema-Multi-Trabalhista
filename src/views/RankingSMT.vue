@@ -1,9 +1,7 @@
 <script setup>
-
-
 </script>
 <template>
- <div class="rank-page">
+  <div class="rank-page">
     <div class="rank-container">
       <div class="column column-third">
         <div class="column-title">Bronze</div>
@@ -28,54 +26,56 @@
     </ul>
   </div>
 </template>
+
 <style scoped>
 .rank-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Ocupa a altura total da tela */
-  background-color: #e0e0e0; /* Cor de fundo */
+  height: 100vh;
+  background-color: #e0e0e0;
 }
 
 .rank-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 90vw;
   margin-bottom: 20px;
   position: relative;
 }
 
 .column {
-  width: 100px; /* Largura fixa para todas as colunas */
+  flex: 1; 
   text-align: center;
   position: relative;
-  background-color: #007bff; /* Azul */
+  background-color: #007bff;
   color: white;
   border-radius: 8px;
-  margin: 0 10px; /* Espaçamento entre as colunas */
-  bottom: 0; /* Base fixa na parte inferior */
+  margin: 0 10px;
+  bottom: 0;
+  min-width: 80px; 
 }
 
 .column-first {
-  height: 200px; /* Altura do primeiro lugar */
+  height: 25vh; 
 }
 
 .column-second {
-  height: 160px; /* Altura do segundo lugar */
+  height: 20vh;
 }
 
 .column-third {
-  height: 120px; /* Altura do terceiro lugar */
+  height: 15vh;
 }
 
 .column-title {
   position: absolute;
-  bottom: 100%; /* Coloca o título acima da coluna */
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 5px; /* Espaçamento entre o título e a coluna */
+  margin-bottom: 5px;
 }
 
 .position-ball {
@@ -88,27 +88,27 @@
   align-items: center;
   font-weight: bold;
   position: absolute;
-  bottom: calc(100% + 5px); /* Coloca a bola acima da coluna */
+  bottom: calc(100% + 5px);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .first {
-  background-color: #ffd700; /* Bola de ouro */
+  background-color: #ffd700;
 }
 
 .second {
-  background-color: #c0c0c0; /* Bola de prata */
+  background-color: #c0c0c0;
 }
 
 .third {
-  background-color: #cd7f32; /* Bola de bronze */
+  background-color: #cd7f32;
 }
 
 .participants {
   margin-top: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 90vw;
   list-style-type: none;
   padding: 0;
   color: black !important;
@@ -121,8 +121,28 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-li{
+
+li {
   color: rgb(85, 85, 85);
 }
 
+
+@media (max-width: 600px) {
+  .column {
+    margin: 0 5px;
+  }
+
+  .position-ball {
+    width: 40px;
+    height: 40px;
+  }
+
+  .column-title {
+    font-size: 0.8rem;
+  }
+
+  .participants li {
+    font-size: 0.9rem;
+  }
+}
 </style>
