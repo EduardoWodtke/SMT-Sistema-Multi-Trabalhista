@@ -1,73 +1,148 @@
 <script setup>
 </script>
 <template>
-<div class="container">
-    <div class="quadrado1"></div>
-    <div class="quadrado2"></div>
-    <div class="quadrado3"></div>
-</div>
-    
+  <div class="rank-page">
+    <div class="rank-container">
+      <div class="column column-third">
+        <div class="column-title">Bronze</div>
+        <div class="position-ball third">3</div>
+      </div>
+      <div class="column column-second">
+        <div class="column-title">Prata</div>
+        <div class="position-ball second">2</div>
+      </div>
+      <div class="column column-first">
+        <div class="column-title">Ouro</div>
+        <div class="position-ball first">1</div>
+      </div>
+    </div>
+
+    <ul class="participants">
+      <li>Participante 4</li>
+      <li>Participante 5</li>
+      <li>Participante 6</li>
+      <li>Participante 7</li>
+      <li>Participante 8</li>
+    </ul>
+  </div>
 </template>
+
 <style scoped>
-*{
-    background-color: rgb(255, 255, 255);
-}
-
-.container {
+.rank-page {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
-  box-sizing: border-box;
-  /* margin-top: 150px; */
+  justify-content: center;
+  height: 100vh;
+  background-color: #e0e0e0;
 }
 
-.quadrado1 {
-  width: 250px;
-  height: 350px;
-  background-color: rgb(32, 63, 197);
-  border-radius: 15px;
-  /* margin-top: 150px; */
-  /* margin-left: 350px; */
-  }
+.rank-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 90vw;
+  margin-bottom: 20px;
+  position: relative;
+}
 
-  .quadrado2 {
-  width: 250px;
-  height: 500px;
-  background-color: rgb(32, 63, 197);
-  border-radius: 15px;
-  
-  }
+.column {
+  flex: 1; 
+  text-align: center;
+  position: relative;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  margin: 0 10px;
+  bottom: 0;
+  min-width: 80px; 
+}
 
-  .quadrado3 {
-  width: 250px;
-  height: 450px;
-  background-color: rgb(32, 63, 197);
-  border-radius: 15px;
-  /* margin-top: 60px; */
-  /* margin-right: 350px; */
-  }
+.column-first {
+  height: 25vh; 
+}
 
-@media (max-width: 1024px) {
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
-  .quadrado1 {
-    width:  200px;
-    height: 200px;
-  }
-  .quadrado2 {
-    width: 200px;
-    height: 200px;
-  }
-  .quadrado3 {
-    width: 200px;
-    height: 200px;
-  }
+.column-second {
+  height: 20vh;
+}
+
+.column-third {
+  height: 15vh;
+}
+
+.column-title {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+}
+
+.position-ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.first {
+  background-color: #ffd700;
+}
+
+.second {
+  background-color: #c0c0c0;
+}
+
+.third {
+  background-color: #cd7f32;
+}
+
+.participants {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 90vw;
+  list-style-type: none;
+  padding: 0;
+  color: black !important;
+}
+
+.participants li {
+  background-color: white;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li {
+  color: rgb(85, 85, 85);
 }
 
 
+@media (max-width: 600px) {
+  .column {
+    margin: 0 5px;
+  }
+
+  .position-ball {
+    width: 40px;
+    height: 40px;
+  }
+
+  .column-title {
+    font-size: 0.8rem;
+  }
+
+  .participants li {
+    font-size: 0.9rem;
+  }
+}
 </style>

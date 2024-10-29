@@ -1,220 +1,205 @@
 <script setup>
 import { ref } from 'vue';
-const messages = ref([]);
+
+const friends = ref([
+  { id: 1, name: 'João', messages: [{ from: 'João', text: 'Oi!' }] },
+  { id: 2, name: 'Maria', messages: [{ from: 'Maria', text: 'Como vai?' }] },
+  { id: 3, name: 'Pedro', messages: [{ from: 'Pedro', text: 'Tudo bem?' }] }
+]);
+
+const activeFriend = ref(null);
 const chat = ref('');
+
+const selectFriend = (friend) => {
+  activeFriend.value = friend;
+};
 
 const sendMessage = () => {
   if (chat.value.trim() !== '') {
-    messages.value.push(chat.value);
+    activeFriend.value.messages.push({ from: 'Você', text: chat.value });
     chat.value = '';
   }
 };
+
+const exitChat = () => {
+  activeFriend.value = null;
+};
 </script>
+
 <template>
-  <div id="container">
-    <div class="tabela-container">
-      <p class="mdi mdi-chat-processing-outline">CONVERSAS</p>
+  <div class="chat-app">
+   
+    <div v-if="!activeFriend" class="friends-list">
+      <h2>Escolha um amigo:</h2>
+      <ul>
+        <li
+          v-for="friend in friends"
+          :key="friend.id"
+          @click="selectFriend(friend)"
+        >
+          {{ friend.name }}
+        </li>
+      </ul>
     </div>
-    <div class="chat">
-      <div class="perfil">
-        <div class="bolinha">IMG</div>
-        <h3>Fulano</h3>
+
+   
+    <div v-if="activeFriend" class="chat-window">
+      <div class="chat-header">
+        <button @click="exitChat" class="back-button">Voltar</button>
+        <h2>{{ activeFriend.name }}</h2>
       </div>
-      <div class="tabela">
-        <div v-for="(message, index) in messages" :key="index" class="conteudo">
-          <h4>{{ message }}</h4>
+      <div class="chat-messages">
+        <div
+          v-for="(message, index) in activeFriend.messages"
+          :key="index"
+          class="message"
+        >
+          <strong>{{ message.from }}:</strong> {{ message.text }}
         </div>
       </div>
-      <div class="oi">
+      <div class="chat-input">
         <input
-          size="50"
-          type="text"
           v-model="chat"
           @keyup.enter="sendMessage"
-          id="conversar"
-          placeholder="Digitar..."
+          type="text"
+          placeholder="Digite sua mensagem..."
         />
+        <button @click="sendMessage">Enviar</button>
       </div>
     </div>
   </div>
 </template>
+
 <style>
-.oi{
+.chat-app {
+  height: 100vh;
+  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  background-color: #002566;
-  width: 100vh;
-  height: 5vh;
-  align-items: center;
-}
-.tabela {
-  padding: 10px;
-  overflow-y: auto; 
-  height: 55vh; 
-}
-.chat {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 45vh;
-  position: absolute;
 }
 
-#conversar {
-  width: 70vh;
-  height: 30px;
-  font-size: 20px;
+
+.friends-list {
+  padding: 20px;
   text-align: center;
-  border: 3px solid;
+}
+
+.friends-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.friends-list li {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #0a0024;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.friends-list li:hover {
+  background-color: #9c67ff;
+  transition: 0.3s;
+}
+
+.friends-list h2 {
+  margin-bottom: 20px;
+}
+
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #09003b;
+  padding: 20px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+.chat-header .back-button {
+  padding: 10px 15px;
+  background-color: #2e1ffc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-header .back-button:hover {
+  background-color: #924ee0;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #6163c9;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #000000;
+  padding-top: 10px;
+
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-size: 16px;
+  margin-right: 10px;
   color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 10px;
-
 }
 
-#container {
-  display: flex;
-  flex-direction: row;
+.chat-input button {
+  padding: 10px 15px;
+  background-color: #2e1ffc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.historico {
-  background-color: rgb(221, 221, 221);
-  box-shadow: 0.5vh 2vh 3vh 0.5vh black;
-  height: 70vh;
-  width: 50vh;
-  display: none;
-
-
-}
-
-.perfil h3{
-  justify-content: center;
-  align-items: center;
-  margin-right: 80vh;
-  margin-top: 2vh;
+.chat-input button:hover {
+  background-color: #924ee0;
+  transition: 0.3s;
 }
 
 
-
-.perfil {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #002566;
-  height: 10vh;
-  width: 100vh;
-  text-align: center;
-  font-size: 30px;
-  text-align: center;
- 
-
-
-
-}
-
-
-.tabela-container {
-  height: 70vh;
-  width: 50px;
-  overflow: hidden;
-  position: relative;
-  transition: width 0.3s;
-  background-color: #00173d;
-
-}
-
-.tabela {
-  width: 100%;
-  background-color: #1b34a5;
-  transition: all 0.3s ease;
-}
-
-.tabela-container:hover {
-  width: 40vh;
-  height: 70vh;
-}
-
-.tabela-container:hover .tabela {
-  transform: translateX(-100%);
-}
-
-.conteudo {
-  padding: 10px;
-  color: black;
-  transition: opacity 0.3s ease;
-}
-
-.tabela-container:hover .conteudo {
-  opacity: 1;
-}
-
-.bolinha {
-  background-color: rgb(0, 153, 255);
-  border: 1px solid black;
-  width: 10vh;
-  height: 10vh;
-  border-radius: 20vh;
-}
-
-
-h4 {
-  font-size: 3vh;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  background-color: #002869;
-  border-radius: 10px;
-
-}
-
-
-
-@media screen and (max-width: 1024px) {
-  #conversar {
-    margin: 0 0 2vh 0;
-    height: 3vh;
-    font-size: 2vh;
-  }
-
-  h3 {
-    margin-left: 13vh;
-  }
-
-  h4 {
-    font-size: 2.5vh;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  #container {
-    display: flex;
+@media (max-width: 768px) {
+  .chat-app {
     flex-direction: column;
-    margin: 0;
-    align-items: center;
   }
 
-  #conversar {
-    width: 30vh;
-    margin: 150% 0 0 0;
+  .friends-list,
+  .chat-window {
+    width: 100%;
   }
 
-  h3 {
-    margin: 0;
-    padding: 0;
+  .chat-header h2 {
+    font-size: 18px;
   }
 
-  .historico {
-    height: 0vh;
-    box-shadow: none;
-  }
-
-  h4 {
-    font-size: 0;
+  .chat-input input {
+    font-size: 14px;
+    
   }
 }
 </style>
