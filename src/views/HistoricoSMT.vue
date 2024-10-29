@@ -1,13 +1,13 @@
 <script setup>
 import { onMounted } from 'vue'
-import { useTrabalhoStore } from '@/stores/trabalho'
+import { useTrabalhoHistoricoStore } from '@/stores/trabalhoHistorico'
 import { useUserStore } from '@/stores/user'
 
-const trabalhoStore = useTrabalhoStore()
+const trabalhoHistoricoStore = useTrabalhoHistoricoStore()
 const userStore = useUserStore()
 
 onMounted(async () => {
-  trabalhoStore.buscarTodosOsTrabalhos()
+  trabalhoHistoricoStore.buscarTodosOsTrabalhosHistoricos()
 })
 onMounted(async () => {
   userStore.buscarTodosOsUsers()
@@ -19,15 +19,14 @@ onMounted(async () => {
     <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
   </div>
   <div class="container">
-    <div v-for="trabalho in trabalhoStore.trabalhos" :key="trabalho.id" class="trabalhador">
+    <div v-for="trabalhoHistorico in trabalhoHistoricoStore.trabalhosHistoricos" :key="trabalhoHistorico.id" class="trabalhador">
       <div class="info">
         <div class="bolinha">
-          <!-- <img :src="trabalho.user.foto" alt=""> -->
         </div>
         <div class="text">
-          <p>{{ trabalho.nome }}</p>
-          <p>Data de encerramento: {{ trabalho.DataTermino }}</p>
-          <p>Valor: {{ trabalho.preco }}</p>
+          <p>{{ trabalhoHistorico.nome }}</p>
+          <p>Data de encerramento: {{ trabalhoHistorico.DataTermino }}</p>
+          <p>Valor: {{ trabalhoHistorico.preco }}</p>
           <p></p>
         </div>
       </div>
