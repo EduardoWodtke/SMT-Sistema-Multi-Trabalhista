@@ -22,13 +22,13 @@ const sendMessage = () => {
 };
 
 const exitChat = () => {
-  activeFriend.value = null; // Voltar para a lista de amigos
+  activeFriend.value = null;
 };
 </script>
 
 <template>
   <div class="chat-app">
-    <!-- Tela de lista de amigos -->
+   
     <div v-if="!activeFriend" class="friends-list">
       <h2>Escolha um amigo:</h2>
       <ul>
@@ -42,7 +42,7 @@ const exitChat = () => {
       </ul>
     </div>
 
-    <!-- Tela de chat -->
+   
     <div v-if="activeFriend" class="chat-window">
       <div class="chat-header">
         <button @click="exitChat" class="back-button">Voltar</button>
@@ -78,7 +78,7 @@ const exitChat = () => {
   flex-direction: column;
 }
 
-/* Estilos para a lista de amigos */
+
 .friends-list {
   padding: 20px;
   text-align: center;
@@ -107,7 +107,7 @@ const exitChat = () => {
   margin-bottom: 20px;
 }
 
-/* Estilos para a tela de chat */
+
 .chat-window {
   display: flex;
   flex-direction: column;
@@ -153,17 +153,19 @@ const exitChat = () => {
 
 .chat-input {
   display: flex;
-  border-top: 1px solid #000;
+  border-top: 1px solid #000000;
   padding-top: 10px;
+
 }
 
 .chat-input input {
   flex-grow: 1;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   font-size: 16px;
   margin-right: 10px;
+  color: rgb(0, 0, 0);
 }
 
 .chat-input button {
@@ -180,7 +182,7 @@ const exitChat = () => {
   transition: 0.3s;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .chat-app {
     flex-direction: column;

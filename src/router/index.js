@@ -48,6 +48,11 @@ const router = createRouter({
           path: 'Logout',
           name: 'Logout',
           component: () => import('@/views/LogoutSMT.vue'),
+        },
+        {
+          path: 'Perfil',
+          name: 'Perfil',
+          component: () => import('@/views/PerfilSMT.vue'),
         }
       ],
     },
