@@ -24,11 +24,11 @@ const router = createRouter({
           name: 'Chat',
           component: () => import('@/views/ChatSMT.vue'),
         },
-        {
-          path: '/Favoritos',
-          name: 'Favoritos',
-          component: () => import('@/views/FavoritosSMT.vue'),
-        },
+        // {
+        //   path: '/Favoritos',
+        //   name: 'Favoritos',
+        //   component: () => import('@/views/FavoritosSMT.vue'),
+        // },
         {
           path: '/Historico',
           name: 'Historico',

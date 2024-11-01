@@ -28,42 +28,28 @@ const exitChat = () => {
 
 <template>
   <div class="chat-app">
-   
     <div v-if="!activeFriend" class="friends-list">
       <h2>Escolha um amigo:</h2>
       <ul>
-        <li
-          v-for="friend in friends"
-          :key="friend.id"
-          @click="selectFriend(friend)"
-        >
+        <li v-for="friend in friends" :key="friend.id" @click="selectFriend(friend)">
           {{ friend.name }}
         </li>
       </ul>
     </div>
 
-   
+
     <div v-if="activeFriend" class="chat-window">
       <div class="chat-header">
         <button @click="exitChat" class="back-button">Voltar</button>
         <h2>{{ activeFriend.name }}</h2>
       </div>
       <div class="chat-messages">
-        <div
-          v-for="(message, index) in activeFriend.messages"
-          :key="index"
-          class="message"
-        >
-          <strong>{{ message.from }}:</strong> {{ message.text }}
+        <div v-for="(message, index) in activeFriend.messages" :key="index" class="message">
+          <p>{{ message.from }}:</p> {{ message.text }}
         </div>
       </div>
       <div class="chat-input">
-        <input
-          v-model="chat"
-          @keyup.enter="sendMessage"
-          type="text"
-          placeholder="Digite sua mensagem..."
-        />
+        <input v-model="chat" @keyup.enter="sendMessage" type="text" placeholder="Digite sua mensagem..." />
         <button @click="sendMessage">Enviar</button>
       </div>
     </div>
@@ -72,10 +58,9 @@ const exitChat = () => {
 
 <style>
 .chat-app {
-  height: 100vh;
-  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  min-height: 66vh;
 }
 
 
@@ -141,6 +126,8 @@ const exitChat = () => {
   flex-grow: 1;
   margin-top: 20px;
   overflow-y: auto;
+  /* max-width: 100vh; */
+  /* word-break: normal; */
 }
 
 .message {
@@ -148,7 +135,8 @@ const exitChat = () => {
   padding: 10px;
   background-color: #6163c9;
   border-radius: 8px;
-  max-width: 80%;
+
+  /* max-width: 80vh; */
 }
 
 .chat-input {
@@ -199,7 +187,7 @@ const exitChat = () => {
 
   .chat-input input {
     font-size: 14px;
-    
+
   }
 }
 </style>

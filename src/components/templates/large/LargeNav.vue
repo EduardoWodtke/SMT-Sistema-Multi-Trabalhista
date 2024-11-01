@@ -56,9 +56,9 @@ onMounted(async () => {
         <router-link to="Historico" class="underline">
           <li>Histórico</li>
         </router-link>
-        <router-link to="Favoritos" class="underline">
+        <!-- <router-link to="Favoritos" class="underline">
           <li>Favoritos</li>
-        </router-link>
+        </router-link> -->
       </ul>
       <!-- <template v-else="isPrestador">
         <button  @click="isPrestador = !isPrestador"></button>
@@ -167,12 +167,12 @@ p {
 ul {
   display: flex;
   flex-direction: row;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 li {
   font-size: 2vh;
   text-align: center;
-  padding: 0 14vh;
+  padding: 0 20vh;
   list-style: none;
 }
 </style>

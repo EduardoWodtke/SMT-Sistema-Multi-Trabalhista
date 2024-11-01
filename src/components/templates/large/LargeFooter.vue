@@ -1,11 +1,5 @@
 <script setup></script>
 <template>
-    <div class="app-container">
-        <div class="content">
-            <!-- Conteúdo principal vai aqui -->
-            <h1>Bem-vindo ao Sistema Multi Trabalhista</h1>
-            <p>Conteúdo da página.</p>
-        </div>
         <footer>
             <div class="footer">
                 <ul id="suporte">
@@ -35,7 +29,6 @@
                 </div>
             </div>
         </footer>
-    </div>
 </template>
 
 <style scoped>
@@ -47,12 +40,6 @@
 
 body, html {
     height: 100%; /* Garante que o corpo ocupe toda a altura */
-}
-
-.app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Faz com que o contêiner ocupe toda a altura da tela */
 }
 
 .content {

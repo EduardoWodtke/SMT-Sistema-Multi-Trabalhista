@@ -15,6 +15,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  <main>
   <div class="barra">
     <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
   </div>
@@ -33,9 +34,13 @@ onMounted(async () => {
       <button class="apagar">Excluir</button>
     </div>
   </div>
+</main>
 </template>
 
 <style scoped>
+main{
+  min-height: 61vh;
+}
 .info{
   display: flex;
   flex-direction: row;

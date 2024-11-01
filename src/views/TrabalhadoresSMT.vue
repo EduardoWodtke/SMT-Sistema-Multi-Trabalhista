@@ -49,6 +49,7 @@ onMounted(async () => {
   grid-template-columns: auto auto auto;
   align-items: center;
   margin: 5vh;
+  min-height: 56vh;
 }
 .trabalhador {
   background-color: #00173d;

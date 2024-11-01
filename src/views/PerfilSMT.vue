@@ -154,6 +154,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    min-height: 66vh;
   }
   
   .profile-header {

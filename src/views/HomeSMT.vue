@@ -29,7 +29,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="slide">
-    <img src="@/assets/trab.png" alt="" />
+    <img src="@/assets/trabalhadores.jpg" alt="" />
     <h3>O que teu marido não faz nós fazemos!</h3>
   </div>
   <div class="map">
