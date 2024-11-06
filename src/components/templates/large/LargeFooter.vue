@@ -38,10 +38,6 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%; /* Garante que o corpo ocupe toda a altura */
-}
-
 .content {
     flex: 1; /* Permite que o conteúdo ocupe o espaço restante */
     padding: 20px; /* Adicione um pouco de preenchimento ao conteúdo */
@@ -51,7 +47,6 @@ footer {
     padding-top: 2vh;
     border-top: 1vh #00173d solid;
     background-color: black;
-    width: 100%; /* O rodapé ocupa toda a largura da tela */
 }
 
 .footer {

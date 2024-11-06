@@ -58,9 +58,9 @@ onMounted(async () => {
       <router-link to="Historico" class="underline">
         <li>Histórico</li>
       </router-link>
-      <router-link to="Favoritos" class="underline">
+      <!-- <router-link to="Favoritos" class="underline">
         <li>Favoritos</li>
-      </router-link>
+      </router-link> -->
     </ul>
   </div>
   <div v-if="servicos" class="servicos">
@@ -80,7 +80,7 @@ onMounted(async () => {
 <style scoped>
 li{
   list-style: none;
-  line-height: 330%;
+  line-height: 400%;
 }
 .underline{
   text-decoration: none;

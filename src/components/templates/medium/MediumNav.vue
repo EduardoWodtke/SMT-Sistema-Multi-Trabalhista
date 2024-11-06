@@ -19,9 +19,9 @@
         <router-link to="Historico" class="underline">
           <li>Histórico</li>
         </router-link>
-        <router-link to="Favoritos" class="underline">
+        <!-- <router-link to="Favoritos" class="underline">
           <li>Favoritos</li>
-        </router-link>
+        </router-link> -->
       </ul>
     </div>
   </nav>
@@ -47,7 +47,7 @@ ul {
 
 li {
   text-align: center;
-  padding: 0 3.5vh;
+  padding: 0 6vh;
   list-style: none;
   font-size: 2vh;
 }

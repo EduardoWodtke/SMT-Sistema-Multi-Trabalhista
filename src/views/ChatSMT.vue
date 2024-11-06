@@ -1,29 +1,29 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const friends = ref([
   { id: 1, name: 'João', messages: [{ from: 'João', text: 'Oi!' }] },
   { id: 2, name: 'Maria', messages: [{ from: 'Maria', text: 'Como vai?' }] },
   { id: 3, name: 'Pedro', messages: [{ from: 'Pedro', text: 'Tudo bem?' }] }
-]);
+])
 
-const activeFriend = ref(null);
-const chat = ref('');
+const activeFriend = ref(null)
+const chat = ref('')
 
 const selectFriend = (friend) => {
-  activeFriend.value = friend;
-};
+  activeFriend.value = friend
+}
 
 const sendMessage = () => {
   if (chat.value.trim() !== '') {
-    activeFriend.value.messages.push({ from: 'Você', text: chat.value });
-    chat.value = '';
+    activeFriend.value.messages.push({ from: 'Você', text: chat.value })
+    chat.value = ''
   }
-};
+}
 
 const exitChat = () => {
-  activeFriend.value = null;
-};
+  activeFriend.value = null
+}
 </script>
 
 <template>
@@ -36,8 +36,6 @@ const exitChat = () => {
         </li>
       </ul>
     </div>
-
-
     <div v-if="activeFriend" class="chat-window">
       <div class="chat-header">
         <button @click="exitChat" class="back-button">Voltar</button>
@@ -45,11 +43,17 @@ const exitChat = () => {
       </div>
       <div class="chat-messages">
         <div v-for="(message, index) in activeFriend.messages" :key="index" class="message">
-          <p>{{ message.from }}:</p> {{ message.text }}
+          <h3>{{ message.from }}:</h3>
+          <p>{{ message.text }}</p>
         </div>
       </div>
       <div class="chat-input">
-        <input v-model="chat" @keyup.enter="sendMessage" type="text" placeholder="Digite sua mensagem..." />
+        <input
+          v-model="chat"
+          @keyup.enter="sendMessage"
+          type="text"
+          placeholder="Digite sua mensagem..."
+        />
         <button @click="sendMessage">Enviar</button>
       </div>
     </div>
@@ -58,136 +62,176 @@ const exitChat = () => {
 
 <style>
 .chat-app {
-  display: flex;
-  flex-direction: column;
-  min-height: 66vh;
+  font-family: Arial, sans-serif;
+  /* max-width: 600px; */
+  margin: 2vh auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: rgb(0, 23, 61);
+  width: 120vh;
+  min-height: 65vh;
 }
-
 
 .friends-list {
-  padding: 20px;
   text-align: center;
-}
-
-.friends-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.friends-list li {
-  padding: 15px;
-  margin: 10px 0;
-  background-color: #0a0024;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.friends-list li:hover {
-  background-color: #9c67ff;
-  transition: 0.3s;
 }
 
 .friends-list h2 {
   margin-bottom: 20px;
+  color: rgb(255, 255, 255);
 }
 
+.friends-list ul {
+  list-style-type: none;
+  padding: 0;
+}
 
+.friends-list li {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+  color: black;
+}
+
+.friends-list li:hover {
+  background-color: rgb(0, 23, 61);
+  color: #fff;
+}
 .chat-window {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  background-color: #09003b;
-  padding: 20px;
+  height: 400px;
+  min-height: 60vh;
+  border-radius: 20vh;
+  width: 100%;
 }
 
 .chat-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: rgb(0, 23, 61);
 }
 
-.chat-header .back-button {
-  padding: 10px 15px;
-  background-color: #2e1ffc;
-  color: white;
-  border: none;
-  border-radius: 5px;
+.back-button {
+  padding: 5px 10px;
   cursor: pointer;
+  background-color: rgb(206, 206, 206);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
 }
 
-.chat-header .back-button:hover {
-  background-color: #924ee0;
+.chat-header h2 {
+  margin: 0;
+  color: rgb(255, 255, 255);
 }
 
 .chat-messages {
-  flex-grow: 1;
-  margin-top: 20px;
+  flex: 1;
+  padding: 10px;
   overflow-y: auto;
-  /* max-width: 100vh; */
-  /* word-break: normal; */
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  color: black;
 }
 
 .message {
   margin-bottom: 10px;
-  padding: 10px;
-  background-color: #6163c9;
-  border-radius: 8px;
+}
 
-  /* max-width: 80vh; */
+.message h3 {
+  margin: 0;
+  font-weight: bold;
+  color: rgb(0, 23, 61);
+}
+.message p {
+  margin: 0;
+  color: rgb(0, 23, 61);
 }
 
 .chat-input {
   display: flex;
-  border-top: 1px solid #000000;
-  padding-top: 10px;
-
+  padding: 10px;
+  background-color: #fff;
+  color: #000000;
 }
 
 .chat-input input {
-  flex-grow: 1;
+  flex: 1;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #000000;
-  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   margin-right: 10px;
-  color: rgb(0, 0, 0);
+  color: #000000;
 }
 
 .chat-input button {
-  padding: 10px 15px;
-  background-color: #2e1ffc;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(0, 23, 61);
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
 .chat-input button:hover {
-  background-color: #924ee0;
-  transition: 0.3s;
+  background-color: rgb(0, 15, 41);
 }
 
-
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .chat-app {
-    flex-direction: column;
+    padding: 15px;
+    width: 60vh;
   }
-
-  .friends-list,
   .chat-window {
-    width: 100%;
+    height: 350px;
   }
-
-  .chat-header h2 {
+  .back-button {
+    padding: 5px;
+  }
+  .chat-input button {
+    padding: 10px 15px;
+  }
+} 
+@media screen and (max-width: 430px) {
+  .chat-app {
+    padding: 10px;
+    width: 40vh;
+    height: 77vh;
+  }
+  .friends-list h2 {
     font-size: 18px;
   }
-
+  .friends-list li {
+    padding: 8px;
+  }
+  .chat-window {
+    height: 300px;
+  }
+  .chat-header {
+    flex-direction: row;
+  }
+  .chat-header h2 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .chat-messages {
+    padding: 5px;
+  }
   .chat-input input {
-    font-size: 14px;
-
+    margin-right: 5px;
+  }
+  .chat-input button {
+    padding: 8px 10px;
   }
 }
 </style>
