@@ -1,21 +1,21 @@
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-import debounce from 'lodash.debounce'
+// import { ref, watch } from 'vue'
+// import { useRouter } from 'vue-router'
+// import debounce from 'lodash.debounce'
 
-import { useAuthStore } from '@/stores/auth'
+// import { useAuthStore } from '@/stores/auth'
 
-const router = useRouter()
-const { isLoggedIn, username, login, logout } = useAuthStore()
+// const router = useRouter()
+// const { isLoggedIn, username, login, logout } = useAuthStore()
 
-const search = ref('')
+// const search = ref('')
 
-watch(
-  search,
-  debounce(() => {
-    router.push({ name: 'search', query: { search: search.value } })
-  }, 600)
-)
+// watch(
+//   search,
+//   debounce(() => {
+//     router.push({ name: 'search', query: { search: search.value } })
+//   }, 600)
+// )
 </script>
 <template>
   <header>
@@ -25,9 +25,9 @@ watch(
     </router-link>
     <div class="barra-pesquisa">
       <input size="100" type="text" v-model="search" id="barra-pesquisa" placeholder="Procurar trabalhadores" />
-      <Router-Link :to="{ name: 'search', query: { search } }" class="botaoSearch">
+      <!-- <Router-Link :to="{ name: 'search', query: { search } }" class="botaoSearch">
         <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="" />
-      </Router-Link>
+      </Router-Link> -->
     </div>
     <div class="icons">
       <div v-if="loggedIn">
