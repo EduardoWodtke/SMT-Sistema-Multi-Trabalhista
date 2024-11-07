@@ -42,7 +42,7 @@ onMounted(() => {
   <div class="servicos-principes">
     <div v-for="user in userStore.users" :key="user.id">
       <div class="servico">
-        <img :src="user.foto" alt="" />
+        <img src="@/assets/userPhoto.png" alt="" class="trabalhadoresImagem"/>
       </div>
       <!-- <div class="servico"><p>2</p></div>
       <div class="servico"><p>3</p></div>
@@ -51,10 +51,12 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style>
-img{
+<style> 
+.trabalhadoresImagem{
   width: 30vh;
+  border-radius: 50%;
 }
+
 .avaliados h4 {
   color: black;
   font-size: 7vh;

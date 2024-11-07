@@ -12,13 +12,10 @@ onMounted(async () => {
   <div id="container">
     <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
       <div class="bolinha">
-        <img :src="user.foto" alt="foto do usuário" class="user-foto" />
+        <img src="@/assets/userPhoto.png" alt="foto do usuário" class="user-foto" />
       </div>
       <div class="info">
         <p>{{ user.name }}</p>
-        <p>{{ user.categoria }}</p>
-        <p>{{ user.email }}</p>
-        <p>{{ user.nota }}</p>
       </div>
     </div>
   </div>
