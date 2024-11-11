@@ -86,12 +86,13 @@ onMounted(() => {
 }
 .slide {
   display: flex;
+  background-color: #00173d;
 }
 .slide img {
   border: solid black 3px;
   width: 100%;
   box-shadow: 3px 0.3vh 2vh black;
-  height: 45vh;
+  opacity: 0.3;
 }
 h3 {
   color: rgb(0, 0, 0);
