@@ -154,7 +154,7 @@ p {
 #info {
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: rgb(0, 23, 61);
   width: 100%;
   align-items: center;
   height: 35px;

@@ -6,31 +6,25 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: '',
+      name: 'Home',
+      component: () => import('@/views/HomeSMT.vue'),
+    },
+    {
+      path: '/',
       component: LayoutFull,
       children: [
         {
-          path: '/',
-          name: 'Home',
-          component: () => import('@/views/HomeSMT.vue'),
-        },
-        {
-          path: '/Ranking',
+          path: 'Ranking',
           name: 'Ranking',
           component: () => import('@/views/RankingSMT.vue'),
         },
         {
-          path: '/Chat',
+          path: 'Chat',
           name: 'Chat',
           component: () => import('@/views/ChatSMT.vue'),
         },
-        // {
-        //   path: '/Favoritos',
-        //   name: 'Favoritos',
-        //   component: () => import('@/views/FavoritosSMT.vue'),
-        // },
         {
-          path: '/Historico',
+          path: 'Historico',
           name: 'Historico',
           component: () => import('@/views/HistoricoSMT.vue'),
         },
@@ -53,7 +47,7 @@ const router = createRouter({
           path: 'Perfil',
           name: 'Perfil',
           component: () => import('@/views/PerfilSMT.vue'),
-        }
+        },
       ],
     },
   ],
