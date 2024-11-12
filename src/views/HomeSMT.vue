@@ -28,9 +28,10 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="slide">
-    <img src="@/assets/trabalhadores.jpg" alt="" />
+  <div class="slide"> 
+    <img class="backgroundPessoas" src="@/assets/trabalhadores.jpg" alt="" />
     <h3>O que teu marido não faz nós fazemos!</h3>
+    <img class="logo" src="../assets/logo.png" alt="">
   </div>
   <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
@@ -51,7 +52,10 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style> 
+<style>
+*{
+  overflow-x: hidden;
+}
 .trabalhadoresImagem{
   width: 30vh;
   border-radius: 50%;
@@ -85,23 +89,34 @@ onMounted(() => {
   height: 35vh;
 }
 .slide {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 92vh;
   background-color: #00173d;
 }
-.slide img {
+.logo{
+  /* display: grid; */
+  justify-content: space-evenly;
+  position: absolute;
+  grid-column: 2;
+}
+.backgroundPessoas {
   border: solid black 3px;
-  width: 100%;
+  width: 128%;
   box-shadow: 3px 0.3vh 2vh black;
   opacity: 0.3;
 }
 h3 {
   color: rgb(0, 0, 0);
   position: absolute;
-  margin: 15% 0 0 31.5%;
   text-shadow: black 3px 3px 3px;
-  font-size: 6vh;
+  font-size: 10vh;
   -webkit-text-stroke: 2px white;
   font-family: 'New Amsterdam', sans-serif;
+  width: 750px;
+  margin: 22% 0 0 3%;
+  grid-column: 2;
+
 }
 
 @media screen and (max-width: 1024px) {
