@@ -29,10 +29,11 @@ onMounted(() => {
 </script>
 <template>
   <div class="slide">
-    <img src="@/assets/trabalhadores.jpg" alt="" />
-    <h3>O que teu marido não faz nós fazemos!</h3>
+    <img src="../assets/gg.jpeg" alt="" />
+    <h3>O que teu marido não faz, nós fazemos!</h3>
+    <router-link to="Login" class="butãoGettingStart">Começar agora!</router-link>
   </div>
-  <div class="map">
+  <!-- <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
   </div>
   <div class="avaliados">
@@ -43,8 +44,8 @@ onMounted(() => {
       <div class="servico">
         <img src="@/assets/userPhoto.png" alt="" class="trabalhadoresImagem"/>
       </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </template>
 <style> 
 .trabalhadoresImagem{
@@ -82,6 +83,7 @@ onMounted(() => {
 .slide {
   display: flex;
   background-color: #00173d;
+  height: 100vh;
 }
 .slide img {
   border: solid black 3px;
@@ -90,13 +92,38 @@ onMounted(() => {
   opacity: 0.3;
 }
 h3 {
-  color: rgb(0, 0, 0);
+  color: #fff;
   position: absolute;
-  margin: 15% 0 0 31.5%;
+  margin: 25% 0 0 23%;
   text-shadow: black 3px 3px 3px;
   font-size: 6vh;
-  -webkit-text-stroke: 2px white;
-  font-family: 'New Amsterdam', sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 3px 3px 10px rgb(65, 65, 65);
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+}
+.butãoGettingStart{
+
+  position: absolute;
+  margin: 32% 0% 0 44%;
+  font-size: 3vh;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 5px;
+  cursor: pointer;
+ 
+  text-decoration: none;
+  border: solid 2px white;
+
+}
+
+.butãoGettingStart:hover{
+  background-color: #ffffff;
+  color: black;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 1024px) {
