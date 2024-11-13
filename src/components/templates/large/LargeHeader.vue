@@ -1,19 +1,20 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
   <header>
-    <router-link to="/" class="logo">
-      <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
-      <h1>SMT</h1>
-    </router-link>
-    <div class="icons">
+    <div class="conteiner">
+      <router-link to="/" class="logo">
+        <!-- <img class="logo-img" src="@/assets/logo.png" alt="SMT" /> -->
+        <h1>SMT</h1>
+      </router-link>
+    </div>
+    <!-- <div class="icons">
       <div v-if="loggedIn">
         <router-link to="/Logout">Logout</router-link>
       </div>
       <router-link v-else to="/Login">
         <i class="mdi mdi-account-hard-hat-outline" />
       </router-link>
-    </div>
+    </div> -->
   </header>
 </template>
 
@@ -22,6 +23,8 @@
   display: flex;
   flex-direction: row;
   text-decoration: none;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .logo h1 {
@@ -31,20 +34,25 @@
   margin-left: 2vh;
   margin-top: 10px;
 }
-
 .icons {
+  display: block;
   font-size: 5vh;
-  padding-right: 2vh;
+  /* right: 0; */
+  /* padding-right: 2vh; */
 }
-
-header {
+.conteiner {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+header {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
   background-color: rgb(0, 23, 61);
   width: 100%;
   align-items: center;
   height: 8vh;
+  /* justify-content: space-around; */
 }
 
 .logo-img {
