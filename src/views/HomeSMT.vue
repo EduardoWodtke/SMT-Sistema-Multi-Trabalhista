@@ -28,10 +28,12 @@ onMounted(() => {
 })
 </script>
 <template>
+
   <div class="slide">
     <img src="../assets/gg.jpeg" alt="" />
     <h3>O que teu marido não faz, nós fazemos!</h3>
     <router-link to="Login" class="butãoGettingStart">Começar agora!</router-link>
+
   </div>
   <!-- <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
@@ -47,7 +49,10 @@ onMounted(() => {
     </div> -->
   <!-- </div> -->
 </template>
-<style> 
+<style>
+*{
+  overflow-x: hidden;
+}
 .trabalhadoresImagem{
   width: 30vh;
   border-radius: 50%;
@@ -81,13 +86,21 @@ onMounted(() => {
   height: 35vh;
 }
 .slide {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 92vh;
   background-color: #00173d;
   height: 100vh;
 }
-.slide img {
+.logo{
+  /* display: grid; */
+  justify-content: space-evenly;
+  position: absolute;
+  grid-column: 2;
+}
+.backgroundPessoas {
   border: solid black 3px;
-  width: 100%;
+  width: 128%;
   box-shadow: 3px 0.3vh 2vh black;
   opacity: 0.3;
 }

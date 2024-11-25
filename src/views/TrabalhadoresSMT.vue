@@ -10,7 +10,7 @@ onMounted(async () => {
 </script>
 <template>
   <div class="pesquisa">
-    <input type="search" placeholder="Procurar trabalhadores">
+    <input type="search" placeholder="Procurar trabalhadores" />
   </div>
   <h1>Trabalhadores</h1>
   <div id="container">
@@ -24,19 +24,40 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+  <div class="rank-page">
+    <h1>Ranking</h1>
+    <div class="rank-container">
+      <div class="column column-second">
+        <div class="position-ball second"></div>
+        <p>2</p>
+      </div>
+      <div class="column column-first">
+        <div class="position-ball first"></div>
+        <p>1</p>
+      </div>
+      <div class="column column-third">
+        <div class="position-ball third"></div>
+        <p>3</p>
+      </div>
+    </div>
+
+    <ul class="participants" v-for="user in userStore.users" :key="user.id">
+      <li>{{ user.name }}</li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-h1{
+h1 {
   color: black;
   text-align: center;
-  font-size: 5vh;
+  font-size: 7vh;
 }
-.pesquisa{
+.pesquisa {
   display: flex;
   justify-content: center;
   margin: 2vh;
-  input{
+  input {
     text-align: center;
     border: 1px solid black;
     width: 35%;
@@ -74,7 +95,6 @@ button {
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  min-height: 67vh;
   justify-content: space-around;
 }
 .trabalhador {
@@ -82,8 +102,116 @@ button {
   width: 50vh;
   flex-direction: column;
   border: 1px rgb(158, 158, 158) solid;
+  margin: 5vh;
+}
+.rank-page {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  h1{
+    font-size: 7vh;
+  }
 }
 
+.rank-container {
+  display: flex;
+  margin-top: 10vh;
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: end;
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  background-color: #007bff;
+  border-radius: 8px;
+  margin: 0 10px;
+  bottom: 0;
+  p {
+    align-items: end;
+    font-size: 12vh;
+    -webkit-text-stroke: #252525 0.5px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+}
+
+.column-first {
+  height: 25vh;
+  p {
+    margin-top: 3vh;
+    color: #ffd700;
+  }
+}
+
+.column-second {
+  height: 20vh;
+  p {
+    color: #c0c0c0;
+  }
+}
+
+.column-third {
+  height: 15vh;
+  p {
+    margin-top: -2vh;
+    color: #cd7f32;
+  }
+}
+.position-ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  p {
+    font-size: 5vh;
+  }
+}
+
+.first {
+  background-color: #ffd700;
+}
+
+.second {
+  background-color: #c0c0c0;
+}
+
+.third {
+  background-color: #cd7f32;
+}
+
+.participants {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 90vw;
+  list-style-type: none;
+  padding: 0;
+  color: black !important;
+}
+
+.participants li {
+  background-color: white;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li {
+  color: rgb(85, 85, 85);
+}
 @media screen and (max-width: 1024px) {
   #container {
     display: grid;
