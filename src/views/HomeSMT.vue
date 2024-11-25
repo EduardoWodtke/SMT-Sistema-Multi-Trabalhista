@@ -32,8 +32,7 @@ onMounted(() => {
   <div class="slide">
     <img src="../assets/gg.jpeg" alt="" />
     <h3>O que teu marido não faz, nós fazemos!</h3>
-    <router-link to="Login" class="butãoGettingStart">Começar agora!</router-link>
-
+    <router-link to="Perfil" class="butãoGettingStart">Começar agora!</router-link>
   </div>
   <!-- <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
@@ -91,6 +90,10 @@ onMounted(() => {
   grid-template-rows: 92vh;
   background-color: #00173d;
   height: 100vh;
+  img{
+    width: 135%;
+    max-height: 108.5%;
+  }
 }
 .logo{
   /* display: grid; */
@@ -117,20 +120,20 @@ h3 {
   text-align: justify;
 }
 .butãoGettingStart{
-
   position: absolute;
   margin: 32% 0% 0 44%;
   font-size: 3vh;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   border-radius: 15px;
   padding: 5px;
   cursor: pointer;
- 
   text-decoration: none;
-  border: solid 2px white;
-
+  border: solid 2px #ffffff;
+  background-color: #31313146;
+  /* -webkit-text-stroke: 0.3px rgb(0, 0, 0); */
+  /* text-shadow: black 5px 4px 10px; */
 }
 
 .butãoGettingStart:hover{
