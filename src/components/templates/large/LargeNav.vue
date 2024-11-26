@@ -44,9 +44,6 @@ onMounted(async () => {
       </div>
       <Menu @click="clickHamburguer()" class="mdi mdi-menu" size="5vh" />
       <ul>
-        <router-link to="Ranking" class="underline">
-          <li>Ranking</li>
-        </router-link>
         <router-link to="Chat" class="underline">
           <li>Conversas</li>
         </router-link>

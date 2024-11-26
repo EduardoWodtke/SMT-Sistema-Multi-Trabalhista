@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  align-items: center;
+  align-items: center; 
   /* justify-content: center; */
 }
 
@@ -31,8 +31,8 @@
   font-size: 7vh;
   font-weight: bold;
   color: #ffffff;
-  margin-left: 2vh;
-  margin-top: 10px;
+  /* margin-left: 2vh; */
+  /* margin-top: 10px; */
 }
 .icons {
   display: block;

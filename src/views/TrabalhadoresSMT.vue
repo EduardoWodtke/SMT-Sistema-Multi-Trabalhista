@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted } from 'vue'
-import { useUserStore } from '@/stores/user'
+import { onMounted } from 'vue';
+import { useUserStore } from '@/stores/user';
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 
 onMounted(async () => {
-  userStore.buscarTodosOsUsers()
-})
+  await userStore.buscarTodosOsUsers(2);
+});
 </script>
 <template>
   <div class="pesquisa">

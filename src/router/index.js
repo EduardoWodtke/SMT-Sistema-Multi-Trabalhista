@@ -13,11 +13,11 @@ const router = createRouter({
       path: '/',
       component: LayoutFull,
       children: [
-        {
-          path: 'Ranking',
-          name: 'Ranking',
-          component: () => import('@/views/RankingSMT.vue'),
-        },
+        // {
+        //   path: 'Ranking',
+        //   name: 'Ranking',
+        //   component: () => import('@/views/RankingSMT.vue'),
+        // },
         {
           path: 'Chat',
           name: 'Chat',
