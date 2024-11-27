@@ -24,6 +24,11 @@ const router = createRouter({
           component: () => import('@/views/ChatSMT.vue'),
         },
         {
+          path: 'test',
+          name: 'test',
+          component: () => import('@/views/testeTra.vue'),
+        },
+        {
           path: 'Historico',
           name: 'Historico',
           component: () => import('@/views/HistoricoSMT.vue'),
