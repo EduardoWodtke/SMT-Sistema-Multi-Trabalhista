@@ -24,4 +24,12 @@ h1{
 p{
   color: black;
 }
+/* tablet */
+@media screen and (max-width: 1024px){ 
+
+}
+/* celular */
+@media screen and (max-width: 430px){ 
+
+}
 </style>

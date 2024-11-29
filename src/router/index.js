@@ -13,20 +13,16 @@ const router = createRouter({
       path: '/',
       component: LayoutFull,
       children: [
-        // {
-        //   path: 'Ranking',
-        //   name: 'Ranking',
-        //   component: () => import('@/views/RankingSMT.vue'),
-        // },
+        {
+          path: '/categoria/:id',
+          name: 'Categoria',
+          component: () => import('@/views/CategoriaSMT.vue'),
+          props: true, // Passa automaticamente o parâmetro da rota como prop
+        },     
         {
           path: 'Chat',
           name: 'Chat',
           component: () => import('@/views/ChatSMT.vue'),
-        },
-        {
-          path: 'test',
-          name: 'test',
-          component: () => import('@/views/testeTra.vue'),
         },
         {
           path: 'Historico',

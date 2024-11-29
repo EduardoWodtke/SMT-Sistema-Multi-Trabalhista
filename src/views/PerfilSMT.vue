@@ -297,5 +297,13 @@
     cursor: pointer;
     margin-right: 10px;
   }
+  /* tablet */
+@media screen and (max-width: 1024px){ 
+
+}
+/* celular */
+@media screen and (max-width: 430px){ 
+
+}
   </style>
   

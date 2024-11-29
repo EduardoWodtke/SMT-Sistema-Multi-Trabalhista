@@ -1,20 +1,26 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { onBeforeRouteUpdate } from 'vue-router'
+import { onBeforeRouteUpdate, useRouter } from 'vue-router'
 import { useCategoriaStore } from '@/stores/categoria'
-// import { PassageUser } from '@passageidentity/passage-elements/passage-user'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
 const servicos = ref(false)
 const categoriaStore = useCategoriaStore()
+const router = useRouter()  // Obtém o router para navegação
 
 const clickHamburguer = () => {
   servicos.value = !servicos.value
 }
+
 function closeHamburguer() {
   servicos.value = false
   document.getElementById('fechar').classList.remove('hamburguer').classList.add('close')
+}
+
+function goToCategoria(id) {
+  // Redireciona para a página da categoria com o id
+  router.push({ name: 'Categoria', params: { id } })
 }
 
 onBeforeRouteUpdate(() => {
@@ -25,6 +31,7 @@ onMounted(async () => {
   categoriaStore.buscarTodasAsCategorias()
 })
 </script>
+
 <template>
   <nav>
     <div id="info">
@@ -38,7 +45,12 @@ onMounted(async () => {
           ></button>
         </div>
         <h2 class="bemvindo">Seja bem vindo(a), {{ authStore.user.name }}</h2>
-        <p v-for="categoria in categoriaStore.categorias" :key="categoria.id">
+        <p
+          v-for="categoria in categoriaStore.categorias"
+          :key="categoria.id"
+          @click="goToCategoria(categoria.id)"
+          class="categoria-item"
+        >
           {{ categoria.nome }}
         </p>
       </div>

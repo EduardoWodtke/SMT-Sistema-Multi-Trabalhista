@@ -29,4 +29,8 @@ const handleloginSuccess = () => {
     margin: 0 0 10% 0;
   }
 }
+/* celular */
+@media screen and (max-width: 430px){ 
+
+}
 </style>

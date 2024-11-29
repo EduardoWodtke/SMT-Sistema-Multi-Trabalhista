@@ -1,7 +1,7 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { useUserStore } from '@/stores/user' // Importe a store
-import UserService from '@/service/user' // Importe o UserService
+// import UserService from '@/service/user' // Importe o UserService
 
 const userStore = useUserStore() // Instancia a store
 
@@ -69,7 +69,6 @@ async function salvar() {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2vh;
-    /* border-bottom: 1px white solid; */
   }
   button {
     width: 15vh;
@@ -77,7 +76,6 @@ async function salvar() {
     margin-bottom: 5vh;
     margin-top: 2vh;
     font-size: 2.5vh;
-    /* border-top: 1px solid white; */
     background: none;
     border: solid 2px white;
     border-radius: 1vh;
@@ -117,5 +115,13 @@ input {
     text-align: center;
     border-bottom: 1px white solid;
   }
+}
+/* tablet */
+@media screen and (max-width: 1024px){ 
+
+}
+/* celular */
+@media screen and (max-width: 430px){ 
+
 }
 </style>
