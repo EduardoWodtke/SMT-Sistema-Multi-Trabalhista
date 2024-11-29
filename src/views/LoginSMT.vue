@@ -35,7 +35,7 @@ async function salvar() {
     // Chama o método adicionarUsuario da store
     await userStore.adicionarUsuario(usuario)
     limpar() // Limpa os campos após salvar
-    alert('Usuário salvo com sucesso!')
+    this.$router.push({ name: 'Trabalhadores' })
   } catch (error) {
     console.error('Erro ao salvar usuário:', error)
     alert('Erro ao salvar o usuário')
@@ -64,24 +64,34 @@ async function salvar() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .caixas{
+  .caixas {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    /* width: 25vh; */
+    margin-bottom: 2vh;
+    /* border-bottom: 1px white solid; */
   }
   button {
     width: 15vh;
     height: 5vh;
     margin-bottom: 5vh;
-    margin-top: 3vh;
-    border-top: 1px solid white;
-
+    margin-top: 2vh;
+    font-size: 2.5vh;
+    /* border-top: 1px solid white; */
+    background: none;
+    border: solid 2px white;
+    border-radius: 1vh;
+  }
+  button:hover{
+    background-color: white;
+    color: #00173d;
   }
 }
 input {
   color: black;
   width: 40vh;
   height: 4vh;
-  margin: 1vh;
+  margin: 2vh;
   border-radius: 1vh;
   padding-left: 1vh;
   font-size: 2vh;
