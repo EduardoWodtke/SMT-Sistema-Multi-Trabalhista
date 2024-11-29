@@ -44,7 +44,7 @@ onMounted(async () => {
       </div>
       <Menu @click="clickHamburguer()" class="mdi mdi-menu" size="5vh" />
       <ul>
-        <router-link to="Chat" class="underline">
+        <!-- <router-link to="Chat" class="underline">
           <li>Conversas</li>
         </router-link>
         <router-link to="Trabalhadores" class="underline">
@@ -52,7 +52,7 @@ onMounted(async () => {
         </router-link>
         <router-link to="Historico" class="underline">
           <li>Histórico</li>
-        </router-link>
+        </router-link> -->
         <!-- <router-link to="Favoritos" class="underline">
           <li>Favoritos</li>
         </router-link> -->

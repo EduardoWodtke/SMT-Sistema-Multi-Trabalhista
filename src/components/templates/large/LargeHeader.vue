@@ -28,9 +28,11 @@
 }
 
 .logo h1 {
-  font-size: 7vh;
+  margin-top: 6vh;
+  font-size: 12vh;
   font-weight: bold;
   color: #ffffff;
+  text-shadow: rgb(78, 84, 104) 2px 2px 0px;
   /* margin-left: 2vh; */
   /* margin-top: 10px; */
 }

@@ -1,70 +1,104 @@
 <script setup>
-import { onMounted } from 'vue';
-import { useUserStore } from '@/stores/user';
+import { onMounted } from 'vue'
+import { useUserStore } from '@/stores/user'
 
-const userStore = useUserStore();
+const userStore = useUserStore()
 
 onMounted(async () => {
-  await userStore.buscarTodosOsUsers(2);
-});
+  await userStore.buscarTodosOsUsers(2)
+})
 </script>
 <template>
-  <div class="pesquisa">
-    <input type="search" placeholder="Procurar trabalhadores" />
-  </div>
-  <h1>Trabalhadores</h1>
-  <div id="container">
-    <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
-      <div class="bolinha">
-        <img src="@/assets/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
+  <div id="body">
+    <div class="topo">
+      <div class="pesquisa">
+        <input type="search" placeholder="Procurar trabalhadores" />
       </div>
-      <div class="info">
-        <p>{{ user.name }}</p>
-        <button>Contratar</button>
-      </div>
-    </div>
-  </div>
-  <div class="rank-page">
-    <h1>Ranking</h1>
-    <div class="rank-container">
-      <div class="column column-second">
-        <div class="position-ball second"></div>
-        <p>2</p>
-      </div>
-      <div class="column column-first">
-        <div class="position-ball first"></div>
-        <p>1</p>
-      </div>
-      <div class="column column-third">
-        <div class="position-ball third"></div>
-        <p>3</p>
+      <div class="icons" style="color: black">
+        <router-link to="Chat">
+          <span class="mdi mdi-chat-processing-outline"></span>
+        </router-link>
+        <router-link to="Historico">
+          <span class="mdi mdi-clock-time-eight-outline"></span>
+        </router-link>
       </div>
     </div>
+    <!-- <h1>Trabalhadores</h1> -->
+    <div id="container">
+      <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
+        <div class="bolinha">
+          <img src="@/assets/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
+        </div>
+        <div class="info">
+          <p>{{ user.name }}</p>
+          <button>Contratar</button>
+        </div>
+      </div>
+    </div>
+    <div class="rank-page">
+      <!-- <h1>Ranking</h1> -->
+      <div class="rank-container">
+        <div class="column column-second">
+          <div class="position-ball second"></div>
+          <p>2</p>
+        </div>
+        <div class="column column-first">
+          <div class="position-ball first"></div>
+          <p>1</p>
+        </div>
+        <div class="column column-third">
+          <div class="position-ball third"></div>
+          <p>3</p>
+        </div>
+      </div>
 
-    <ul class="participants" v-for="user in userStore.users" :key="user.id">
-      <li>{{ user.name }}</li>
-    </ul>
+      <ul class="participants" v-for="user in userStore.users" :key="user.id">
+        <li>{{ user.name }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.topo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 32.5%;
+  margin-right: 2vh;
+  .pesquisa {
+    display: flex;
+    justify-content: center;
+    margin: 2vh;
+    input {
+      text-align: center;
+      border: 1px solid black;
+      width: 70vh;
+      color: black;
+      height: 4vh;
+      font-size: 2vh;
+    }
+  }
+  .icons {
+    display: flex;
+    flex-direction: column;
+    a{
+      margin-bottom: -4vh;
+      span {
+        font-size: 5vh;
+        color: #00173d;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+#body {
+  min-height: 65vh;
+}
 h1 {
   color: black;
   text-align: center;
   font-size: 7vh;
-}
-.pesquisa {
-  display: flex;
-  justify-content: center;
-  margin: 2vh;
-  input {
-    text-align: center;
-    border: 1px solid black;
-    width: 35%;
-    color: black;
-    height: 4vh;
-    font-size: 2vh;
-  }
 }
 button {
   height: 5vh;
@@ -111,7 +145,7 @@ button {
   align-items: center;
   justify-content: center;
   /* height: 100vh; */
-  h1{
+  h1 {
     font-size: 7vh;
   }
 }
