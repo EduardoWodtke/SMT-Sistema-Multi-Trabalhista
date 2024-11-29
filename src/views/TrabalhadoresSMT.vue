@@ -15,12 +15,8 @@ onMounted(async () => {
         <input type="search" placeholder="Procurar trabalhadores" />
       </div>
       <div class="icons" style="color: black">
-        <router-link to="Chat">
-          <span class="mdi mdi-chat-processing-outline"></span>
-        </router-link>
-        <router-link to="Historico">
-          <span class="mdi mdi-clock-time-eight-outline"></span>
-        </router-link>
+        <router-link to="Chat" class="mdi mdi-chat-processing-outline" />
+        <router-link to="Historico" class="mdi mdi-clock-time-eight-outline" />
       </div>
     </div>
     <!-- <h1>Trabalhadores</h1> -->
@@ -36,7 +32,6 @@ onMounted(async () => {
       </div>
     </div>
     <div class="rank-page">
-      <!-- <h1>Ranking</h1> -->
       <div class="rank-container">
         <div class="column column-second">
           <div class="position-ball second"></div>
@@ -51,7 +46,6 @@ onMounted(async () => {
           <p>3</p>
         </div>
       </div>
-
       <ul class="participants" v-for="user in userStore.users" :key="user.id">
         <li>{{ user.name }}</li>
       </ul>
@@ -82,14 +76,14 @@ onMounted(async () => {
   .icons {
     display: flex;
     flex-direction: column;
-    a{
+    a {
       margin-bottom: -4vh;
-      span {
-        font-size: 5vh;
-        color: #00173d;
-        margin-bottom: 0;
-      }
+      font-size: 5vh;
+      color: #00173d;
     }
+  }
+  a:hover {
+    text-shadow: #616161 0px 0px 3vh;
   }
 }
 #body {
@@ -144,12 +138,10 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
   h1 {
     font-size: 7vh;
   }
 }
-
 .rank-container {
   display: flex;
   margin-top: 10vh;
@@ -157,7 +149,6 @@ button {
   margin-bottom: 20px;
   align-items: end;
 }
-
 .column {
   flex: 1;
   text-align: center;

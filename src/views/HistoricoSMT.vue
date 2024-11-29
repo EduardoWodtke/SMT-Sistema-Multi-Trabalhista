@@ -16,32 +16,45 @@ onMounted(async () => {
 
 <template>
   <main>
-  <div class="barra">
-    <input size="100" type="text" v-model="search" class="barra-pesquisa" placeholder="Procurar trabalhadores" />
-  </div>
-  <div class="container">
-    <div v-for="trabalhoHistorico in trabalhoHistoricoStore.trabalhosHistoricos" :key="trabalhoHistorico.id" class="trabalhador">
-      <div class="info">
-        <div class="bolinha">
+    <div class="container">
+      <router-link to="Trabalhadores" class="mdi mdi-arrow-left-bold" />
+      <div
+        v-for="trabalhoHistorico in trabalhoHistoricoStore.trabalhosHistoricos"
+        :key="trabalhoHistorico.id"
+        class="trabalhador"
+      >
+        <div class="info">
+          <div class="bolinha"></div>
+          <div class="text">
+            <p>{{ trabalhoHistorico.nome }}</p>
+            <p>Data de encerramento: {{ trabalhoHistorico.DataTermino }}</p>
+            <p>Valor: {{ trabalhoHistorico.preco }}</p>
+            <p></p>
+          </div>
         </div>
-        <div class="text">
-          <p>{{ trabalhoHistorico.nome }}</p>
-          <p>Data de encerramento: {{ trabalhoHistorico.DataTermino }}</p>
-          <p>Valor: {{ trabalhoHistorico.preco }}</p>
-          <p></p>
-        </div>
+        <button class="apagar">Excluir</button>
       </div>
-      <button class="apagar">Excluir</button>
     </div>
-  </div>
-</main>
+  </main>
 </template>
 
 <style scoped>
-main{
+a {
+  display: block;
+  font-size: 5vh;
+  color: black;
+  margin-top: -5vh;
+  margin-left: -200vh;
+}
+a:hover {
+  color: rgb(102, 102, 102);
+  /* -webkit-text-stroke: #ffffff 0.5px; */
+  text-shadow: #000000 1px 1px 0px;
+}
+main {
   min-height: 61vh;
 }
-.info{
+.info {
   display: flex;
   flex-direction: row;
 }
@@ -133,7 +146,7 @@ main{
     height: 15vh;
     margin: 0 1vh 10% 1vh;
   }
-  .text{
+  .text {
     font-size: 2vh;
   }
 
@@ -143,7 +156,7 @@ main{
   }
 
   .apagar {
-    margin: 10vh 0 0 26vh ;
+    margin: 10vh 0 0 26vh;
     width: 5vh;
     height: 3vh;
     position: absolute;
@@ -157,10 +170,9 @@ main{
     margin-bottom: 30%;
   }
 
-  .text{
+  .text {
     font-size: 2vh;
   }
-
 
   .barra-pesquisa {
     width: 90%;

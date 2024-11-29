@@ -28,13 +28,16 @@ const exitChat = () => {
 
 <template>
   <div class="chat-app">
-    <div v-if="!activeFriend" class="friends-list">
-      <h2>Escolha um amigo:</h2>
-      <ul>
-        <li v-for="friend in friends" :key="friend.id" @click="selectFriend(friend)">
-          {{ friend.name }}
-        </li>
-      </ul>
+    <div class="cabecalho">
+      <router-link to="Trabalhadores" class="mdi mdi-arrow-left-bold" />
+      <div v-if="!activeFriend" class="friends-list">
+        <h2>Escolha um amigo:</h2>
+        <ul>
+          <li v-for="friend in friends" :key="friend.id" @click="selectFriend(friend)">
+            {{ friend.name }}
+          </li>
+        </ul>
+      </div>
     </div>
     <div v-if="activeFriend" class="chat-window">
       <div class="chat-header">
@@ -61,6 +64,14 @@ const exitChat = () => {
 </template>
 
 <style>
+  a{
+    font-size: 3vh;
+  }
+  a:hover{
+    color: rgb(102, 102, 102);
+    /* -webkit-text-stroke: #ffffff 0.5px; */
+    text-shadow: #ffffff 1px 1px 0px ;
+  }
 .chat-app {
   font-family: Arial, sans-serif;
   /* max-width: 600px; */
@@ -201,7 +212,7 @@ const exitChat = () => {
   .chat-input button {
     padding: 10px 15px;
   }
-} 
+}
 @media screen and (max-width: 430px) {
   .chat-app {
     padding: 10px;

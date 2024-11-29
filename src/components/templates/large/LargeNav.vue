@@ -135,6 +135,7 @@ p {
   display: block;
   background-color: #00173d;
   position: fixed;
+  z-index: 10;
   padding-left: 5vh;
   width: 26%;
   line-height: 240%;
