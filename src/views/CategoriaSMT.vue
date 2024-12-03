@@ -24,6 +24,7 @@ onMounted(async () => {
 <style>
 .container {
   min-height: 65vh;
+  cursor: pointer;
 }
 h1 {
   color: black;

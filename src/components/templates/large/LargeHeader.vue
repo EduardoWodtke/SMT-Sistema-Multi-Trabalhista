@@ -2,7 +2,7 @@
 <template>
   <header>
     <div class="conteiner">
-      <router-link to="/" class="logo">
+      <router-link to="/trabalhadores" class="logo">
         <!-- <img class="logo-img" src="@/assets/logo.png" alt="SMT" /> -->
         <h1>SMT</h1>
       </router-link>

@@ -1,12 +1,20 @@
-import axios from 'axios';
+import axios from 'axios'
 
-export default class AuthService {
-  async postUserToken(token) {
-    const response = await axios.get('/usuarios/me/', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
+const API_URL = 'http://0.0.0.0:19003/token/'
+
+export async function login(email, password) {
+  const response = await axios.post(API_URL, {
+    email,
+    password,
+  })
+  return response.data
+}
+
+export function setAuthToken(token) {
+  if (token) {
+    localStorage.setItem('psg_auth_token', token)
+    localStorage.setItem('psg_auth_token2', token)
+  } else {
+    delete localStorage.delItem('psg_auth_token')
   }
 }

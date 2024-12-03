@@ -1,44 +1,30 @@
-<script setup>
-import { ref } from 'vue'
-import { useUserStore } from '@/stores/user' // Importe a store
-// import UserService from '@/service/user' // Importe o UserService
+<script>
+import { login, setAuthToken } from '@/service/auth'
 
-const userStore = useUserStore() // Instancia a store
-
-// Dados do formulário
-const nome = ref('')
-const email = ref('')
-const cpf = ref('')
-
-// Função para limpar os campos do formulário
-function limpar() {
-  nome.value = ''
-  email.value = ''
-  cpf.value = ''
-}
-
-// Função para salvar os dados do usuário
-async function salvar() {
-  // Verificação de campos obrigatórios
-  if (!nome.value || !email.value || !cpf.value) {
-    alert('Por favor, preencha todos os campos obrigatórios.')
-    return
-  }
-
-  const usuario = {
-    nome: nome.value,
-    email: email.value,
-    cpf: cpf.value
-  }
-
-  try {
-    // Chama o método adicionarUsuario da store
-    await userStore.adicionarUsuario(usuario)
-    limpar() // Limpa os campos após salvar
-    this.$router.push({ name: 'Trabalhadores' })
-  } catch (error) {
-    console.error('Erro ao salvar usuário:', error)
-    alert('Erro ao salvar o usuário')
+export default {
+  data() {
+    return {
+      username: '',
+      password: '',
+      loading: false
+    }
+  },
+  methods: {
+    async handleLogin() {
+      this.loading = true
+      try {
+        const response = await login(this.username, this.password)
+        setAuthToken(response.access)
+        alert('Login realizado com sucesso!')
+        console.log('Token JWT:', response.access)
+        this.$router.push('/trabalhadores')
+        // eslint-disable-next-line no-unused-vars
+      } catch (error) {
+        alert('Erro ao fazer login. Verifique suas credenciais.')
+      } finally {
+        this.loading = false
+      }
+    }
   }
 }
 </script>
@@ -47,81 +33,73 @@ async function salvar() {
   <div id="container">
     <div class="login">
       <h1>Login</h1>
-      <div class="form">
-        <div class="caixas">
-          <input type="text" v-model="nome" placeholder="Nome" />
-          <input type="email" v-model="email" placeholder="Email" />
-          <input type="text" v-model="cpf" placeholder="CPF" />
-        </div>
-        <button @click="salvar">Login</button>
+      <div class="caixinha">
+        <span class="mdi mdi-account" />
+        <input type="text" class="form-control" placeholder="Email" v-model="username" required />
       </div>
+      <div class="caixinha">
+        <span class="mdi mdi-lock" />
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Senha"
+          v-model="password"
+          required
+        />
+      </div>
+      <div class="botoes">
+        <button type="submit" class="butao">REGISTRAR</button>
+        <button type="submit" class="butao">ENTRAR</button>
+      </div>
+      <a href="">Esqueceu a senha?</a>
     </div>
   </div>
 </template>
 
 <style scoped>
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .caixas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2vh;
-  }
-  button {
-    width: 15vh;
-    height: 5vh;
-    margin-bottom: 5vh;
-    margin-top: 2vh;
-    font-size: 2.5vh;
-    background: none;
-    border: solid 2px white;
-    border-radius: 1vh;
-  }
-  button:hover{
-    background-color: white;
-    color: #00173d;
-  }
-}
-input {
-  color: black;
-  width: 40vh;
-  height: 4vh;
-  margin: 2vh;
-  border-radius: 1vh;
-  padding-left: 1vh;
-  font-size: 2vh;
-  border-bottom: 1px white solid;
-}
 #container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-height: 65.8vh;
-}
-.login {
-  display: flex;
-  flex-direction: column;
-  background-color: #00173d;
-  width: 50vh;
-  height: 50vh;
-  border-radius: 2vh;
-  margin-top: 5vh;
-  justify-content: space-between;
-  h1 {
-    margin: 2vh;
-    text-align: center;
-    border-bottom: 1px white solid;
+  min-height: 65vh;
+  align-items: center;
+  .login {
+    display: flex;
+    flex-direction: column;
+    background-color: #00173d;
+    width: 50vh;
+    align-items: center;
+    height: 40vh;
+    border-radius: 3vh;
+    .botoes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 1vh;
+      .butao {
+        background: none;
+        width: 10vh;
+        height: 3vh;
+        font-size: 2vh;
+        border: 1px solid white;
+        border-radius: 2vh;
+      }
+    }
+    h1 {
+      font-size: 5vh;
+    }
+    .caixinha {
+      input {
+        background: none;
+        border: none;
+        border-bottom: 2px solid white;
+        height: 4vh;
+        font-size: 2vh;
+        width: 40vh;
+        margin: 2vh;
+      }
+    }
   }
-}
-/* tablet */
-@media screen and (max-width: 1024px){ 
-
-}
-/* celular */
-@media screen and (max-width: 430px){ 
-
 }
 </style>
