@@ -37,14 +37,17 @@ onMounted(async () => {
     <div id="info">
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
-          <img src="@/assets/logo.png" alt="" />
+          <router-link to="Trabalhadores">
+
+            <img src="@/assets/logo.png" alt="" />
+          </router-link>
           <button
             class="butao mdi mdi-alpha-x"
             style="font-size: 10vh"
             @click="closeHamburguer()"
           ></button>
         </div>
-        <h2 class="bemvindo">Seja bem vindo(a), {{ authStore.user.name }}</h2>
+        <h2 class="bemvindo">Seja bem vindo(a)!</h2>
         <p
           v-for="categoria in categoriaStore.categorias"
           :key="categoria.id"
@@ -157,6 +160,7 @@ p {
   top: 0;
   height: 100%;
   animation: hamburguer 2s;
+  cursor: pointer;
 }
 .underline {
   text-decoration: none;

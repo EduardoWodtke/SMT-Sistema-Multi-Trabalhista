@@ -32,7 +32,7 @@ onMounted(() => {
   <div class="slide">
     <img src="../assets/gg.jpeg" alt="" />
     <h3>O que teu marido não faz, nós fazemos!</h3>
-    <router-link to="Register" class="butãoGettingStart">Começar agora!</router-link>
+    <router-link to="Login" class="butãoGettingStart">Começar agora!</router-link>
   </div>
   <!-- <div class="map">
     <img src="@/assets/mapa.jpeg" alt="" />
