@@ -90,4 +90,8 @@ ul {
 #redes-sociais i {
     padding: 1vh;
 }
+
+
 </style>
+
+Deixe esse header responsivo para dar acessoa dispositivos mobile utilize apenas vue 

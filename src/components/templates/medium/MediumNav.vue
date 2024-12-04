@@ -27,11 +27,7 @@
   </nav>
 </template>
 <style scoped>
-nav{
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-}
+
 
 .underline {
   text-decoration: none;
