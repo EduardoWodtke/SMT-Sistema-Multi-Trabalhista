@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router' // Para acessar os parâmetros da rota
 import { useCategoriaStore } from '@/stores/categoria'
+import { useUserStore } from '@/stores/user';
 
 const route = useRoute() // Usando o Vue Router para acessar os parâmetros da rota
 const categoriaStore = useCategoriaStore() // Usando a store de categorias
@@ -15,16 +16,104 @@ onMounted(async () => {
 </script>
 <template>
   <div class="container">
-    <h1>Hello word</h1>
-    <h1>Categoria: {{ categoria.nome }}</h1>
-    <p>{{ categoria.descricao }}</p>
+    <h1>{{ categoria.nome }}s</h1><hr>
     <!-- Exiba mais informações da categoria aqui -->
+    <div class="trabalhadores">
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+      <div class="trabalhador">
+        <img src="@/assets/imagens/teste-perfil.jpg" alt="" />
+        <p>nome</p>
+        <button>Contratar</button>
+      </div>
+    </div>
   </div>
 </template>
 <style>
 .container {
   min-height: 65vh;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  h1{
+    text-align: center;
+    font-size: 3vh;
+  }
+  hr{
+    width: 90%;
+    align-items: center;
+    /* text-align: center; */
+  }
+  .trabalhadores {
+    display: grid;
+    /* grid-row: auto auto auto; */
+    grid-template-columns: auto auto auto;
+    .trabalhador {
+      margin: 5vh;
+      /* width: 50vh; */
+      /* height: 20vh; */
+      border: 1px solid black;
+      /* background-color: #00173d; */
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
+      p {
+        margin-left: 2vh;
+        font-size: 5vh;
+        color: black;
+      }
+      button {
+        font-size: 2vh;
+        margin: 2vh;
+        width: 20vh;
+        background-color: #00173d;
+        height: 5vh;
+        justify-content: center;
+        /* align-items: center; */
+        border: none;
+      }
+      button:hover {
+        background-color: rgb(58, 81, 102);
+      }
+    }
+  }
 }
 h1 {
   color: black;

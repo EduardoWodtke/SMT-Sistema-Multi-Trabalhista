@@ -1,21 +1,20 @@
 import { defineStore } from "pinia";
-import UserService from "@/service/user"; // Importe o UserService
+import UserService from "@/service/user";
 
 export const useUserStore = defineStore("user", {
   state: () => ({
-    users: [], // Lista de usuários
-    currentUser: null, // Usado para armazenar o usuário logado
+    users: [], 
+    currentUser: null, 
   }),
 
   actions: {
-    // Buscar todos os usuários através do UserService
     async buscarTodosOsUsers(tipo = 2) {
       try {
-        const userService = new UserService(); // Instancia o UserService
-        const users = await userService.buscarTodosOsUsers(tipo); // Chama o método buscarTodosOsUsers
-        this.users = users; // Armazena os usuários no estado da store
+        const userService = new UserService();
+        const users = await userService.buscarTodosOsUsers(tipo);
+        this.users = users; 
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error); // Tratamento de erro
+        console.error("Erro ao buscar usuários:", error);
       }
     },
 

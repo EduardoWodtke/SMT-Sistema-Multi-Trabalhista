@@ -30,7 +30,7 @@ onMounted(() => {
 <template>
 
   <div class="slide">
-    <img src="../assets/gg.jpeg" alt="" />
+    <img src="../assets/imagens/gg.jpeg" alt="" />
     <h3>O que teu marido não faz, nós fazemos!</h3>
     <router-link to="Login" class="butãoGettingStart">Começar agora!</router-link>
   </div>
