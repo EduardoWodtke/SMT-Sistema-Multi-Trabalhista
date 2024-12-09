@@ -24,7 +24,7 @@
   flex-direction: row;
   text-decoration: none;
   align-items: center; 
-  /* justify-content: center; */
+ 
 }
 
 .logo h1 {
@@ -33,14 +33,12 @@
   font-weight: bold;
   color: #ffffff;
   text-shadow: rgb(78, 84, 104) 2px 2px 0px;
-  /* margin-left: 2vh; */
-  /* margin-top: 10px; */
+  
 }
 .icons {
   display: block;
   font-size: 5vh;
-  /* right: 0; */
-  /* padding-right: 2vh; */
+ 
 }
 .conteiner {
   display: flex;
@@ -54,7 +52,7 @@ header {
   width: 100%;
   align-items: center;
   height: 8vh;
-  /* justify-content: space-around; */
+  
 }
 
 .logo-img {

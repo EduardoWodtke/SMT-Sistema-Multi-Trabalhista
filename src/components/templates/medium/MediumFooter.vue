@@ -40,12 +40,23 @@ onMounted(async () => {
   </div>
 </template>
 <style scoped>
+/* Reseta estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Botão de menu */
 button {
   display: flex;
   position: relative;
   background: none;
   border: none;
+  cursor: pointer;
 }
+
+/* Estilo do menu hamburguer */
 .hamburguer {
   background-color: #00173d;
   width: 40%;
@@ -58,10 +69,10 @@ button {
   font-size: 3vh;
   flex-direction: column;
   border: black 0.5vh solid;
+  z-index: 1000;
 }
-* {
-  margin: 0 0 0 0;
-}
+
+/* Estilo do rodapé */
 footer {
   display: flex;
   justify-content: space-between;
@@ -71,13 +82,40 @@ footer {
   bottom: 0;
   border: #00173d solid 5px;
   background-color: black;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
+  z-index: 999;
 }
+
 .icones {
   display: flex;
   justify-content: space-around;
   font-size: 6.5vh;
   width: 70vh;
+}
+
+
+@media (max-width: 768px) {
+  .hamburguer {
+    width: 60%; 
+    padding-right: 2vh;
+    font-size: 2.5vh; 
+  }
+
+  footer {
+    padding: 10px; 
+    flex-direction: column; 
+  }
+
+  .icones {
+    width: 100%; 
+    font-size: 5vh; 
+    justify-content: space-between; 
+    padding: 0 15px;
+
+  button {
+    font-size: 6vh; 
+  }
+}
 }
 </style>
