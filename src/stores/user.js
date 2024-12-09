@@ -3,11 +3,12 @@ import UserService from "@/service/user";
 
 export const useUserStore = defineStore("user", {
   state: () => ({
-    users: [], 
-    currentUser: null, 
+    users: [], // Lista de usuários
+    currentUser: null, // Usuário atual
   }),
 
   actions: {
+    // Buscar todos os usuários, com um tipo padrão
     async buscarTodosOsUsers(tipo = 2) {
       try {
         const userService = new UserService();
@@ -15,6 +16,17 @@ export const useUserStore = defineStore("user", {
         this.users = users; 
       } catch (error) {
         console.error("Erro ao buscar usuários:", error);
+      }
+    },
+
+    // Buscar usuários por categoria
+    async buscarUserPorCategoria(categoriaId) {
+      try {
+        const userService = new UserService(); // Instancia o UserService
+        const users = await userService.buscarUsersPorCategoria(categoriaId); // Chama o método do serviço
+        this.users = users; // Filtra ou define a lista de usuários
+      } catch (error) {
+        console.error("Erro ao buscar usuários por categoria:", error);
       }
     },
 
