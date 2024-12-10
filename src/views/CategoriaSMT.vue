@@ -1,23 +1,24 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router'; // Para acessar os parâmetros da rota
-import { useCategoriaStore } from '@/stores/categoria';
-import { useUserStore } from '@/stores/user';
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useCategoriaStore } from '@/stores/categoria'
+import { useUserStore } from '@/stores/user'
 
-const route = useRoute(); // Usando o Vue Router para acessar os parâmetros da rota
-const categoriaStore = useCategoriaStore(); // Usando a store de categorias
-const categoria = ref({}); // Variável para armazenar os dados da categoria
-const userStore = useUserStore(); // Usando a store de usuários
-const users = ref([]); // Variável para armazenar os usuários da categoria
+const route = useRoute()
+const categoriaStore = useCategoriaStore()
+const categoria = ref({})
+const userStore = useUserStore()
+const users = ref([])
 
 onMounted(async () => {
-  const categoriaId = route.params.id; // Pega o ID da categoria da URL
-  await categoriaStore.buscarCategoriaPorId(categoriaId); // Chama a store para buscar a categoria
-  categoria.value = categoriaStore.categoria; // Atribui os dados da categoria à variável local
+  const categoriaId = route.params.id
+  // Busca a categoria pelo ID
+  await categoriaStore.buscarCategoriaPorId(categoriaId)
+  categoria.value = categoriaStore.categoria
 
-  await userStore.buscarUserPorCategoria(categoriaId); // Busca os usuários pela categoria
-  users.value = userStore.users; // Atribui os usuários à variável local
-});
+  await userStore.buscarUserPorCategoria(categoriaId)
+  users.value = userStore.filteredUsers
+})
 </script>
 
 <template>
@@ -25,15 +26,8 @@ onMounted(async () => {
     <h1>{{ categoria.nome }}s</h1>
     <hr />
     <div class="trabalhadores">
-      <div
-        class="trabalhador"
-        v-for="user in users"
-        :key="user.id"
-      >
-        <img
-          :src="user.profileImage || '@/assets/imagens/teste-perfil.jpg'"
-          alt="Foto de {{ user.name }}"
-        />
+      <div class="trabalhador" v-for="user in users" :key="user.id">
+        <img :src="user.foto" alt="Foto de {{ user.name }}" />
         <p>{{ user.name }}</p>
         <button>Contratar</button>
       </div>
@@ -108,8 +102,10 @@ h1 {
 }
 
 /* tablet */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+}
 
 /* celular */
-@media screen and (max-width: 430px) {}
+@media screen and (max-width: 430px) {
+}
 </style>

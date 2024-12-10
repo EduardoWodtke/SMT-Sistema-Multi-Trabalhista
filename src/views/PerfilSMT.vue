@@ -1,15 +1,28 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router'; 
+import { useUserStore } from '@/stores/user';
+
+const route = useRoute(); 
+const userStore = useUserStore(); 
+const users = ref([]); 
+
+onMounted(async () => {
+  const userId = route.params.id; 
+  await userStore.buscarUserPorId(userId);
+  users.value = userStore.categoria;
+});
+</script>
 <template>
     <div class="profile-page">
-      <!-- Cabeçalho do Perfil -->
+      <h2>{{ user.name }}</h2>
       <div class="profile-header">
         <div class="banner">
           <img :src="bannerImage" alt="Banner" class="banner-image" />
         </div>
         <div class="profile-info">
           <img :src="profileImage" alt="Foto de Perfil" class="profile-image" />
-          <h2>{{ userName }}</h2>
           <p>{{ bio }}</p>
-          <!-- Botão de Editar Perfil -->
           <button @click="openEditProfileModal">Editar Perfil</button>
         </div>
       </div>
