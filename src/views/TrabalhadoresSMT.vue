@@ -67,7 +67,7 @@ function goToUser(id) {
 .topo {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; 
   margin-left: 32.5%;
   margin-right: 2vh;
   .pesquisa {
@@ -250,35 +250,73 @@ li {
 @media screen and (max-width: 1024px) {
   #container {
     display: grid;
-    grid-template-columns: auto auto;
-    margin: 0 0 25% 0;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas responsivas */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0 auto; /* Centraliza o container */
   }
   .trabalhador {
-    width: 30vh;
-    height: 15vh;
-    margin: 3vh 0 0vh 8%;
-    font-size: 3vh;
+    width: 100%; /* Largura responsiva */
+    max-width: 300px; /* Limita a largura máxima */
+    height: auto; /* Altura ajustável */
+    margin: 10px auto; /* Espaçamento entre trabalhadores */
+    font-size: 1rem; /* Texto responsivo */
+    padding: 10px; /* Adiciona espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Melhora o design */
   }
   .bolinha {
-    width: 15vh;
-    background-color: red;
+    width: 80px; /* Tamanho adaptado */
+    height: 80px;
+    background-color: #e0e0e0; /* Cor neutra */
+    border-radius: 50%; /* Mantém o formato circular */
+    margin: 0 auto 10px; /* Centraliza e espaça */
+  }
+  .icons {
+    flex-direction: row; /* Ícones em linha */
+    justify-content: space-around; /* Espaça os ícones */
+    a {
+      font-size: 3vh; /* Ajusta tamanho do ícone */
+    }
+  }
+  button {
+    font-size: 1rem; /* Botão responsivo */
+    width: 100%; /* Largura total no contexto do card */
   }
 }
 
 @media screen and (max-width: 430px) {
   #container {
     display: flex;
-    flex-direction: column;
-    margin: 0 0 40% 0;
-  }
-  .bolinha {
-    width: 15vh;
-    background-color: pink;
+    flex-direction: column; /* Layout em uma coluna */
+    gap: 15px; /* Espaçamento entre os itens */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 10px; /* Espaçamento interno no container */
   }
   .trabalhador {
-    margin: 5% 0 2% 0;
-    width: 40vh;
-    height: 15vh;
+    width: 100%; /* Preenche a largura disponível */
+    max-width: 280px; /* Limita largura máxima */
+    height: auto; /* Altura ajustável */
+    margin: 0 auto; /* Centraliza os trabalhadores */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Melhora o design */
+  }
+  .bolinha {
+    width: 60px; /* Tamanho menor para telas pequenas */
+    height: 60px;
+    background-color: #e0e0e0; /* Cor neutra */
+    border-radius: 50%; /* Formato circular */
+    margin: 0 auto 10px; /* Centraliza e espaça */
+  }
+  .icons {
+    flex-direction: row; /* Ícones em linha */
+    justify-content: space-around; /* Espaça os ícones */
+    a {
+      font-size: 2.5vh; /* Tamanho reduzido */
+    }
+  }
+  button {
+    font-size: 0.9rem; /* Botão responsivo */
+    width: 100%; /* Largura total */
   }
 }
+
 </style>
