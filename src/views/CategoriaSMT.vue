@@ -1,46 +1,51 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { useCategoriaStore } from '@/stores/categoria'
-import { useUserStore } from '@/stores/user'
+import { ref, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useCategoriaStore } from '@/stores/categoria';
+import { useUserStore } from '@/stores/user';
 
-const route = useRoute()
-const categoriaStore = useCategoriaStore()
-const categoria = ref({})
-const userStore = useUserStore()
-const users = ref([])
+const route = useRoute();
+const router = useRouter();
+
+const categoriaStore = useCategoriaStore();
+const userStore = useUserStore();
+
+const categoria = ref({});
+const users = ref([]);
 
 onMounted(async () => {
-  const categoriaId = route.params.id
-  await categoriaStore.buscarCategoriaPorId(categoriaId)
-  categoria.value = categoriaStore.categoria
+  const categoriaId = route.params.id;
 
-  await userStore.buscarTodosOsUsers(2)
-  // await userStore.buscarUserPorCategoria(categoriaId)
-  // users.value = userStore.filteredUsers
-})
+  await categoriaStore.buscarCategoriaPorId(categoriaId);
+  categoria.value = categoriaStore.categoria;
+
+  await userStore.buscarUsersPorCategoria(categoriaId);
+  users.value = userStore.filteredUsers;
+});
 
 function goToUser(id) {
-  router.push({ name: 'Perfil', params: { id } })
+  router.push({ name: 'Perfil', params: { id } });
 }
 </script>
 
 <template>
   <div class="container">
-    <h1>{{ categoria.nome }}s</h1>
+    <h1>{{ categoria.nome }}</h1>
     <hr />
     <div class="trabalhadores">
-      <div class="trabalhador" v-for="user in userStore.users" :key="user.id">
-        <img :src="user.foto" alt="Foto de {{ user.name }}" />
+      <div
+        class="trabalhador"
+        v-for="user in users"
+        :key="user.id"
+      >
+        <img :src="user.foto" :alt="`Foto de ${user.name}`" />
         <p>{{ user.name }}</p>
-        <!-- <p>{{ user.foto.description }}</p> -->
-        <p>{{ user.categoria.nome }}</p>
-        <button @click="goToUser">Contratar</button>
+        <p>{{ user.categoria }}</p>
+        <button @click="() => goToUser(user.id)">Contratar</button>
       </div>
     </div>
   </div>
 </template>
-
 <style>
 .container {
   min-height: 65vh;

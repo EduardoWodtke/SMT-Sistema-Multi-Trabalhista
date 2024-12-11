@@ -25,17 +25,19 @@ function goToUser(id) {
         <router-link to="Historico" class="mdi mdi-clock-time-eight-outline" />
       </div>
     </div>
-    <!-- <h1>Trabalhadores</h1> -->
     <div id="container">
       <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
         <div class="bolinha">
-          <img src="@/assets/imagens/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
+          <img :src="user.foto" alt="foto do usuário" class="user-foto" />
         </div>
         <div class="info">
           <p  
           class="user-item"
         >
           {{ user.name }}
+        </p>
+        <p>
+          {{ user.categoria.nome }}
         </p>
           <button @click="goToUser(user.id)">Contratar</button>
         </div>
