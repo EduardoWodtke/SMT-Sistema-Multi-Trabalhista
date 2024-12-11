@@ -11,7 +11,6 @@ onMounted(async () => {
   await userStore.buscarTodosOsUsers(2)
 })
 function goToUser(id) {
-  // Redireciona para a página da categoria com o id
   router.push({ name: 'Perfil', params: { id } })
 }
 </script>
@@ -33,9 +32,7 @@ function goToUser(id) {
           <img src="@/assets/imagens/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
         </div>
         <div class="info">
-          <p
-          v-for="user in userStore.users"
-          :key="user.id"
+          <p  
           class="user-item"
         >
           {{ user.name }}

@@ -4,7 +4,7 @@
   <header>
     <div class="logo">
       <router-link to="/">
-        <img class="logo-img" src="@/assets/logo.png" alt="SMT" />
+        <img class="logo-img" src="@/assets/imagens/logo.png" alt="SMT" />
       </router-link>
     </div>
     <div class="barra-pesquisa">

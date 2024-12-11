@@ -12,13 +12,17 @@ const users = ref([])
 
 onMounted(async () => {
   const categoriaId = route.params.id
-  // Busca a categoria pelo ID
   await categoriaStore.buscarCategoriaPorId(categoriaId)
   categoria.value = categoriaStore.categoria
 
-  await userStore.buscarUserPorCategoria(categoriaId)
-  users.value = userStore.filteredUsers
+  await userStore.buscarTodosOsUsers(2)
+  // await userStore.buscarUserPorCategoria(categoriaId)
+  // users.value = userStore.filteredUsers
 })
+
+function goToUser(id) {
+  router.push({ name: 'Perfil', params: { id } })
+}
 </script>
 
 <template>
@@ -26,10 +30,12 @@ onMounted(async () => {
     <h1>{{ categoria.nome }}s</h1>
     <hr />
     <div class="trabalhadores">
-      <div class="trabalhador" v-for="user in users" :key="user.id">
+      <div class="trabalhador" v-for="user in userStore.users" :key="user.id">
         <img :src="user.foto" alt="Foto de {{ user.name }}" />
         <p>{{ user.name }}</p>
-        <button>Contratar</button>
+        <!-- <p>{{ user.foto.description }}</p> -->
+        <p>{{ user.categoria.nome }}</p>
+        <button @click="goToUser">Contratar</button>
       </div>
     </div>
   </div>
@@ -102,10 +108,8 @@ h1 {
 }
 
 /* tablet */
-@media screen and (max-width: 1024px) {
-}
+@media screen and (max-width: 1024px) {}
 
 /* celular */
-@media screen and (max-width: 430px) {
-}
+@media screen and (max-width: 430px) {}
 </style>
