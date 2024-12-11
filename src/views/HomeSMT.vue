@@ -146,7 +146,7 @@ onMounted(() => {
    .slide{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 110%;
    }
    h3{
     font-size: 5vh;
@@ -165,7 +165,7 @@ onMounted(() => {
     .slide{
     display: flex;
     flex-direction: column;
-    width: 155%;
+    width: 170%;
     align-items: center;
     /* height: 100%; */
     
@@ -180,10 +180,11 @@ onMounted(() => {
    }
    a{
     bottom: 10%;
-    left: 35%;
+    left: 29%;
    }
    .butãoGettingStart{
     margin: 0;
+  
    }
   }
   </style>
