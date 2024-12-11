@@ -1,30 +1,27 @@
-<script>
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { login, setAuthToken } from '@/service/auth'
 
-export default {
-  data() {
-    return {
-      username: '',
-      password: '',
-      loading: false
-    }
-  },
-  methods: {
-    async handleLogin() {
-      this.loading = true
-      try {
-        const response = await login(this.username, this.password)
-        setAuthToken(response.access)
-        alert('Login realizado com sucesso!')
-        console.log('Token JWT:', response.access)
-        this.$router.push('/trabalhadores')
-        // eslint-disable-next-line no-unused-vars
-      } catch (error) {
-        alert('Erro ao fazer login. Verifique suas credenciais.')
-      } finally {
-        this.loading = false
-      }
-    }
+const router = useRouter()
+
+const username = ref('')
+const password = ref('')
+const loading = ref(false)
+
+async function handleLogin() {
+  loading.value = true
+  try {
+    const response = await login(username.value, password.value)
+    setAuthToken(response.access)
+    alert('Login realizado com sucesso!')
+    console.log('Token JWT:', response.access)
+    router.push('/trabalhadores')
+    // eslint-disable-next-line no-unused-vars
+  } catch (error) {
+    alert('Erro ao fazer login. Verifique suas credenciais.')
+  } finally {
+    loading.value = false
   }
 }
 </script>
@@ -48,8 +45,10 @@ export default {
         />
       </div>
       <div class="botoes">
-        <button type="submit" class="butao">REGISTRAR</button>
-        <button type="submit" class="butao">ENTRAR</button>
+        <router-link to="Register" class="butao">
+          REGISTRAR
+        </router-link>
+        <button @click="handleLogin" class="butao">ENTRAR</button>
       </div>
       <a href="">Esqueceu a senha?</a>
     </div>
@@ -57,6 +56,16 @@ export default {
 </template>
 
 <style scoped>
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 0px solid white;
+  outline: none;
+  /* border-bottom: 1px solid white;   */
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #00173d inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 #container {
   display: flex;
   flex-direction: row;
@@ -79,11 +88,17 @@ export default {
       margin-bottom: 1vh;
       .butao {
         background: none;
-        width: 10vh;
-        height: 3vh;
-        font-size: 2vh;
+        width: 13vh;
+        height: 4vh;
+        font-size: 2.5vh;
         border: 1px solid white;
-        border-radius: 2vh;
+        border-radius: 1vh;
+        text-align: center;
+        text-decoration: none;
+      }
+      .butao:hover {
+        background-color: white;
+        color: #00173d;
       }
     }
     h1 {
@@ -95,9 +110,12 @@ export default {
         border: none;
         border-bottom: 2px solid white;
         height: 4vh;
-        font-size: 2vh;
+        font-size: 2.5vh;
         width: 40vh;
         margin: 2vh;
+      }
+      span {
+        font-size: 3vh;
       }
     }
   }

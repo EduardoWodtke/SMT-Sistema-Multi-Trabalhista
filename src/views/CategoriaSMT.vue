@@ -1,38 +1,115 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router' // Para acessar os parâmetros da rota
+import { useRoute } from 'vue-router'
 import { useCategoriaStore } from '@/stores/categoria'
+import { useUserStore } from '@/stores/user'
 
-const route = useRoute() // Usando o Vue Router para acessar os parâmetros da rota
-const categoriaStore = useCategoriaStore() // Usando a store de categorias
-const categoria = ref({}) // Variável para armazenar os dados da categoria
+const route = useRoute()
+const categoriaStore = useCategoriaStore()
+const categoria = ref({})
+const userStore = useUserStore()
+const users = ref([])
 
 onMounted(async () => {
-  const categoriaId = route.params.id // Pega o ID da categoria da URL
-  await categoriaStore.buscarCategoriaPorId(categoriaId) // Chama a store para buscar a categoria
-  categoria.value = categoriaStore.categoria // Atribui os dados da categoria à variável local
+  const categoriaId = route.params.id
+  await categoriaStore.buscarCategoriaPorId(categoriaId)
+  categoria.value = categoriaStore.categoria
+
+  await userStore.buscarTodosOsUsers(2)
+  // await userStore.buscarUserPorCategoria(categoriaId)
+  // users.value = userStore.filteredUsers
 })
+
+function goToUser(id) {
+  router.push({ name: 'Perfil', params: { id } })
+}
 </script>
+
 <template>
   <div class="container">
-    <h1>Hello word</h1>
-    <h1>Categoria: {{ categoria.nome }}</h1>
-    <p>{{ categoria.descricao }}</p>
-    <!-- Exiba mais informações da categoria aqui -->
+    <h1>{{ categoria.nome }}s</h1>
+    <hr />
+    <div class="trabalhadores">
+      <div class="trabalhador" v-for="user in userStore.users" :key="user.id">
+        <img :src="user.foto" alt="Foto de {{ user.name }}" />
+        <p>{{ user.name }}</p>
+        <!-- <p>{{ user.foto.description }}</p> -->
+        <p>{{ user.categoria.nome }}</p>
+        <button @click="goToUser">Contratar</button>
+      </div>
+    </div>
   </div>
 </template>
+
 <style>
 .container {
   min-height: 65vh;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  hr {
+    width: 90%;
+    align-items: center;
+    /* text-align: center; */
+  }
+
+  .trabalhadores {
+    display: grid;
+    /* grid-row: auto auto auto; */
+    grid-template-columns: auto auto auto;
+
+    .trabalhador {
+      margin: 5vh;
+      /* width: 50vh; */
+      /* height: 20vh; */
+      border: 1px solid black;
+      /* background-color: #00173d; */
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        margin-left: 2vh;
+        font-size: 5vh;
+        color: black;
+      }
+
+      button {
+        font-size: 2vh;
+        margin: 2vh;
+        width: 20vh;
+        background-color: #00173d;
+        height: 5vh;
+        justify-content: center;
+        /* align-items: center; */
+        border: none;
+      }
+
+      button:hover {
+        background-color: rgb(58, 81, 102);
+      }
+    }
+  }
 }
+
 h1 {
   color: black;
 }
+
 /* tablet */
-@media screen and (max-width: 1024px) {
-}
+@media screen and (max-width: 1024px) {}
+
 /* celular */
-@media screen and (max-width: 430px) {
-}
+@media screen and (max-width: 430px) {}
 </style>

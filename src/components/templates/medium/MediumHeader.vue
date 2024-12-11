@@ -5,6 +5,7 @@
     <router-link to="/trabalhadores" class="logo">
         <!-- <img class="logo-img" src="@/assets/logo.png" alt="SMT" /> -->
         <h1>SMT</h1>
+
       </router-link>
    
   </header>

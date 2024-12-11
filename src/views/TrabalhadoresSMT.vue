@@ -1,12 +1,18 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
+
+const router = useRouter() 
 
 const userStore = useUserStore()
 
 onMounted(async () => {
   await userStore.buscarTodosOsUsers(2)
 })
+function goToUser(id) {
+  router.push({ name: 'Perfil', params: { id } })
+}
 </script>
 <template>
   <div id="body">
@@ -23,11 +29,15 @@ onMounted(async () => {
     <div id="container">
       <div v-for="user in userStore.users" :key="user.id" class="trabalhador">
         <div class="bolinha">
-          <img src="@/assets/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
+          <img src="@/assets/imagens/teste-perfil.jpg" alt="foto do usuário" class="user-foto" />
         </div>
         <div class="info">
-          <p>{{ user.name }}</p>
-          <button>Contratar</button>
+          <p  
+          class="user-item"
+        >
+          {{ user.name }}
+        </p>
+          <button @click="goToUser(user.id)">Contratar</button>
         </div>
       </div>
     </div>

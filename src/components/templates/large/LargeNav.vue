@@ -7,7 +7,7 @@ import { useAuthStore } from '@/stores/auth'
 const authStore = useAuthStore()
 const servicos = ref(false)
 const categoriaStore = useCategoriaStore()
-const router = useRouter()  // Obtém o router para navegação
+const router = useRouter()
 
 const clickHamburguer = () => {
   servicos.value = !servicos.value
@@ -19,7 +19,6 @@ function closeHamburguer() {
 }
 
 function goToCategoria(id) {
-  // Redireciona para a página da categoria com o id
   router.push({ name: 'Categoria', params: { id } })
 }
 
@@ -38,8 +37,7 @@ onMounted(async () => {
       <div v-if="servicos" class="hamburguer" id="fechar">
         <div class="logox">
           <router-link to="Trabalhadores">
-
-            <img src="@/assets/logo.png" alt="" />
+            <img src="@/assets/imagens/logo.png" alt="" />
           </router-link>
           <button
             class="butao mdi mdi-alpha-x"
@@ -129,7 +127,7 @@ onMounted(async () => {
 .logox img {
   width: 12vh;
 }
-h2{
+h2 {
   text-shadow: gray 3px 3px 5px;
 }
 p {
