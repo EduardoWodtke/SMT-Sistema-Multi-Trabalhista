@@ -2,48 +2,37 @@
 </script>
 <template>
   <header>
-    <div class="logo">
-      <router-link to="/">
-        <img class="logo-img" src="@/assets/imagens/logo.png" alt="SMT" />
+    <router-link to="/trabalhadores" class="logo">
+        <!-- <img class="logo-img" src="@/assets/logo.png" alt="SMT" /> -->
+        <h1>SMT</h1>
+
       </router-link>
-    </div>
-    <div class="barra-pesquisa">
-      <input
-        size="100"
-        type="text"
-        v-model="search"
-        id="barra-pesquisa"
-        placeholder="Procurar serviços"
-      />
-    </div>
+   
   </header>
 </template>
 
 <style scoped>
 header {
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  background-color: #00173d;
+  background-color: rgb(0, 23, 61);
   width: 100%;
   align-items: center;
-  height: 30%;
+  height: 8vh;
+  font-size: 30px;
+  /* justify-content: space-around; */
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center; 
+  /* justify-content: center; */
 }
 
 
 
-.logo-img {
-  width: 13vh;
-}
-#barra-pesquisa {
-  width: 600px;
-  height: 45px;
-  border-radius: 10px;
-  font-size: 22px;  
-  margin-right: 12vh;
-  text-align: center;
-  border: 3px solid;
-  box-shadow: 0 10px 30px 0 black;
-}
 
 </style>

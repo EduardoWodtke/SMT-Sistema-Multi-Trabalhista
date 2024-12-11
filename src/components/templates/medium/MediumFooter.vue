@@ -18,6 +18,7 @@ onMounted(async () => {
   categoriaStore.buscarTodasAsCategorias()
 })
 </script>
+
 <template>
   <footer>
     <div class="icones">
@@ -39,6 +40,7 @@ onMounted(async () => {
     </p>
   </div>
 </template>
+
 <style scoped>
 button {
   display: flex;
@@ -46,21 +48,24 @@ button {
   background: none;
   border: none;
 }
+
 .hamburguer {
   background-color: #00173d;
   width: 40%;
   text-align: end;
-  padding-right: 4vh;
-  bottom: 15%;
+  padding-right: 2vh;
+  bottom: calc(5vh + 20px); 
   right: 0;
   display: flex;
   position: fixed;
   font-size: 3vh;
   flex-direction: column;
   border: black 0.5vh solid;
-}
+  margin: 0; 
+
 * {
-  margin: 0 0 0 0;
+  margin: 0;
+}
 }
 footer {
   display: flex;
@@ -74,10 +79,36 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
 .icones {
   display: flex;
   justify-content: space-around;
   font-size: 6.5vh;
   width: 70vh;
 }
+
+
+@media screen and (max-width: 1024px) {
+  .hamburguer {
+    width: 60%;
+    font-size: 2.5vh;
+    padding-right: 2vh;
+    bottom: calc(5vh + 10px); 
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 5vh;
+  }
+
+  .icones {
+    width: 90%;
+    font-size: 5vh;
+  }
+
+  button {
+    font-size: 6vh;
+  }
+}
 </style>
+
