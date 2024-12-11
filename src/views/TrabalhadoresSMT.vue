@@ -250,72 +250,72 @@ li {
 @media screen and (max-width: 1024px) {
   #container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas responsivas */
-    gap: 20px; /* Espaçamento entre os itens */
-    margin: 0 auto; /* Centraliza o container */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    margin: 0 auto; 
   }
   .trabalhador {
-    width: 100%; /* Largura responsiva */
-    max-width: 300px; /* Limita a largura máxima */
-    height: auto; /* Altura ajustável */
-    margin: 10px auto; /* Espaçamento entre trabalhadores */
-    font-size: 1rem; /* Texto responsivo */
-    padding: 10px; /* Adiciona espaçamento interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Melhora o design */
+    width: 100%; 
+    max-width: 300px; 
+    height: auto; 
+    margin: 10px auto; 
+    font-size: 1rem; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   }
   .bolinha {
-    width: 80px; /* Tamanho adaptado */
+    width: 80px;
     height: 80px;
-    background-color: #e0e0e0; /* Cor neutra */
-    border-radius: 50%; /* Mantém o formato circular */
-    margin: 0 auto 10px; /* Centraliza e espaça */
+    background-color: #e0e0e0;
+    border-radius: 50%; 
+    margin: 0 auto 10px;
   }
   .icons {
-    flex-direction: row; /* Ícones em linha */
-    justify-content: space-around; /* Espaça os ícones */
+    flex-direction: row; 
+    justify-content: space-around; 
     a {
-      font-size: 3vh; /* Ajusta tamanho do ícone */
+      font-size: 3vh; 
     }
   }
   button {
-    font-size: 1rem; /* Botão responsivo */
-    width: 100%; /* Largura total no contexto do card */
+    font-size: 1rem; 
+    width: 100%; 
   }
 }
 
 @media screen and (max-width: 430px) {
   #container {
     display: flex;
-    flex-direction: column; /* Layout em uma coluna */
-    gap: 15px; /* Espaçamento entre os itens */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 10px; /* Espaçamento interno no container */
+    flex-direction: column; 
+    gap: 15px; 
+    margin: 0 auto; 
+    padding: 10px; 
   }
   .trabalhador {
-    width: 100%; /* Preenche a largura disponível */
-    max-width: 280px; /* Limita largura máxima */
-    height: auto; /* Altura ajustável */
-    margin: 0 auto; /* Centraliza os trabalhadores */
-    padding: 10px; /* Espaçamento interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Melhora o design */
+    width: 100%;
+    max-width: 280px;
+    height: auto; 
+    margin: 0 auto; 
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   .bolinha {
-    width: 60px; /* Tamanho menor para telas pequenas */
+    width: 60px; 
     height: 60px;
-    background-color: #e0e0e0; /* Cor neutra */
-    border-radius: 50%; /* Formato circular */
-    margin: 0 auto 10px; /* Centraliza e espaça */
+    background-color: #e0e0e0; 
+    border-radius: 50%; 
+    margin: 0 auto 10px;
   }
   .icons {
-    flex-direction: row; /* Ícones em linha */
-    justify-content: space-around; /* Espaça os ícones */
+    flex-direction: row; 
+    justify-content: space-around; 
     a {
-      font-size: 2.5vh; /* Tamanho reduzido */
+      font-size: 2.5vh; 
     }
   }
   button {
-    font-size: 0.9rem; /* Botão responsivo */
-    width: 100%; /* Largura total */
+    font-size: 0.9rem; 
+    width: 100%; 
   }
 }
 

@@ -38,7 +38,7 @@ onMounted(async () => {
   </footer>
   <div v-if="menu" class="menu">
     <div class="logox">
-      <img src="@/assets/logo.png" alt="" />
+      <img src="@/assets/imagens/logo.png" alt="" />
       <button
         class="butao mdi mdi-alpha-x"
         style="font-size: 10vh"
@@ -65,7 +65,7 @@ onMounted(async () => {
   </div>
   <div v-if="servicos" class="servicos">
     <div class="logox">
-      <img src="@/assets/logo.png" alt="" />
+      <img src="@/assets/imagens/logo.png" alt="" />
       <button
         class="butao mdi mdi-alpha-x"
         style="font-size: 10vh"
