@@ -18,7 +18,7 @@ function goToUser(id) {
   <div id="body">
     <div class="topo">
       <div class="pesquisa">
-        <input type="search" placeholder="Procurar trabalhadores" />
+       <input type="search" placeholder="Procurar trabalhadores" /> 
       </div>
       <div class="icons" style="color: black">
         <router-link to="Chat" class="mdi mdi-chat-processing-outline" />
@@ -248,6 +248,7 @@ li {
   color: rgb(85, 85, 85);
 }
 @media screen and (max-width: 1024px) {
+  
   #container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -280,7 +281,18 @@ li {
   button {
     font-size: 1rem; 
     width: 100%; 
+    margin: 0;
+    
   }
+  .topo{
+    
+    margin: 0 !important;
+    width: 20vh;
+  }
+  .pesquisa{
+    width: 66vh;
+  }
+  
 }
 
 @media screen and (max-width: 430px) {
@@ -315,7 +327,20 @@ li {
   }
   button {
     font-size: 0.9rem; 
-    width: 100%; 
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+  
+  img{
+    width: 60px; 
+    height: 60px;
+    background-color: #e0e0e0; 
+    border-radius: 50%; 
+    margin: 0 auto 10px;
+  }
+  .pesquisa{
+    width: 37vh;
   }
 }
 

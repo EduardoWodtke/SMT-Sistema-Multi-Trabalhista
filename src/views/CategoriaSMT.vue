@@ -27,7 +27,7 @@ function goToUser(id) {
 
 <template>
   <div class="container">
-    <h1>{{ categoria.nome }}s</h1>
+    <h1>{{ categoria.nome }}</h1>
     <hr />
     <div class="trabalhadores">
       <div class="trabalhador" v-for="user in userStore.users" :key="user.id">
@@ -108,8 +108,139 @@ h1 {
 }
 
 /* tablet */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  .container {
+  min-height: 65vh;
+  cursor: pointer;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  hr {
+    width: 90%;
+    align-items: center;
+    /* text-align: center; */
+  }
+
+  .trabalhadores {
+    display: grid;
+    /* grid-row: auto auto auto; */
+    grid-template-columns: auto auto auto;
+
+    .trabalhador {
+      margin: 5vh;
+      /* width: 50vh; */
+      /* height: 20vh; */
+      border: 1px solid black;
+      /* background-color: #00173d; */
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        margin-left: 2vh;
+        font-size: 5vh;
+        color: black;
+      }
+
+      button {
+        font-size: 2vh;
+        margin: 2vh;
+        width: 20vh;
+        background-color: #00173d;
+        height: 5vh;
+        justify-content: center;
+        /* align-items: center; */
+        border: none;
+      }
+
+      button:hover {
+        background-color: rgb(58, 81, 102);
+      }
+    }
+  }
+}
+
+h1 {
+  color: black;
+}
+}
 
 /* celular */
-@media screen and (max-width: 430px) {}
+@media screen and (max-width: 430px) {
+  .container {
+  min-height: 65vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  hr {
+    width: 90%;
+    align-items: center;
+    /* text-align: center; */
+  }
+
+  .trabalhadores {
+    display: grid;
+    /* grid-row: auto auto auto; */
+    grid-template-columns: auto auto auto;
+
+    .trabalhador {
+      margin: 5vh;
+      /* width: 50vh; */
+      /* height: 20vh; */
+      border: 1px solid black;
+      /* background-color: #00173d; */
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        margin-left: 2vh;
+        font-size: 5vh;
+        color: black;
+      }
+
+      button {
+        font-size: 2vh;
+        margin: 2vh;
+        width: 20vh;
+        background-color: #00173d;
+        height: 5vh;
+        justify-content: center;
+        /* align-items: center; */
+        border: none;
+      }
+
+      button:hover {
+        background-color: rgb(58, 81, 102);
+      }
+    }
+  }
+}
+
+h1 {
+  color: black;
+}
+}
 </style>
