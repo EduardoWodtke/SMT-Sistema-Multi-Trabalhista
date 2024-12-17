@@ -26,7 +26,7 @@ onMounted(async () => {
         <div class="info">
           <div class="bolinha"></div>
           <div class="text">
-            <p>{{ trabalhoHistorico.nome }}</p>
+            <p>Pedro De Alcantra</p>
             <p>Data de encerramento: {{ trabalhoHistorico.DataTermino }}</p>
             <p>Valor: {{ trabalhoHistorico.preco }}</p>
             <p></p>
