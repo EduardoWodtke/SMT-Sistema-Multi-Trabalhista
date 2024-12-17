@@ -37,7 +37,7 @@ function goToUser(id) {
         >
           {{ user.name }}
         </p>
-          <button @click="goToUser(user.id)">Contratar</button>
+          <router-link to="/contratar" class="btn-contratar">Contratar</router-link>
         </div>
       </div>
     </div>
@@ -247,6 +247,34 @@ button {
 li {
   color: rgb(85, 85, 85);
 }
+
+.btn-contratar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00173d; 
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+
+.btn-contratar:hover {
+  background-color: #5061ff; 
+  transform: scale(1.05);
+}
+
+
+.btn-contratar:active {
+  background-color: #3e8e41;
+  transform: scale(1);
+}
+
+
 @media screen and (max-width: 1024px) {
   
   #container {

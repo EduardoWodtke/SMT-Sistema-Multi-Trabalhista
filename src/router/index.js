@@ -54,6 +54,11 @@ const router = createRouter({
           name: 'Perfil',
           component: () => import('@/views/PerfilSMT.vue'),
         },
+        {
+          path: 'Contratar',
+          name: 'Contratar',
+          component: () => import('@/views/ContratarSMT.vue'),
+        }
       ],
     },
   ],
