@@ -18,6 +18,7 @@ function goToUser(id) {
   <div id="body">
     <div class="topo">
       <div class="pesquisa">
+        <router-link to="/" class="logout">Logout</router-link>
        <input type="search" placeholder="Procurar trabalhadores" /> 
       </div>
       <div class="icons" style="color: black">
@@ -274,6 +275,31 @@ li {
   transform: scale(1);
 }
 
+.logout{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00173d; 
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #5061ff; 
+  transform: scale(1.05);
+}
+
+
+.logout:active {
+  background-color: #3e8e41;
+  transform: scale(1);
+}
+
 
 @media screen and (max-width: 1024px) {
   
@@ -320,7 +346,20 @@ li {
   .pesquisa{
     width: 66vh;
   }
-  
+  .logout{
+  display: block;
+  padding: 1px 20px;
+  height: 4vh;
+  background-color: #00173d; 
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
 }
 
 @media screen and (max-width: 430px) {
