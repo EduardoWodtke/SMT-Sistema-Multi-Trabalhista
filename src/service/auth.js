@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://0.0.0.0:19003/token/'
+const API_URL = 'https://smt-v6uu.onrender.com/token/'
 
 export async function login(email, password) {
   const response = await axios.post(API_URL, {
