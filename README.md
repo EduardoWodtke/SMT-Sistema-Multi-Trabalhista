@@ -54,3 +54,29 @@ Para que o sistema seja mais dinâmico, deverá ser elaborado um sistema de pont
 -Pyhton, tal qual um conjunto de LEGO, proporciona aos programadores a flexibilidade de construir soluções, desde as mais simples até as mais complexas, de forma criativa e eficiente.
 
 -PDM, é um gerenciador moderno de pacotes e dependências para Python, compatível com os mais recentes padrões PEP;
+
+## Como colocar para funcionar
+
+### FrontEnd
+
+Faça um clone do repositorio do git
+
+Com os recursos baixados, execute no cmd: NPM install
+
+Após baixar os pacotes necessarios, execute no cmd: NPM run dev
+
+Pronto o FrontEnd está de pé
+
+### BackEnd
+
+Faça um clone do repositório do git
+
+Com os recursos baixados, execute no cmd: PDM install
+
+Após os recursos baixados, renomeie o arquivo .env.exemplo para .env
+
+Após isso execute o comando PDM run migrate
+
+Com o banco pronto só executar o comando PDM run dev
+
+Pronto o BackEnd está de pé
