@@ -47,9 +47,9 @@ Para que o sistema seja mais dinâmico, deverá ser elaborado um sistema de pont
 # Como rodar em sua maquina?
 
 ## Recursos necessarios
--NVM, que permite a utilização de versões diferentes do NodeJS. O nvm é gerenciador de versões do NodeJs;
+-NVM, que permite a utilização de versões diferentes do NodeJS. O nvm é gerenciador de versões do NodeJs e usar este comando: 
 
-E usar este comando ### nvm install --lts
+### nvm install --lts
 
 -Pyhton, tal qual um conjunto de LEGO, proporciona aos programadores a flexibilidade de construir soluções, desde as mais simples até as mais complexas, de forma criativa e eficiente.
 
